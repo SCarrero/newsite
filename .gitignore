@@ -8,3 +8,5 @@ dist
 *.lock
 src/assets/ss/fonts/**/*
 src/assets/js/vendor/**/*
+!src/assets/js/vendor/foundation-what-input.min.js
+!src/assets/js/vendor/jquery-3.4.1.min.js
