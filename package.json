@@ -1,7 +1,7 @@
 {
-  "name": "fmzurb2",
+  "name": "newsite",
   "version": "1.0.0",
-  "description": "ZURB Template Variant Used by FM",
+  "description": "ZURB Template Variant",
   "main": "gulpfile.babel.js",
   "scripts": {
     "start": "gulp",
@@ -43,10 +43,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SCarrero/fmzurb2.git"
+    "url": "https://github.com/SCarrero/newsite.git"
   },
   "bugs": {
-    "url": "https://github.com/SCarrero/fmzurb2/issues"
+    "url": "https://github.com/SCarrero/newsite/issues"
   },
   "private": true
 }
