@@ -1,5 +1,5 @@
-# MH ZURB Web Template
-Based on v6.5 of Foundation 
+# Starter New Site Web Template
+Based on v6.5 of Foundation with Webpack omitted
 
 This is a variant of the [ZURB Foundation Template for Sites](https://github.com/zurb/foundation-zurb-template).  It has a Gulp-powered build system with these features:
 
