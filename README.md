@@ -13,4 +13,4 @@ This is a variant of the [ZURB Foundation Template for Sites](https://github.com
 ## Create a New Repo
 
 To create a new repo using this template, refer to [Creating a repository from a template
-](htps://help.github.com/en/articles/creating-a-repository-from-a-template)
+](https://help.github.com/en/articles/creating-a-repository-from-a-template).
