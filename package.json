@@ -1,5 +1,5 @@
 {
-  "name": "home",
+  "name": "newsite",
   "version": "1.0.0",
   "description": "ZURB Template Variant Used by FM",
   "main": "gulpfile.babel.js",
@@ -43,10 +43,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SCarrero/home.git"
+    "url": "https://github.com/SCarrero/newsite.git"
   },
   "bugs": {
-    "url": "https://github.com/SCarrero/home/issues"
+    "url": "https://github.com/SCarrero/newsite/issues"
   },
   "private": true
 }
