@@ -66,33 +66,22 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);  
-$global-lineheight: 1.4;
-$light-gray: #f4f4f4;  // note: darken($light-gray, 10%) = #dbdbdb;  darken($light-gray, 18.5%) = #cecece;
-$medium-gray: #464645;
-$dark-gray: #333333;
-$black: #000000;
-$white: #ffffff;
-$primary-color: #00a6e2;
-$fm-orange: #ff6c00;
-$fm-green: #88BD45;
-$fm-yellow: #ffb718;
-$fm-red: #cf0a2c;
-$fm-teal: #00a19a;
-$fm-blue: #457bbe;
-$fm-purple: #725090;
-$fm-gray: #777874;  // also lighten(saturate(adjust-hue($medium-gray,15), 1), 19);
+$global-width: rem-calc(1200);
+$global-lineheight: 1.5;
 $foundation-palette: (
-  primary: $fm-gray,
-  alert: $fm-red,
-  secondary: $primary-color,
-  success: $fm-green,
-  warning: $fm-orange,
+  primary: #1779ba,
+  secondary: #767676,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
 );
-@include add-foundation-colors;
-$orbit-palette: map-merge($foundation-palette, (purple: $fm-purple, blue: $fm-blue, teal: $fm-teal, black: $black, white: $white, concrete: $light-gray));
+$light-gray: #e6e6e6;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
+$black: #0a0a0a;
+$white: #fefefe;
 $body-background: $white;
-$body-font-color: $medium-gray;
+$body-font-color: $black;
 $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
@@ -295,7 +284,7 @@ $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
-$button-background-hover: scale-color($button-background, $lightness: 15%);
+$button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
@@ -308,7 +297,7 @@ $button-sizes: (
 );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
-$button-background-hover-lightness: 15%;
+$button-background-hover-lightness: -20%;
 $button-hollow-hover-lightness: -50%;
 $button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
 $button-responsive-expanded: false;
@@ -877,3 +866,4 @@ $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
+

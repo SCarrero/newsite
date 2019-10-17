@@ -25,13 +25,9 @@ function loadConfig() {
   return yaml.load(ymlFile);
 }
 
-// create all the subGuide pages
-gulp.task('subguide',
-  gulp.series(styleGuide));
-
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, images, copy, copyjs), javascript, sass, 'subguide'));
+ gulp.series(clean, gulp.parallel(pages, images, copy, copyjs), javascript, sass, styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -78,7 +74,7 @@ function resetPages(done) {
 function styleGuide(done){
   return sherpa('src/styleguide/index.md', {
     output: PATHS.dist + '/special/styleguide/index.html',
-    template: 'src/styleguide/template_foundation.html'
+    template: 'src/styleguide/template.html'
   }, done );  
 }
 
@@ -89,7 +85,8 @@ function sass() {
     // Autoprefixer
     autoprefixer(),
   ].filter(Boolean);
-  var source = 'src/assets/scss/app.scss';
+  var source = 'src/assets/scss/dev/app.scss';
+  if(PRODUCTION) { source = 'src/assets/scss/app.scss'; }
   $.sass.compiler = require('node-sass');
   return gulp.src(source)
     .pipe($.sourcemaps.init())
@@ -108,7 +105,7 @@ function sass() {
 function javascript(done) {
 //  gulp.src(PATHS.entries)
 //    .pipe($.concat('foundation-what-input.min.js'))
-//    .pipe(gulp.dest(PATHS.dist + '/js'));
+//    .pipe(gulp.dest(PATHS.dist + '/js/vendor/'));
   gulp.src(PATHS.javascript)
     .pipe($.sourcemaps.init())
     .pipe($.concat('app.js'))    
@@ -150,6 +147,6 @@ function watch() {
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
   gulp.watch('src/assets/js/vendor/*.js').on('all', gulp.series(copyjs, browser.reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
-  gulp.watch('src/styleguide/*').on('all', gulp.series('subguide', browser.reload));
+  gulp.watch('src/styleguide/*').on('all', gulp.series(styleGuide, browser.reload));
 }
 // end
