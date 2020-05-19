@@ -1,5 +1,6 @@
 # Your project's server will run on localhost:xxxx at this port
 PORT: 8000
+BROWSERSLIST_CONFIG: ".browserslistrc"
 
 # Gulp will reference these paths when it copies files
 PATHS:

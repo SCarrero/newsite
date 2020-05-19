@@ -27,7 +27,7 @@ function loadConfig() {
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, images, copy, copyjs), javascript, sass, styleGuide));
+ gulp.series(clean, foundationJs, gulp.parallel(pages, images, copy), copyjs, javascript, sass, styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -101,11 +101,15 @@ function sass() {
     .pipe(browser.reload({ stream: true }));
 }
 
+// Generate Foundation JS
+function foundationJs(done) {
+  gulp.src(PATHS.entries)
+    .pipe($.concat('foundation-what-input.min.js'))
+    .pipe(gulp.dest('src/assets/js/vendor/'));
+  done();
+}
 // Generate our JS
 function javascript(done) {
-//  gulp.src(PATHS.entries)
-//    .pipe($.concat('foundation-what-input.min.js'))
-//    .pipe(gulp.dest(PATHS.dist + '/js/vendor/'));
   gulp.src(PATHS.javascript)
     .pipe($.sourcemaps.init())
     .pipe($.concat('app.js'))    
@@ -140,8 +144,8 @@ function reload(done) {
 function watch() {
   gulp.watch(PATHS.assets, gulp.series(copy, browser.reload));
   gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, browser.reload));
-  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, browser.reload));
+  gulp.watch('src/{layouts,partials,helpers}/**/*').on('all', gulp.series(resetPages, pages, browser.reload));
+  gulp.watch('src/data/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, browser.reload));
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));

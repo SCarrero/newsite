@@ -1,7 +1,7 @@
 {
   "name": "newsite",
-  "version": "1.0.0",
-  "description": "ZURB Template Variant Used by FM",
+  "version": "1.0.1",
+  "description": "FM Variation on Zurb Template Variant Used to Generate new sites",
   "main": "gulpfile.babel.js",
   "scripts": {
     "start": "gulp",
@@ -10,10 +10,10 @@
   "author": "ZURB <foundation@zurb.com>",
   "license": "MIT",
   "dependencies": {
-    "foundation-sites": "^6.5.3",
-    "jquery": "^3.4.1",
+    "foundation-sites": "6.6.3",
+    "jquery": "3.5.1",
     "motion-ui": "^2.0.3",
-    "what-input": "^5.2.6"
+    "what-input": "5.2.9"
   },
   "devDependencies": {
     "@babel/core": "7.6.4",
