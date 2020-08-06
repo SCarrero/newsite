@@ -36,7 +36,14 @@
     <meta name="author" content="{{ author }}" />
     {{/if}}
     <meta name="theme-color" content="">
-    <script>document.documentElement.classList.remove("no-js");</script>
+    <script>document.documentElement.classList.remove("no-js");
+    function preferReducedMotion() {
+      const query = '(prefers-reduced-motion: no-preference)';
+      const mediaQueryList = window.matchMedia(query);
+      const prefersReducedMotion = !mediaQueryList.matches;
+      return prefersReducedMotion;
+    }
+    </script>
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="stylesheet" href="/ss/app.css" />
