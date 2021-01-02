@@ -1,7 +1,7 @@
 {
   "name": "newsite",
-  "version": "1.0.1",
-  "description": "FM Variation on Zurb Template Variant Used to Generate new sites",
+  "version": "1.0.3",
+  "description": "Variation on Zurb Template Variant Used to Generate new sites",
   "main": "gulpfile.babel.js",
   "scripts": {
     "start": "gulp",

@@ -1,0 +1,25 @@
+{{#if title}}
+<title>{{{string 'sanitize' title}}}</title>
+<meta property="og:title" content="{{{string 'sanitize' title}}}" />
+<meta name="twitter:title" content="{{{string 'sanitize' title}}}"/>
+{{/if}}
+{{#if keywords}}
+<meta name="keywords" content="{{ keywords }}" />
+{{/if}}
+{{#if twittercard}}
+<meta name="twitter:card" content="{{ twittercard }}" />
+{{else}}
+<meta name="twitter:card" content="summary" />
+{{/if}}
+{{#if description}}
+<meta name="Description" content="{{string 'unquote' description }}" />
+<meta property="og:description" content="{{string 'unquote' description }}" />
+<meta name="twitter:description" content="{{string 'unquote' description }}" />
+{{/if}}
+{{#if image}}
+<meta property="og:image" content="{{ image }}" />
+<meta name="twitter:image" content="{{ image }}" />
+{{/if}}    
+{{#if url}}
+<meta property="og:url" content="{{ url }}" />
+{{/if}}

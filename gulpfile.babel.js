@@ -25,9 +25,13 @@ function loadConfig() {
   return yaml.load(ymlFile);
 }
 
+
+gulp.task('styleGuide',
+  gulp.series(styleGuide1, styleGuide2));
+
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, foundationJs, gulp.parallel(pages, images, copy), copyjs, javascript, sass, styleGuide));
+ gulp.series(clean, gulp.parallel(pages, images, copy), javascript, sass, 'styleGuide'));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -43,12 +47,6 @@ function clean(done) {
 function copy() {
   return gulp.src(PATHS.assets)
     .pipe(gulp.dest(PATHS.dist));
-}
-
-// Copy updated js vendor files
-function copyjs() {
-  return gulp.src('src/assets/js/vendor/*.js')
-    .pipe(gulp.dest(PATHS.dist + '/js/vendor/'));
 }
 
 // Copy page templates into finished HTML files
@@ -71,13 +69,18 @@ function resetPages(done) {
 }
 
 // Generate a style guide from the Markdown content and HTML template in styleguide/
-function styleGuide(done){
+function styleGuide1(done){
   return sherpa('src/styleguide/index.md', {
     output: PATHS.dist + '/special/styleguide/index.html',
     template: 'src/styleguide/template.html'
-  }, done );  
+  }, done );
 }
-
+function styleGuide2(done){
+return sherpa('src/styleguide/panini.md', {
+  output: PATHS.dist + '/special/styleguide/panini.html',
+  template: 'src/styleguide/template.html'
+}, done );
+}
 // Compile Sass into CSS
 // In production, the CSS is compressed
 function sass() {
@@ -113,6 +116,13 @@ function javascript(done) {
   gulp.src(PATHS.javascript)
     .pipe($.sourcemaps.init())
     .pipe($.concat('app.js'))    
+    .pipe($.babel({
+      presets: [
+        ['@babel/env', {
+          modules: false
+        }]
+      ]
+    }))
     .pipe($.if(PRODUCTION, $.uglify()
       .on('error', e => { console.log(e); })
     ))
@@ -148,9 +158,7 @@ function watch() {
   gulp.watch('src/data/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, browser.reload));
-  gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
-  gulp.watch('src/assets/js/vendor/*.js').on('all', gulp.series(copyjs, browser.reload));
-  gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
-  gulp.watch('src/styleguide/*').on('all', gulp.series(styleGuide, browser.reload));
+  gulp.watch('src/assets/js/*.js').on('all', gulp.series(javascript, browser.reload));
+  gulp.watch('src/styleguide/*').on('all', gulp.series('styleGuide', browser.reload));
 }
 // end

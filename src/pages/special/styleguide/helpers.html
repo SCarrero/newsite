@@ -1,0 +1,467 @@
+---
+title: Helpers
+stylesheet: /special/styleguide/files/styleguide.css
+txt: 'in 2019, my dad went to work for the CIA — the Chefs, not the "Spooks."  '
+num: 5
+breakfast:
+  - eggs
+  - bacon
+  - toast
+  - juice
+  - coffee
+  - fruit
+lunch:
+  - sandwich
+  - chips
+  - pickle
+  - salad
+  - tea
+  - cookie
+---
+<div class="grid-container">
+  <style>code {display: block; margin-bottom: 1rem;} code.html::before { display: none;}</style>
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 cell">
+      <h1>{{title}}</h1>
+      <p>Below are details on the helper scripts for this repo: <a href="#string">String Helpers</a>, <a href="#array">Array Helpers</a>, <a href="#date">Date Helpers</a>, <a href="#math">Math Helpers</a>, <a href="#typeof">Typeof Helpers</a>,.</p>
+      <p><strong>All examples use the following data bits, defined in the frontmatter:</strong></p>
+{{#code 'html'}}
+  txt: 'in 2019, my dad went to work for the CIA — the chefs, not the "spooks."  ' 
+num: 5
+breakfast:
+  - eggs
+  - bacon
+  - toast
+  - juice
+  - coffee
+  - fruit
+lunch:
+  - sandwich
+  - chips
+  - pickle
+  - salad
+  - tea
+  - cookie
+{{/code}}   
+
+<h2 id="string">String Helper Examples</h2>
+
+<h3>Default</h3>
+<p>returns the value as a string</p>
+{{#code 'html'}} 
+<p>\{{string  "" num }}-\{{string  "" breakfast }}</p>{{/code}} 
+<p>{{string  "" num }}-{{string  "" breakfast }}</p>
+
+<h3>capitalize</h3>
+<p>'capitalize' returns the string with first letter capitalized.</p>
+{{#code 'html'}} 
+<p>\{{string  "capitalize" txt }}</p>{{/code}} 
+<p>{{string  "capitalize" txt }}</p>
+
+<h3>charAt</h3>
+<p>'charAt' returns the character in the nth position</p>
+{{#code 'html'}} 
+<p>The 3rd character is \{{string  "charAt" txt 3 }}</p>{{/code}} 
+<p>The 3rd character is {{string  "charAt" txt 3 }}</p>
+
+<h3>chop</h3>
+<p>'chop' returns the string with whitespace and non-word characters removed from both ends</p>
+{{#code 'html'}} 
+<p>\{{string  "chop" txt }}</p>{{/code}} 
+<p>{{string  "chop" txt }}</p>
+
+<h3>ellipsify</h3>
+<p>'ellipsify' returns string with all characters after nth position removed and replaced with ellipsis (use triple-stash so the ellipsis isn't escaped)</p>
+{{#code 'html'}} 
+<p>\{{{string  "ellipsify" txt 35}}}</p>{{/code}} 
+<p>{{{string  "ellipsify" txt 35}}}</p>
+
+<h3>ellipsifyWords</h3>
+<p>'ellipsifyWords' returns string with all words after nth word removed and replaced with ellipsis (use triple-stash so the ellipsis isn't escaped)</p>
+{{#code 'html'}} 
+<p>\{{{string  "ellipsifyWords" txt 8}}}</p>{{/code}} 
+<p>{{{string  "ellipsifyWords" txt 8}}}</p>
+
+<h3>indexOf</h3>
+<p>indexOf' returns the position # of the first instance of the substring within the string</p>
+{{#code 'html'}} 
+<p>The first "d" is at the index of \{{string  "indexOf" txt 'd'}}</p>{{/code}} 
+<p>The first "d" is at the index of {{string  "indexOf" txt 'd'}}</p>
+
+<h3>lastIndexOf</h3>
+<p>'lastIndexOf' returns the position # of the last instance of the substring within the string</p>
+{{#code 'html'}} 
+<p>The last "d" is at the index of \{{string  "lastIndexOf" txt "d"}}</p>{{/code}} 
+<p>The last "d" is at the index of {{string  "lastIndexOf" txt "d"}}</p>
+
+<h3>length</h3>
+<p>'length'returns length of string</p>
+{{#code 'html'}} 
+  <p>The string has \{{string  "length" txt }} characters</p>{{/code}} 
+<p>The string has {{string  "length" txt }} characters</p>
+
+<h3>lowercase</h3>
+<p>'lowercase' returns string with all letters lowercased</p>
+{{#code 'html'}} 
+  <p>\{{string  "lowercase" txt }}</p>{{/code}} 
+<p>{{string  "lowercase" txt }}</p>
+
+<h3>padStart</h3>
+<p>'padStart' returns the string with the initial position padded N times with character(s) provided</p>
+{{#code 'html'}} 
+  <p>\{{string  "padStart" num 3 "0"}}</p>{{/code}} 
+<p>{{string  "padStart" num 3 "0"}}</p>
+
+<h3>replace</h3>
+<p>'replace' returns the string with substring replaced with new string, with optional modifiers ("g" is default)</p>
+{{#code 'html'}} 
+  <p>\{{string  "replace" txt "Dad" "Mom" "gi"}}</p>{{/code}} 
+<p>{{string "replace" txt "Dad" "Mom" "gi"}}</p>
+
+<h3>reverse</h3>
+<p>'reverse' returns the string reversed</p>
+{{#code 'html'}} 
+  <p>\{{string  "reverse" txt }}</p>{{/code}} 
+<p>{{string  "reverse" txt }}</p>
+
+<h3>sanitize</h3>
+<p>'sanitize' returns the string with HTML and special characters removed (we use this for &lt;title> content)</p>
+{{#code 'html'}} 
+  <p>\{{string  "sanitize" txt }}</p>{{/code}} 
+<p>{{string  "sanitize" txt }}</p>
+
+<h3>search</h3>
+<p>'search'| similar to indexOf, but works with regular expressions</p>
+{{#code 'html'}} 
+  <p>The first non-word, non-space character is at position \{{string  "search" txt "[^\w\s]"}}</p>{{/code}} 
+<p>The first non-word, non-space character is at position {{string  "search" txt "[^\w\s]"}}</p>
+
+<h3>slice</h3>
+<p>'slice' returns a portion of the string from after the nth character, up to an optional nth character</p>
+{{#code 'html'}} 
+  <p>The string after 8th position: \{{string  "slice" txt 8}}<br>
+The string from 8th - 40th position: \{{string  "slice" txt 8 40}}</p>{{/code}} 
+<p>The string after 8th position: {{string  "slice" txt 8}}<br>
+  The string from 8th - 40th position: {{string  "slice" txt 8 40}}</p>
+
+<h3>split</h3>
+<p>'split'| splits the string at specified character(s) and returns an array of N segments</p>
+{{#code 'html'}} 
+  <p>\{{string  "split" txt "—" 1}}<br>
+\{{array "join" (string  "split" txt " ") "_"}}</p>{{/code}} 
+<p>{{string  "split" txt "—" 1}}<br>
+  {{array "join" (string  "split" txt " ") "_"}}</p>
+
+<h3>test</h3>
+<p>'test' returns true/false depending on if string contains the substring or expression provided, with optional modifiers ("g" is default)</p>
+{{#code 'html'}} 
+  <p>The string contains "Dad" (case-insensitive): \{{string  "test" txt "Dad" "gi"}}</p>
+<p>The string contains "Work": \{{string  "test" txt "Work"}}</p>{{/code}} 
+<p>The string contains "Dad" (case-insensitive): {{string  "test" txt "Dad" "gi"}}</p>
+<p>The string contains "Work": {{string  "test" txt "Work"}}</p>
+
+<h3>trim</h3>
+<p>'trim' returns the string with whitespace removed from both ends</p>
+{{#code 'html'}} 
+  <p>\{{string  "trim" txt }}</p>{{/code}} 
+<p>{{string  "trim" txt }}</p>
+
+<h3>unquote</h3>
+<p>'unquote' returns the string with plaintext double quotes replaced with HTML entity quotes (we use this for most meta tag values, use triple-stash if you don't want entities escaped)</p>
+{{#code 'html'}} 
+  <p>\{{string  "unquote" txt }}<br>
+\{{{string  "unquote" txt }}}</p>{{/code}} 
+<p>{{string  "unquote" txt }}<br>
+  {{{string  "unquote" txt }}}</p>
+
+<h3>uppercase</h3>
+<p>'uppercase' returns string with all letters uppercased</p>
+{{#code 'html'}} 
+  <p>\{{string  "uppercase" txt }}</p>{{/code}} 
+<p>{{string  "uppercase" txt }}</p>
+
+
+<hr>
+
+<h2 id="array">Array Helper Examples</h2>
+
+<h3>Default</h3>
+<p>returns the value as an array (allowing for array functions like each, first, last, etc.)</p>
+{{#code 'html'}} 
+\{{#each (array  "" num) }} <p>\{{#if @first}}first item: \{{/if}}
+  \{{.}} \{{#if @last}}- also last item\{{/if}}</p> 
+\{{/each}}  {{/code}} 
+{{#each (array  "" num) }} <p>{{#if @first}}first item: {{/if}}
+  {{.}} {{#if @last}}- also last item{{/if}}</p> 
+{{/each}}      
+  
+  <h3>concat</h3>
+  <p>'concat' returns a new array containing items fromthe 2 arrays passed to it </p>
+{{#code 'html'}} 
+  \{{#each (array "concat" breakfast lunch)}}
+\{{this}}, 
+\{{/each}}{{/code}} 
+<p>
+{{#each (array "concat" breakfast lunch)}}
+  {{this}}, 
+{{/each}}
+</p>
+
+
+<h3>inArray</h3>
+<p>'inArray' returns true if array contains specified string </p>
+{{#code 'html'}} 
+  \{{#if (array "inArray" lunch "sandwich")}} 
+  <p>The lunch array contains "sandwich".</p>
+  \{{else}} 
+  <p>The lunch array does not contain "sandwich".</p>
+\{{/if}}{{/code}}
+
+{{#if (array "inArray" lunch "sandwich")}} 
+  <p>The lunch array contains "sandwich".</p>
+  {{else}} 
+  <p>The lunch array does not contain "sandwich".</p>
+{{/if}}
+
+
+<h3>join</h3>
+<p>'join'  joins elements of an array into a string with specified separators </p>
+{{#code 'html'}} 
+<p>\{{array "join" breakfast " & "}} </p>{{/code}}
+
+<p>{{array "join" breakfast " & "}} </p>
+
+
+<h3>length</h3>
+<p>'length' returns the length of an array </p>
+{{#code 'html'}} 
+<p>I have \{{array "length" breakfast}} items for breakfast </p>{{/code}}   
+
+<p>I have {{array "length" breakfast}} items for breakfast</p>
+
+<h3>pop</h3>
+<p>'pop' removes the last item from the array and returns it  <strong>(permanently modifies the array)</strong></p>
+{{#code 'html'}} 
+  <p>Last item was \{{array "pop" lunch}}</p>  
+<p>The rest of lunch is:  \{{#each lunch}} \{{.}} \{{/each}}</p>{{/code}}   
+    
+<p>Last item was {{array "pop" lunch}}</p>  
+<p>The rest of lunch is:  {{#each lunch}} {{.}} {{/each}}</p>
+
+<h3>push</h3>
+<p>'push'  returns the array with the new item added to the end  <strong>(permanently modifies the array)</strong></p>
+{{#code 'html'}} 
+<p>The revised lunch is: \{{#each (array "push" lunch "muffin")}} \{{.}} \{{/each}}</p>{{/code}}   
+    
+  <p>The revised lunch is: {{#each (array "push" lunch "muffin")}} {{.}} {{/each}}</p>
+
+<h3>randomize</h3>
+<p>'randomize' returns a copy of the array with the items in random order </p>
+{{#code 'html'}} 
+<p>The randomized lunch is: \{{#each (array "randomize" lunch)}} \{{.}} \{{/each}}</p>{{/code}}   
+    
+  <p>The randomized lunch is: {{#each (array "randomize" lunch)}} {{.}} {{/each}}</p>
+
+<h3>reverse</h3>
+<p>'reverse' returns a copy of the array with the items in reversed order</p>
+{{#code 'html'}} 
+<p>The reversed breakfast is: \{{#each (array "reverse" breakfast)}} \{{.}} \{{/each}}</p>{{/code}}   
+
+  <p>The reversed breakfast is: {{#each (array "reverse" breakfast)}} {{.}} {{/each}}</p>
+
+<h3>shift</h3>
+<p>'shift' removes the first item from the array and returns it <strong>(permanently modifies the array)</strong></p>
+{{#code 'html'}} 
+  <p>First item was \{{array "shift" breakfast}}</p>  
+<p>The rest of breakfast is:  \{{#each breakfast}} \{{.}} \{{/each}}</p>{{/code}}   
+    
+<p>First item was {{array "shift" breakfast}}</p>  
+<p>The rest of breakfast is:  {{#each breakfast}} {{.}} {{/each}}</p>
+
+<h3>slice</h3>
+<p>'slice' returns items from within the array, starting at nth item specified, up to an optional nth item </p>
+{{#code 'html'}} 
+<p>Items 2-3 of breakfast are: \{{#each (array "slice" breakfast 1 3)}} \{{.}} \{{/each}}</p>{{/code}}   
+    
+  <p>Items 2-3 of breakfast are: {{#each (array "slice" breakfast 1 3)}} {{.}} {{/each}}</p>
+
+<h3>sort</h3>
+<p>'sort'  returns the array with the items in alphanumeric order <strong>(permanently modifies the array)</strong></p>
+{{#code 'html'}} 
+<p>Sorted alphanumerically, lunch is: \{{#each (array "sort" lunch)}} \{{.}} \{{/each}}</p>{{/code}}   
+    
+  <p>Sorted alphanumerically, lunch is: {{#each (array "sort" lunch)}} {{.}} {{/each}}</p>
+
+<h3>unshift</h3>
+<p>'unshift' returns the array with the new item added to the start  <strong>(permanently modifies the array)</strong></p>
+{{#code 'html'}} 
+<p>The revised breakfast is: \{{#each (array "unshift" breakfast "muffin")}} \{{.}} \{{/each}}</p>{{/code}}   
+    
+  <p>The revised breakfast is: {{#each (array "unshift" breakfast "muffin")}} {{.}} {{/each}}</p>
+<hr>  
+
+<h2 id="date">Date</h2>
+
+<h3>USCalendar</h3>
+<p>'USCalendar' returns full US formatted date of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>Today is \{{date "USCalendar" }}</p>{{/code}}   
+<p>Today is {{date "USCalendar" }}</p>
+
+<h3>dateNum</h3>
+<p>'dateNum' returns the day of the month (1-31) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>Today is day \{{date "dateNum" }} of this month</p>{{/code}}   
+<p>Today is day {{date "dateNum" }} of this month</p>
+
+<h3>dateStr</h3>
+<p>'dateStr' similar to dateNum, but formatted to always be 2 characters (01-31)</p>
+{{#code 'html'}} 
+<p>\{{date "dateStr" "8/4/1999"}}</p>{{/code}}   
+<p>{{date "dateStr" "8/4/1999" }}</p>
+
+<h3>USDate</h3>
+<p>'USDate' returns a date with US format (MM/DD/YYYY) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>\{{date "USDate" "January 2, 2021 14:23:16 GMT-5"}}</p>{{/code}}   
+<p>{{date "USDate" "January 2, 2021 14:23:16 GMT-5"}}</p>
+
+<h3>USDateShort</h3>
+<p>'USDateShort' returns a date with US format (m/d/yy) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>\{{date "USDateShort" "January 2, 2021 14:23:16 GMT-5"}}</p>{{/code}}   
+<p>{{date "USDateShort" "January 2, 2021 14:23:16 GMT-5"}}</p>
+
+<h3>weekdayNum</h3>
+<p>'weekdayNum' returns the day of the week (1-7) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>Today is day \{{date "weekdayNum" }} of this week</p>{{/code}}   
+<p>Today is day {{date "weekdayNum" }} of this week</p>
+
+<h3>weekdayStr</h3>
+<p>weekdayStr' returns the day of the week (Sunday - Saturday) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>Christmas 2020 was on a \{{date "weekdayStr" "12/25/2020"}}</p>{{/code}}   
+<p>Christmas 2020 was on a {{date "weekdayStr"  "12/25/2020"}}</p>
+
+<h3>month</h3>
+<p>'month' returns the month (January - December) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>The month is currently \{{date "month" }}</p>{{/code}}   
+<p>The month is currently {{date "month" }}</p>
+
+<h3>monthAbr</h3>
+<p>'monthAbr' returns the month abbreviation (Jan - Dec) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>The month is currently \{{date "monthAbr" }}</p>{{/code}}   
+<p>The month is currently {{date "monthAbr" }}</p>
+
+<h3>monthNum</h3>
+<p>'monthNum' returns the month number (1-12) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>\{{date "month" }} is month number \{{date "monthNum" }}</p>{{/code}}   
+<p>{{date "month" }} is month number {{date "monthNum" }}</p>
+
+<h3>monthStr</h3>
+<p>'monthStr' similar to monthNum but always formatted to be 2 characters (01-12)</p>
+{{#code 'html'}} 
+<p>\{{date "month" }} is month number \{{date "monthStr" }}</p>{{/code}}   
+<p>{{date "month" }} is month number {{date "monthStr" }}</p>
+
+<h3>year</h3>
+<p>'year' returns the year (4 digits) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>\{{date "year" }}</p>{{/code}}   
+<p>{{date "year" }}</p>
+
+<hr>
+
+<h2 id="math">Math Helpers</h2>
+
+<h3>add</h3>
+<p>'add' returns N1 + N2</p>
+{{#code 'html'}} 
+<p>\{{math "add" num 10 }}</p>{{/code}}   
+<p>{{math "add" num 10 }}</p>
+
+<h3>subtract</h3>
+<p>'subtract' returns N1 - N2</p>
+{{#code 'html'}} 
+<p>\{{math "subtract"  num 10}}</p>{{/code}}   
+<p>{{math "subtract"  num 10}}</p>
+
+<h3>multiply</h3>
+<p>'multiply' returns N1 * N2</p>
+{{#code 'html'}} 
+<p>\{{math "multiply"  num 10}}</p>{{/code}}   
+<p>{{math "multiply"  num 10}}</p>
+
+<h3>divide</h3>
+<p>'divide' returns N1 / N2</p>
+{{#code 'html'}} 
+<p>\{{math "divide" 34 num}</p>{{/code}}   
+<p>{{math "divide" 34 num}}</p>
+
+<h3>remainder</h3>
+<p>'remainder' returns the remainder of N1 / N2</p>
+{{#code 'html'}} 
+<p>\{{math "remainder" 34 num}}</p>{{/code}}   
+<p>{{math "remainder" 34 num}}</p>
+
+<h3>exponent</h3>
+<p>'exponent' returns N1 to the power of N2</p>
+{{#code 'html'}} 
+<p>\{{math "exponent" 10 num}}</p>{{/code}}   
+<p>{{math "exponent" 10 num}}</p>
+
+<h3>fixed</h3>
+<p>'fixed' returns N1 formatted with fixed-point notation to N2 decimals</p>
+{{#code 'html'}} 
+<p>\{{math "fixed" 3.12654338349 num}}</p>{{/code}}   
+<p>{{math "fixed" 3.12654338349 num}}</p>
+
+<h3>round</h3>
+<p>'round' returns N1 rounded off to closest integer</p>
+{{#code 'html'}} 
+<p>\{{math "round" 3.12}}</p>{{/code}}   
+<p>{{math "round" 3.12}}</p>
+
+<h3>ceiling</h3>
+<p>'ceiling' returns N1 rounded up to closest integer</p>
+{{#code 'html'}} 
+<p>\{{math "ceiling" 3.12}}</p>{{/code}}   
+<p>{{math "ceiling" 3.12}}</p>
+
+<h3>floor</h3>
+<p>'floor' returns N1 rounded down to closest integer</p>
+{{#code 'html'}} 
+<p>\{{math "floor" 6.7}}</p>{{/code}}   
+<p>{{math "floor" 6.7}}</p>
+
+<h3>abs</h3>
+<p>'abs' returns absolute value of N1</p>
+{{#code 'html'}} 
+<p>\{{math "abs" -21.5}}</p>{{/code}}   
+<p>{{math "abs" -21.5}}</p>
+
+<h3>random</h3>
+<p>'random' returns a random number beteween min: N1 and max: N2</p>
+{{#code 'html'}} 
+<p>\{{math "random" 0 num}}</p>{{/code}}   
+<p>{{math "random" 0 num}}</p>
+
+
+<hr>
+
+<h2 id="typeof">Typeof Helper</h2>
+
+<p>'typeof' returns true/false depending on if first item is type of second item</p>
+{{#code 'html'}} 
+<p>\{{#if (typeof breakfast "object")}} 'breakfast' has a typeof object.\{{/if}}</p>{{/code}}   
+<p>{{#if (typeof breakfast "object")}} 'breakfast' has a typeof object.{{/if}}</p>
+
+<hr>
+    </div>
+  </div>
+</div>
+<p>&nbsp;</p>

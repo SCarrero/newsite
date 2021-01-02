@@ -1,3 +1,6 @@
+body {
+  background: white;
+}
 #top {
   width:100%;
   position:fixed;
@@ -5,10 +8,36 @@
   padding: 0.5rem 0 0; 
   z-index: 1001;      
 }
+.page-title {
+  background: #f9f9f9;
+  color: #777874;
+  line-height: 1.2;
+  padding-top: 44px;
+  padding-bottom: 44px;
+  position: relative; }
+  .page-title h1 {
+    color: #88BD45;
+    margin: 0.6rem 0;
+    font-weight: 400;
+    margin: 0.25em 0 0.375em;
+    font-size: 1.125rem;
+    font-size: calc(18px +  14 * (100vw - 320px)/1180);    
+  }
+  @media screen and (min-width: 61.25em) {
+    .page-title h1 {
+      max-width: 59%; } 
+  }
+  @media screen and (min-width: 93.75em) {
+    .page-title h1 {
+      font-size: 2rem; } 
+  }
 form.form {
   margin-bottom: 0;
 }
 /* This styles individual sections of the style guide */
+.ss-section {
+  position: relative;
+}
 .ss-section:not(:last-child) {
   padding-bottom: 3rem;
   clear: both;
@@ -50,6 +79,7 @@ form.form {
 /* This styles code blocks used for examples. */
 .ss-code {
     margin-bottom: 1rem; 
+    position: relative;
   }
   .ss-code code {
     max-height: 900px;
@@ -86,32 +116,54 @@ code {
   #top select { font-size: 14px; }
 }    
  
-.row.display {
-  background: #eee;
-  font-size: 11px;
-  margin-bottom: 10px;
-  line-height: 2rem;
-  border: solid 1px #c6c6c6;
-  margin-left: 0 !important;
-  margin-right: 0 !important; }
-  .row.display .column:nth-child(2), .row.display .column.small-centered, .row.display .column.large-centered {
-    background: #e1e1e1; }
-  .row.display .column.color-end {
-    background: #d5d5d5; }
-
-.row.display-end {
+.display.grid-x,
+.display.grid-y,
+.display .grid-x,
+.display .grid-y {
   background: #fff;
   font-size: 11px;
   margin-bottom: 10px;
   line-height: 2rem;
-  border: solid 1px #c6c6c6;
+  border: 1px solid #c6c6c6;
   margin-left: 0 !important;
   margin-right: 0 !important; }
-  .row.display-end .column {
-    background: #e1e1e1;
-    border-left: 1px solid #c6c6c6; }
-    .row.display-end .column.color-end {
-      background: #d5d5d5; }
+  .display.grid-x .cell,
+  .display .grid-x .cell {
+    background: #eef;
+    border-left: 1px solid #d5d5e5;
+    border-right: 1px solid #d5d5e5; }
+  .display.grid-x .cell,
+  .display.grid-y .cell,
+  .display .grid-x .cell,
+  .display .grid-y .cell {
+    background: #eef;
+    border-top: 1px solid #d5d5e5;
+    border-bottom: 1px solid #d5d5e5; }
+  .display.grid-x .cell:nth-child(even),
+  .display.grid-y .cell:nth-child(even),
+  .display .grid-x .cell:nth-child(even),
+  .display .grid-y .cell:nth-child(even) {
+    background: #eee;
+    color: #0a0a0a; }
+  .display.grid-x:not(.grid-margin-x) .cell:first-child,
+  .display .grid-x:not(.grid-margin-x) .cell:first-child {
+    border-left-width:0; }
+  .display.grid-y:not(.grid-margin-y) .cell:first-child,
+  .display .grid-y:not(.grid-margin-y) .cell:first-child {
+    border-top-width:0; }
+  .display.grid-x:not(.grid-margin-x) .cell:last-child,
+  .display .grid-x:not(.grid-margin-x) .cell:last-child {
+    border-right-width:0; }
+  .display.grid-y:not(.grid-margin-y) .cell:last-child,
+  .display .grid-y:not(.grid-margin-y) .cell:last-child {
+    border-bottom-width:0; }
+.display .grid-x,
+.display .grid-y {
+  margin-bottom: 0; }
+
+.grid-y .grid-x {
+  margin-bottom: 0; }
+
 pre {
   position: relative;
 }

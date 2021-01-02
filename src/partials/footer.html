@@ -1,0 +1,14 @@
+<footer class="footer hide-for-print grid-container">
+	<div class="grid-x grid-padding-x">
+    <div class="cell">
+      <ul class="menu simple">
+        {{#terms.page}}
+        {{#if url}}
+        <li><a href="{{ url }}">{{ name }}</a></li>
+        {{/if}}
+        {{/terms.page}}
+        <li>&copy; {{date 'year'}} Freddie Mac</li> 
+      </ul>
+    </div>
+	</div>
+</footer>

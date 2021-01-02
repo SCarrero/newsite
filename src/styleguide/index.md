@@ -1,4 +1,5 @@
-﻿# The Grid
+﻿
+# The Grid
 
 <p class="lead">Problem: You've got tons of content, each needing different sized cells, and don't know how to quick and easily get it all done. Solution: The awesome XY grid!</p>
 
@@ -21,40 +22,40 @@ In the Grid you can nest cells down as far as you'd like. Just embed grid-x insi
 Using this framework is easy. Here's how your code will look when you use a series of `<div>` tags to create cells.
 
 ```html
-<div class="grid-x">
+<div class="grid-x grid-padding-x">
   <div class="small-6 medium-4 large-3 cell">...</div>
   <div class="small-6 medium-8 large-9 cell">...</div>
 </div>
 ```
 
-<div class="grid-x display">
+<div class="grid-x grid-padding-x display">
   <div class="small-12 large-4 cell">4</div>
   <div class="small-12 large-4 cell">4</div>
   <div class="small-12 large-4 cell">4</div>
 </div>
-<div class="grid-x display">
+<div class="grid-x grid-padding-x display">
   <div class="small-12 large-3 cell">3</div>
   <div class="small-12 large-6 cell">6</div>
   <div class="small-12 large-3 cell">3</div>
 </div>
-<div class="grid-x display">
+<div class="grid-x grid-padding-x display">
   <div class="small-12 large-2 cell">2</div>
   <div class="small-12 large-8 cell">8</div>
   <div class="small-12 large-2 cell">2</div>
 </div>
-<div class="grid-x display">
+<div class="grid-x grid-padding-x display">
   <div class="small-12 large-3 cell">3</div>
   <div class="small-12 large-9 cell">9</div>
 </div>
-<div class="grid-x display">
+<div class="grid-x grid-padding-x display">
   <div class="small-12 large-4 cell">4</div>
   <div class="small-12 large-8 cell">8</div>
 </div>
-<div class="grid-x display">
+<div class="grid-x grid-padding-x display">
   <div class="small-12 large-5 cell">5</div>
   <div class="small-12 large-7 cell">7</div>
 </div>
-<div class="grid-x display">
+<div class="grid-x grid-padding-x display">
   <div class="small-12 large-6 cell">6</div>
   <div class="small-12 large-6 cell">6</div>
 </div>
@@ -66,11 +67,11 @@ Using this framework is easy. Here's how your code will look when you use a seri
 In the Grid you can nest cells down as far as you'd like. Just embed grid-x inside cells and go from there. Each embedded grid-x can contain up to 12 cells.
 
 ```html
-<div class="grid-x">
+<div class="grid-x grid-padding-x">
   <div class="small-8 cell">8
-    <div class="grid-x">
+    <div class="grid-x grid-padding-x">
       <div class="small-8 cell">8 Nested
-        <div class="grid-x">
+        <div class="grid-x grid-padding-x">
           <div class="small-8 cell">8 Nested Again</div>
           <div class="small-4 cell">4</div>
         </div>
@@ -82,11 +83,11 @@ In the Grid you can nest cells down as far as you'd like. Just embed grid-x insi
 </div>
 ```
 
-<div class="grid-x display">
+<div class="grid-x grid-padding-x display">
   <div class="small-8 cell">8
-    <div class="grid-x">
+    <div class="grid-x grid-padding-x">
       <div class="small-8 cell">8 Nested
-        <div class="grid-x">
+        <div class="grid-x grid-padding-x">
           <div class="small-8 cell">8 Nested Again</div>
           <div class="small-4 cell">4</div>
         </div>
@@ -94,7 +95,7 @@ In the Grid you can nest cells down as far as you'd like. Just embed grid-x insi
       <div class="small-4 cell">4</div>
     </div>
   </div>
-  <div class="small-4 cellgi">4</div>
+  <div class="small-4 cell">4</div>
 </div>
 
 ---
@@ -104,21 +105,21 @@ In the Grid you can nest cells down as far as you'd like. Just embed grid-x insi
 As you've probably noticed in the examples above, you have access to a small, medium, and large grid. If you know that your grid structure will be the same for small devices as it will be on large devices, just use the small grid. You can override your small grid classes by adding medium or large grid classes.
 
 ```html
-<div class="grid-x">
+<div class="grid-x grid-padding-x">
   <div class="small-2 cell">2</div>
   <div class="small-10 cell">10, last</div>
 </div>
-<div class="grid-x">
+<div class="grid-x grid-padding-x">
   <div class="small-3 cell">3</div>
   <div class="small-9 cell">9, last</div>
 </div>
 ```
 
-<div class="grid-x display">
+<div class="grid-x grid-padding-x display">
   <div class="small-2 cell">2</div>
   <div class="small-10 cell">10, last</div>
 </div>
-<div class="grid-x display">
+<div class="grid-x grid-padding-x display">
   <div class="small-3 cell">3</div>
   <div class="small-9 cell">9, last</div>
 </div>
@@ -131,32 +132,32 @@ As you've probably noticed in the examples above, you have access to a small, me
 
 ---
 
-<div class="row up-1 medium-up-3 large-up-5">
-  <div class="column">
+<div class="grid-x grid-padding-x up-1 medium-up-3 large-up-5">
+  <div class="cell">
     <div class="color-block">
       <span style="background: #2199e8"></span>
       #2199e8
     </div>
   </div>
-  <div class="column">
+  <div class="cell">
     <div class="color-block">
       <span style="background: #3adb76"></span>
       #3adb76
     </div>
   </div>
-  <div class="column">
+  <div class="cell">
     <div class="color-block">
       <span style="background: #ffae00"></span>
       #ffae00
     </div>
   </div>
-  <div class="column">
+  <div class="cell">
     <div class="color-block">
       <span style="background: #ec5840"></span>
       #ec5840
     </div>
   </div>
-  <div class="column">
+  <div class="cell">
     <div class="color-block">
       <span style="background: #0a0a0a"></span>
       #0a0a0a
@@ -282,7 +283,7 @@ Check out the [Foundation Docs](http://foundation.zurb.com/sites/docs) to learn 
 Form elements in Foundation are styled based on their type attribute rather than a class. Inputs in Foundation have another major advantage — they are full width by default. That means that inputs will run as wide as the column that contains them. However, you have two options which make these forms extremely versatile:
 
 - You can size inputs using column sizes, like `.medium-6`, `.small-6`.
-- You can create row elements inside your form and use columns for the form, including inputs, labels and more. Rows inside a form inherit some special padding to even up input spacing.
+- You can create row elements inside your form and use cell for the form, including inputs, labels and more. Rows inside a form inherit some special padding to even up input spacing.
 
 ---
 
@@ -290,53 +291,53 @@ Form elements in Foundation are styled based on their type attribute rather than
 
 ```html_example
 <form>
-  <div class="row">
-    <div class="large-12 columns">
-      <label>Label</label>
-      <input type="text" placeholder="placeholder">
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 cell">
+      <label for="">Label</label>
+      <input id="" type="text" placeholder="placeholder">
     </div>
   </div>
-  <div class="row">
-    <div class="large-6 columns">
-      <label>Label</label>
-      <input type="text" placeholder="placeholder">
+  <div class="grid-x grid-padding-x">
+    <div class="large-6 cell">
+      <label for="">Label</label>
+      <input id="" type="text" placeholder="placeholder">
     </div>
-    <div class="large-6 columns">
+    <div class="large-6 cell">
       <div class="row collapse">
-        <label>Label</label>
+        <label for="">Label</label>
         <div class="input-group">
-          <input class="input-group-field" type="text" placeholder="placeholder">
+          <input id="" class="input-group-field" type="text" placeholder="placeholder">
           <span class="input-group-label">.com</span>
         </div>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <label>Select Box</label>
-      <select>
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 cell">
+      <label for="">Select Box</label>
+      <select id="">
         <option value="good">Good</option>
         <option value="better">Better</option>
         <option value="best">Best</option>
       </select>
     </div>
   </div>
-  <div class="row">
-    <div class="large-6 columns">
-      <label>Choose Your Favorite</label>
+  <div class="grid-x grid-padding-x">
+    <div class="large-6 cell">
+      <label for="">Choose Your Favorite</label>
       <input type="radio" name="radio1" value="radio1" id="radio1"><label for="radio1">Red</label>
       <input type="radio" name="radio2" value="radio2" id="radio2"><label for="radio2">Blue</label>
     </div>
-    <div class="large-6 columns">
-      <label>Check these out</label>
+    <div class="large-6 cell">
+      <label for="">Check these out</label>
       <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
       <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
     </div>
   </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <label>Textarea Label</label>
-      <textarea placeholder="placeholder"></textarea>
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 cell">
+      <label for="">Textarea Label</label>
+      <textarea id="" placeholder="placeholder"></textarea>
     </div>
   </div>
 </form>
