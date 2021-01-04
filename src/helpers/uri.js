@@ -12,7 +12,8 @@
 
 module.exports = function(operator, string) {
   const URL = (typeof string === 'string') ? string : string.toString();
-  switch (operator) {
+  const segments = URL.match('://') ? URL.split('://') : [URL];
+    switch (operator) {
     case 'decodeURI':
       return decodeURI(URL);
     case 'decodeURIComponent':
@@ -21,12 +22,23 @@ module.exports = function(operator, string) {
       return encodeURI(URL);
     case 'encodeURIComponent':
       return encodeURIComponent(URL);
+    case 'getHash':
+      return URL.split('#')[1];
+    case 'getHostName':
+      return segments[1].split(/[/?#]/)[0];
     case 'getProtocol':
-      return URL.split(':',2)[0];
+      return URL.split('://',2)[0];
+    case 'getRelativePath':
+      if (segments.length > 1 && segments[1].indexOf('/') >= 0 ){
+        return segments[1].slice(segments[1].indexOf('/')).split(/[?#]/)[0];
+      }
+      else {
+        return "/";
+      }
     case 'getQueryString':
-      return URL.split('?',2)[1];
+      return URL.split('?',2)[1].split('#')[0];
     case 'stripProtocol':
-      return URL.split(':',2)[1];
+      return segments[0];
     case 'stripQueryString':
       return URL.split('?',2)[0];
     default:

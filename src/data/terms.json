@@ -1,10 +1,10 @@
 ﻿{ "page": [
   {  
     "name": "Terms of Use",
-    "url": "http://www.freddiemac.com/terms/"
+    "url": "/terms/"
   },
   {  
     "name": "Privacy Policy",
-    "url": "http://www.freddiemac.com/terms/privacy.html"
+    "url": "/terms/privacy.html"
   }
 ]} 

@@ -23,7 +23,7 @@ lunch:
   <div class="grid-x grid-padding-x">
     <div class="large-12 cell">
       <h1>{{title}}</h1>
-      <p>Below are details on the helper scripts for this repo: <a href="#string">String Helpers</a>, <a href="#array">Array Helpers</a>, <a href="#date">Date Helpers</a>, <a href="#math">Math Helpers</a>, <a href="#typeof">Typeof Helpers</a>,.</p>
+      <p>The helper scripts have been grouped: <a href="#string">Strings</a>, <a href="#number">Numbers</a>, <a href="#date">Dates</a>, <a href="#array">Arrays</a>, <a href="#setvar">setVar</a>, <a href="#typeof">Typeof</a>, <a href="#ifcond">ifConditionals</a>, <a href="#uri">URI/URL</a>.</p>
       <p><strong>All examples use the following data bits, defined in the frontmatter:</strong></p>
 {{#code 'html'}}
   txt: 'in 2019, my dad went to work for the CIA — the chefs, not the "spooks."  ' 
@@ -43,6 +43,7 @@ lunch:
   - tea
   - cookie
 {{/code}}   
+
 
 <h2 id="string">String Helper Examples</h2>
 
@@ -131,7 +132,7 @@ lunch:
 <p>{{string  "sanitize" txt }}</p>
 
 <h3>search</h3>
-<p>'search'| similar to indexOf, but works with regular expressions</p>
+<p>'search' similar to indexOf, but works with regular expressions</p>
 {{#code 'html'}} 
   <p>The first non-word, non-space character is at position \{{string  "search" txt "[^\w\s]"}}</p>{{/code}} 
 <p>The first non-word, non-space character is at position {{string  "search" txt "[^\w\s]"}}</p>
@@ -145,7 +146,7 @@ The string from 8th - 40th position: \{{string  "slice" txt 8 40}}</p>{{/code}}
   The string from 8th - 40th position: {{string  "slice" txt 8 40}}</p>
 
 <h3>split</h3>
-<p>'split'| splits the string at specified character(s) and returns an array of N segments</p>
+<p>'split' splits the string at specified character(s) and returns an array of N segments</p>
 {{#code 'html'}} 
   <p>\{{string  "split" txt "—" 1}}<br>
 \{{array "join" (string  "split" txt " ") "_"}}</p>{{/code}} 
@@ -182,6 +183,170 @@ The string from 8th - 40th position: \{{string  "slice" txt 8 40}}</p>{{/code}}
 
 
 <hr>
+
+<h2 id="number">Number Helper Examples</h2>
+
+<h3>abs</h3>
+<p>'abs' returns absolute value of N1</p>
+{{#code 'html'}} 
+<p>\{{number "abs" -21.5}}</p>{{/code}}   
+<p>{{number "abs" -21.5}}</p>
+
+<h3>add</h3>
+<p>'add' returns N1 + N2</p>
+{{#code 'html'}} 
+<p>\{{number "add" num 10 }}</p>{{/code}}   
+<p>{{number "add" num 10 }}</p>
+
+<h3>ceiling</h3>
+<p>'ceiling' returns N1 rounded up to closest integer</p>
+{{#code 'html'}} 
+<p>\{{number "ceiling" 3.12}}</p>{{/code}}   
+<p>{{number "ceiling" 3.12}}</p>
+
+<h3>divide</h3>
+<p>'divide' returns N1 / N2</p>
+{{#code 'html'}} 
+<p>\{{number "divide" 34 num}</p>{{/code}}   
+<p>{{number "divide" 34 num}}</p>
+
+<h3>exponent</h3>
+<p>'exponent' returns N1 to the power of N2</p>
+{{#code 'html'}} 
+<p>\{{number "exponent" 10 num}}</p>{{/code}}   
+<p>{{number "exponent" 10 num}}</p>
+
+<h3>fixed</h3>
+<p>'fixed' returns N1 formatted with fixed-point notation to N2 decimals</p>
+{{#code 'html'}} 
+<p>\{{number "fixed" 3.12654338349 num}}</p>{{/code}}   
+<p>{{number "fixed" 3.12654338349 num}}</p>
+
+<h3>floor</h3>
+<p>'floor' returns N1 rounded down to closest integer</p>
+{{#code 'html'}} 
+<p>\{{number "floor" 6.7}}</p>{{/code}}   
+<p>{{number "floor" 6.7}}</p>
+
+<h3>isInteger</h3>
+<p>'isInteger'returns true if N1 is an integer, else returns false </p>
+{{#code 'html'}} 
+<p>\{{number "isInteger" -34}</p>{{/code}}   
+<p>{{number "isInteger" -34}}</p>
+
+<h3>multiply</h3>
+<p>'multiply' returns N1 * N2</p>
+{{#code 'html'}} 
+<p>\{{number "multiply"  num 10}}</p>{{/code}}   
+<p>{{number "multiply"  num 10}}</p>
+
+<h3>negate</h3>
+<p>'negate' returns N1 * -1</p>
+{{#code 'html'}} 
+<p>\{{number "negate"  num }}</p>{{/code}}   
+<p>{{number "negate"  num }}</p>
+
+<h3>random</h3>
+<p>'random' returns a random number beteween min: N1 and max: N2</p>
+{{#code 'html'}} 
+<p>\{{number "random" 0 num}}</p>{{/code}}   
+<p>{{number "random" 0 num}}</p>
+
+<h3>remainder</h3>
+<p>'remainder' returns the remainder of N1 / N2</p>
+{{#code 'html'}} 
+<p>\{{number "remainder" 34 num}}</p>{{/code}}   
+<p>{{number "remainder" 34 num}}</p>
+
+<h3>round</h3>
+<p>'round' returns N1 rounded off to closest integer</p>
+{{#code 'html'}} 
+<p>\{{number "round" 3.12}}</p>{{/code}}   
+<p>{{number "round" 3.12}}</p>
+
+<h3>subtract</h3>
+<p>'subtract' returns N1 - N2</p>
+{{#code 'html'}} 
+<p>\{{number "subtract"  num 10}}</p>{{/code}}   
+<p>{{number "subtract"  num 10}}</p>
+
+<hr>
+<h2 id="date">Date Helper Examples</h2>
+
+<h3>USCalendar</h3>
+<p>'USCalendar' returns full US formatted date of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>Today is \{{date "USCalendar" }}</p>{{/code}}   
+<p>Today is {{date "USCalendar" }}</p>
+
+<h3>dateNum</h3>
+<p>'dateNum' returns the day of the month (1-31) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>Today is day \{{date "dateNum" }} of this month</p>{{/code}}   
+<p>Today is day {{date "dateNum" }} of this month</p>
+
+<h3>dateStr</h3>
+<p>'dateStr' similar to dateNum, but formatted to always be 2 characters (01-31)</p>
+{{#code 'html'}} 
+<p>\{{date "dateStr" "8/4/1999"}}</p>{{/code}}   
+<p>{{date "dateStr" "8/4/1999" }}</p>
+
+<h3>USDate</h3>
+<p>'USDate' returns a date with US format (MM/DD/YYYY) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>\{{date "USDate" "January 2, 2021 14:23:16 GMT-5"}}</p>{{/code}}   
+<p>{{date "USDate" "January 2, 2021 14:23:16 GMT-5"}}</p>
+
+<h3>USDateShort</h3>
+<p>'USDateShort' returns a date with US format (m/d/yy) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>\{{date "USDateShort" "January 2, 2021 14:23:16 GMT-5"}}</p>{{/code}}   
+<p>{{date "USDateShort" "January 2, 2021 14:23:16 GMT-5"}}</p>
+
+<h3>weekdayNum</h3>
+<p>'weekdayNum' returns the day of the week (1-7) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>Today is day \{{date "weekdayNum" }} of this week</p>{{/code}}   
+<p>Today is day {{date "weekdayNum" }} of this week</p>
+
+<h3>weekdayStr</h3>
+<p>weekdayStr' returns the day of the week (Sunday - Saturday) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>Christmas 2020 was on a \{{date "weekdayStr" "12/25/2020"}}</p>{{/code}}   
+<p>Christmas 2020 was on a {{date "weekdayStr"  "12/25/2020"}}</p>
+
+<h3>month</h3>
+<p>'month' returns the month (January - December) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>The month is currently \{{date "month" }}</p>{{/code}}   
+<p>The month is currently {{date "month" }}</p>
+
+<h3>monthAbr</h3>
+<p>'monthAbr' returns the month abbreviation (Jan - Dec) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>The month is currently \{{date "monthAbr" }}</p>{{/code}}   
+<p>The month is currently {{date "monthAbr" }}</p>
+
+<h3>monthNum</h3>
+<p>'monthNum' returns the month number (1-12) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>\{{date "month" }} is month number \{{date "monthNum" }}</p>{{/code}}   
+<p>{{date "month" }} is month number {{date "monthNum" }}</p>
+
+<h3>monthStr</h3>
+<p>'monthStr' similar to monthNum but always formatted to be 2 characters (01-12)</p>
+{{#code 'html'}} 
+<p>\{{date "month" }} is month number \{{date "monthStr" }}</p>{{/code}}   
+<p>{{date "month" }} is month number {{date "monthStr" }}</p>
+
+<h3>year</h3>
+<p>'year' returns the year (4 digits) of today, or optional date provided</p>
+{{#code 'html'}} 
+<p>\{{date "year" }}</p>{{/code}}   
+<p>{{date "year" }}</p>
+
+<hr>
+
 
 <h2 id="array">Array Helper Examples</h2>
 
@@ -300,167 +465,174 @@ The string from 8th - 40th position: \{{string  "slice" txt 8 40}}</p>{{/code}}
   <p>The revised breakfast is: {{#each (array "unshift" breakfast "muffin")}} {{.}} {{/each}}</p>
 <hr>  
 
-<h2 id="date">Date</h2>
+<h2 id="setvar">setVar Helper Example</h2>
 
-<h3>USCalendar</h3>
-<p>'USCalendar' returns full US formatted date of today, or optional date provided</p>
-{{#code 'html'}} 
-<p>Today is \{{date "USCalendar" }}</p>{{/code}}   
-<p>Today is {{date "USCalendar" }}</p>
+<p>'setVar' stores a root level variable that can be retrieved later</p>
 
-<h3>dateNum</h3>
-<p>'dateNum' returns the day of the month (1-31) of today, or optional date provided</p>
 {{#code 'html'}} 
-<p>Today is day \{{date "dateNum" }} of this month</p>{{/code}}   
-<p>Today is day {{date "dateNum" }} of this month</p>
-
-<h3>dateStr</h3>
-<p>'dateStr' similar to dateNum, but formatted to always be 2 characters (01-31)</p>
-{{#code 'html'}} 
-<p>\{{date "dateStr" "8/4/1999"}}</p>{{/code}}   
-<p>{{date "dateStr" "8/4/1999" }}</p>
-
-<h3>USDate</h3>
-<p>'USDate' returns a date with US format (MM/DD/YYYY) of today, or optional date provided</p>
-{{#code 'html'}} 
-<p>\{{date "USDate" "January 2, 2021 14:23:16 GMT-5"}}</p>{{/code}}   
-<p>{{date "USDate" "January 2, 2021 14:23:16 GMT-5"}}</p>
-
-<h3>USDateShort</h3>
-<p>'USDateShort' returns a date with US format (m/d/yy) of today, or optional date provided</p>
-{{#code 'html'}} 
-<p>\{{date "USDateShort" "January 2, 2021 14:23:16 GMT-5"}}</p>{{/code}}   
-<p>{{date "USDateShort" "January 2, 2021 14:23:16 GMT-5"}}</p>
-
-<h3>weekdayNum</h3>
-<p>'weekdayNum' returns the day of the week (1-7) of today, or optional date provided</p>
-{{#code 'html'}} 
-<p>Today is day \{{date "weekdayNum" }} of this week</p>{{/code}}   
-<p>Today is day {{date "weekdayNum" }} of this week</p>
-
-<h3>weekdayStr</h3>
-<p>weekdayStr' returns the day of the week (Sunday - Saturday) of today, or optional date provided</p>
-{{#code 'html'}} 
-<p>Christmas 2020 was on a \{{date "weekdayStr" "12/25/2020"}}</p>{{/code}}   
-<p>Christmas 2020 was on a {{date "weekdayStr"  "12/25/2020"}}</p>
-
-<h3>month</h3>
-<p>'month' returns the month (January - December) of today, or optional date provided</p>
-{{#code 'html'}} 
-<p>The month is currently \{{date "month" }}</p>{{/code}}   
-<p>The month is currently {{date "month" }}</p>
-
-<h3>monthAbr</h3>
-<p>'monthAbr' returns the month abbreviation (Jan - Dec) of today, or optional date provided</p>
-{{#code 'html'}} 
-<p>The month is currently \{{date "monthAbr" }}</p>{{/code}}   
-<p>The month is currently {{date "monthAbr" }}</p>
-
-<h3>monthNum</h3>
-<p>'monthNum' returns the month number (1-12) of today, or optional date provided</p>
-{{#code 'html'}} 
-<p>\{{date "month" }} is month number \{{date "monthNum" }}</p>{{/code}}   
-<p>{{date "month" }} is month number {{date "monthNum" }}</p>
-
-<h3>monthStr</h3>
-<p>'monthStr' similar to monthNum but always formatted to be 2 characters (01-12)</p>
-{{#code 'html'}} 
-<p>\{{date "month" }} is month number \{{date "monthStr" }}</p>{{/code}}   
-<p>{{date "month" }} is month number {{date "monthStr" }}</p>
-
-<h3>year</h3>
-<p>'year' returns the year (4 digits) of today, or optional date provided</p>
-{{#code 'html'}} 
-<p>\{{date "year" }}</p>{{/code}}   
-<p>{{date "year" }}</p>
+  \{{setVar "maximum" num }} 
+<p>The variable 'maximum' equals \{{@root.maximum}}</p>{{/code}}   
+{{setVar "maximum" num }} 
+<p>The variable 'maximum' equals {{@root.maximum}}</p>
 
 <hr>
 
-<h2 id="math">Math Helpers</h2>
 
-<h3>add</h3>
-<p>'add' returns N1 + N2</p>
-{{#code 'html'}} 
-<p>\{{math "add" num 10 }}</p>{{/code}}   
-<p>{{math "add" num 10 }}</p>
-
-<h3>subtract</h3>
-<p>'subtract' returns N1 - N2</p>
-{{#code 'html'}} 
-<p>\{{math "subtract"  num 10}}</p>{{/code}}   
-<p>{{math "subtract"  num 10}}</p>
-
-<h3>multiply</h3>
-<p>'multiply' returns N1 * N2</p>
-{{#code 'html'}} 
-<p>\{{math "multiply"  num 10}}</p>{{/code}}   
-<p>{{math "multiply"  num 10}}</p>
-
-<h3>divide</h3>
-<p>'divide' returns N1 / N2</p>
-{{#code 'html'}} 
-<p>\{{math "divide" 34 num}</p>{{/code}}   
-<p>{{math "divide" 34 num}}</p>
-
-<h3>remainder</h3>
-<p>'remainder' returns the remainder of N1 / N2</p>
-{{#code 'html'}} 
-<p>\{{math "remainder" 34 num}}</p>{{/code}}   
-<p>{{math "remainder" 34 num}}</p>
-
-<h3>exponent</h3>
-<p>'exponent' returns N1 to the power of N2</p>
-{{#code 'html'}} 
-<p>\{{math "exponent" 10 num}}</p>{{/code}}   
-<p>{{math "exponent" 10 num}}</p>
-
-<h3>fixed</h3>
-<p>'fixed' returns N1 formatted with fixed-point notation to N2 decimals</p>
-{{#code 'html'}} 
-<p>\{{math "fixed" 3.12654338349 num}}</p>{{/code}}   
-<p>{{math "fixed" 3.12654338349 num}}</p>
-
-<h3>round</h3>
-<p>'round' returns N1 rounded off to closest integer</p>
-{{#code 'html'}} 
-<p>\{{math "round" 3.12}}</p>{{/code}}   
-<p>{{math "round" 3.12}}</p>
-
-<h3>ceiling</h3>
-<p>'ceiling' returns N1 rounded up to closest integer</p>
-{{#code 'html'}} 
-<p>\{{math "ceiling" 3.12}}</p>{{/code}}   
-<p>{{math "ceiling" 3.12}}</p>
-
-<h3>floor</h3>
-<p>'floor' returns N1 rounded down to closest integer</p>
-{{#code 'html'}} 
-<p>\{{math "floor" 6.7}}</p>{{/code}}   
-<p>{{math "floor" 6.7}}</p>
-
-<h3>abs</h3>
-<p>'abs' returns absolute value of N1</p>
-{{#code 'html'}} 
-<p>\{{math "abs" -21.5}}</p>{{/code}}   
-<p>{{math "abs" -21.5}}</p>
-
-<h3>random</h3>
-<p>'random' returns a random number beteween min: N1 and max: N2</p>
-{{#code 'html'}} 
-<p>\{{math "random" 0 num}}</p>{{/code}}   
-<p>{{math "random" 0 num}}</p>
-
-
-<hr>
-
-<h2 id="typeof">Typeof Helper</h2>
+<h2 id="typeof">Typeof Helper Example</h2>
 
 <p>'typeof' returns true/false depending on if first item is type of second item</p>
 {{#code 'html'}} 
-<p>\{{#if (typeof breakfast "object")}} 'breakfast' has a typeof object.\{{/if}}</p>{{/code}}   
-<p>{{#if (typeof breakfast "object")}} 'breakfast' has a typeof object.{{/if}}</p>
+  <p>\{{#if (typeof breakfast "object")}} 'breakfast' has a typeof 'object'.\{{/if}}<br>>
+\{{#unless (typeof breakfast "string")}} 'breakfast' is not typeof 'string'.\{{/unless}}</p>{{/code}}   
+<p>{{#if (typeof breakfast "object")}} 'breakfast' has a typeof 'object'.{{/if}}<br>
+{{#unless (typeof breakfast "string")}} 'breakfast' is not typeof 'string'.{{/unless}}</p>
 
 <hr>
+
+<h2 id="ifcond">IfCond Helper  Examples</h2>
+
+<h3>Condition '=='</h3>
+<p>'==' returns true if (item1 == item2), else false </p>
+{{#code 'html'}} 
+  <p>value of 'num' \{{#ifCond num '==' '5'}} is \{{else}} is not \{{/ifCond}} equal to '5'</p>{{/code}}   
+<p>value of 'num' {{#ifCond num '==' '5'}} is {{else}} is not {{/ifCond}} equal to '5'</p>
+
+<h3>Condition '==='</h3>
+<p>'===' returns true if (item1 === item2), else false </p>
+{{#code 'html'}} 
+  <p>value and type of 'num' \{{#ifCond num '===' '5'}} is \{{else}} is not \{{/ifCond}} equal to '5'</p>{{/code}}   
+<p>value and type of 'num' {{#ifCond num '===' '5'}} is {{else}} is not {{/ifCond}} equal to '5'</p>
+
+<h3>Condition '!='</h3>
+<p>'!=' returns true if (item1 != item2), else false </p>
+{{#code 'html'}} 
+  <p>value of 'num' \{{#ifCond num '!=' '5'}} is not \{{else}} is \{{/ifCond}} equal to '5'</p>{{/code}}   
+<p>value of 'num' {{#ifCond num '!=' '5'}} is not {{else}} is {{/ifCond}} equal to '5'</p>
+
+
+<h3>Condition '!=='</h3>
+<p>'!==' returns true if (item1 !== item2), else false </p>
+{{#code 'html'}} 
+  <p>value and type of 'num' \{{#ifCond num '!==' '5'}} is not \{{else}} is \{{/ifCond}} equal to '5'</p>{{/code}}   
+<p>value and type of 'num' {{#ifCond num '!==' '5'}} is not {{else}} is {{/ifCond}} equal to '5'</p>
+
+<h3>Condition '<'</h3>
+<p>'<' returns true if (item1 < item2), else false </p>
+{{#code 'html'}} 
+<p>'num' \{{#ifCond num '<' 6}} is \{{else}} is not \{{/ifCond}} less than 6</p>{{/code}}   
+<p>'num' {{#ifCond num '<' 6}} is {{else}} is not {{/ifCond}} less than 6</p>
+
+<h3>Condition '<='</h3>
+<p>'<=' returns true if (item1 <= item2), else false </p>
+{{#code 'html'}} 
+<p>'num' \{{#ifCond num '<=' 6}} is \{{else}} is not \{{/ifCond}} less than or equal to 5</p>{{/code}}   
+<p>'num' {{#ifCond num '<=' 6}} is {{else}} is not {{/ifCond}} less than or equal to 5</p>
+
+<h3>Condition '>'</h3>
+<p>'>' returns true if (item1 > item2), else false </p>
+{{#code 'html'}} 
+<p>'num' \{{#ifCond num '>' 6}} is \{{else}} is not \{{/ifCond}} greater than 6</p>{{/code}}   
+<p>'num' {{#ifCond num '>' 6}} is {{else}} is not {{/ifCond}} greater than 6</p>
+
+<h3>Condition '>='</h3>
+<p>'>=' returns true if (item1 >= item2), else false </p>
+{{#code 'html'}} 
+<p>'num' \{{#ifCond num '>=' 6}} is \{{else}} is not \{{/ifCond}} greater than or equal to 6</p>{{/code}}   
+<p>'num' {{#ifCond num '>=' 6}} is {{else}} is not {{/ifCond}} greater than or equal to 6</p>
+
+<h3>Condition '&&'</h3>
+<p>'&&' returns true if both item1 & item2 are true, else false </p>
+{{#code 'html'}} 
+<p>\{{#if (ifCond (typeof breakfast "object") '&&' (array "inArray" lunch "sandwich"))}} both conditions are true 
+  \{{else}} one or more conditions is false \{{/if}}</p>{{/code}}   
+<p>{{#if (ifCond (typeof breakfast "object") '&&' (array "inArray" lunch "sandwich"))}} both conditions are true 
+  {{else}} one or more conditions is false {{/if}}</p>
+
+
+<h3>Condition '||'</h3>
+<p>'||' returns true if either item1 or item2 is true, else false</p>
+{{#code 'html'}} 
+<p>\{{#if (ifCond (typeof breakfast "number") '||' (array "inArray" lunch "sandwich"))}} at least 1 condition is true 
+  \{{else}} both conditions are false \{{/if}}</p>{{/code}}   
+<p>{{#if (ifCond (typeof breakfast "number") '||' (array "inArray" lunch "sandwich"))}} at least 1 condition is true 
+  {{else}} both conditions are false {{/if}}</p>
+<hr>
+
+<h2 id="uri">URL/URI Helper  Examples</h2>
+
+<h3>Decode URI</h3>
+<p>'decodeURI' returns a decoded URI (that was previously encoded) </p>
+{{#code 'html'}} 
+<p>\{{uri 'decodeURI' "http://www.freddiemac.com/?str=%5Bhi%20there!%5D"}}</p>{{/code}}   
+<p>{{uri 'decodeURI' "http://www.freddiemac.com/?str=%5Bhi%20there!%5D"}}</p>
+<hr>
+
+<h3>decodeURIComponent </h3>
+<p>'decodeURIComponent' returns a decoded component URI (that was previously encoded) </p>
+{{#code 'html'}} 
+<p>\{{uri 'decodeURI' "http%3A%2F%2Fwww.freddiemac.com%2F%3Fstr%3D%5Bhi%20there!%5D"}}</p>{{/code}}   
+<p>{{uri 'decodeURI' "http%3A%2F%2Fwww.freddiemac.com%2F%3Fstr%3D%5Bhi%20there!%5D"}}</p>
+
+<h3>encodeURI</h3>
+<p>'encodeURI' returns an URI encoded string </p>
+{{#code 'html'}} 
+<p>\{{uri 'encodeURI' "http://www.freddiemac.com/?str=[hi there!]"}}</p>{{/code}}   
+<p>{{uri 'encodeURI' "http://www.freddiemac.com/?str=[hi there!]"}}</p>
+
+
+<h3>encodeURIComponent </h3>
+<p>'encodeURIComponent' returns an URI component encoded string  </p>
+{{#code 'html'}} 
+<p>\{{uri 'encodeURIComponent' "http://www.freddiemac.com/?str=[hi there!]"}}</p>{{/code}}   
+<p>{{uri 'encodeURIComponent' "http://www.freddiemac.com/?str=[hi there!]"}}</p>
+
+<h3>getHostName</h3>
+<p>'getHostName' returns hostname of a URL, without query string or protocol </p>
+{{#code 'html'}} 
+<p>\{{uri 'getHostName' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}</p>{{/code}}   
+<p>{{uri 'getHostName' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}</p>
+
+<h3>getHash</h3>
+<p>'getHash' returns hostname of a URL, without query string or protocol </p>
+{{#code 'html'}} 
+<p>\{{uri 'getHash' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}</p>{{/code}}   
+<p>{{uri 'getHash' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}</p>
+
+<h3>getProtocol </h3>
+<p>'getProtocol' returns protocol of a URL </p>
+{{#code 'html'}} 
+<p>\{{uri 'getProtocol' "https://myhome.freddiemac.com/page.html?str=[hi there!]"}}</p>{{/code}}   
+<p>{{uri 'getProtocol' "https://myhome.freddiemac.com/page.html?str=[hi there!]"}}</p>
+
+<h3>getRelativePath</h3>
+<p>'getRelativePath' returns path and filename of URL without protocol, domain, query string, or hash</p>
+{{#code 'html'}} 
+<p>\{{uri 'getRelativePath' "https://myhome.freddiemac.com/subsection/page.html?a=example&b=sorry#bookmark"}}</p>{{/code}}   
+<p>{{uri 'getRelativePath' "https://myhome.freddiemac.com/subsection/page.html?a=example&b=sorry#bookmark"}}</p>
+
+
+<h3>getQueryString </h3>
+<p>'getQueryString' returns Query string of a URL </p>
+{{#code 'html'}} 
+<p>\{{uri 'getQueryString' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}</p>{{/code}}   
+<p>{{uri 'getQueryString' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}</p>
+
+<h3>stripProtocol </h3>
+<p>'stripProtocol' returns a URL without the protocol </p>
+{{#code 'html'}} 
+<p>\{{uri 'stripProtocol' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}</p>{{/code}}   
+<p>{{uri 'stripProtocol' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}</p>
+
+<h3>stripQueryString </h3>
+<p>'stripQueryString' returns a URL without the query string or hash</p>
+{{#code 'html'}} 
+<p>\{{uri 'stripQueryString' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}</p>{{/code}}   
+<p>{{uri 'stripQueryString' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}</p>
+
+<hr>
+
+
+
     </div>
   </div>
 </div>

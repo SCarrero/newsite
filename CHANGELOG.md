@@ -12,6 +12,6 @@ Updated dependencies.
 
 Added more methodical approach to vertical spacing.
 
-## Version 1.0.3 (December 28, 2020)
+## Version 1.0.3 (Jan 4, 2021)
 
-Added more helpers, partials, and folders. Now supports copying of ready-to-go css and custom js. 
+Added helpers, partials, folders, documentation. 

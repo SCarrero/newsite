@@ -198,7 +198,7 @@ We have extended Panini with many helpers already, but if you don't see the righ
 
 ### String Helpers
 
-View [working examples of these](/special/stypeguide/helpers.html)
+View [working examples of these](/special/styleguide/helpers.html#string)
 
 | Option | Description |
 | ------ | ----------- |
@@ -223,27 +223,30 @@ View [working examples of these](/special/stypeguide/helpers.html)
 |'unquote'| returns the string with plaintext double quotes replaced with HTML entity quotes |
 |'uppercase'| returns string with all letters uppercased |
 
+### Number Helpers
 
-### Array Helpers
-
-View [working examples of these](/special/stypeguide/helpers.html)
+View [working examples of these](/special/styleguide/helpers.html#number)
 
 | Option | Description |
 | ------ | ----------- |
-|'concat'| returns a new array containing items fromthe 2 arrays passed to it |
-|'inArray'| returns true if array contains specified string |
-|'join' | joins elements of an array into a string with specified separators |
-|'length'| returns the length of an array |
-|'pop'  | removes the last item from the array and returns it  (permanently modifies the array)|
-|'push' | returns the array with the new item added to the end  (permanently modifies the array)|
-|'randomize'| returns a copy of the array with the items in random order|
-|'reverse'| returns a copy of the array with the items in reversed order|
-|'shift'| removes the first item from the array and returns it (permanently modifies the array)|
-|'slice'| returns items from within the array, starting at nth item specified, up to an optional nth item |
-|'sort' | returns the array with the items in alphanumeric order (permanently modifies the array)|
-|'unshift'| returns the array with the new item added to the start  (permanently modifies the array)|
+| 'abs'| returns absolute value of N1 |
+| 'add'| returns N1 + N2 |
+| 'ceiling'| returns N1 rounded up to closest integer |
+| 'divide'| returns N1 / N2  |
+| 'exponent'| returns N1 to the power of N2 |
+| 'fixed'| returns N1 formatted with fixed-point notation to N2 decimals |
+| 'floor'| returns N1 rounded down to closest integer |
+| 'isInteger'| returns true if N1 is an integer, else returns false |
+| 'multiply'| returns N1 * N2  |
+| 'negate'| returns N1 * -1 |
+| 'random'| returns a random number beteween N1 and N2 |
+| 'remainder'| returns the remainder of N1 / N2 |
+| 'round'| returns N1 rounded off to closest integer |
+| 'subtract'| returns N1 - N2  |
 
 ### Date Helpers
+
+View [working examples of these](/special/styleguide/helpers.html#date)
 
 | Option | Description |
 | ------ | ----------- |
@@ -259,22 +262,76 @@ View [working examples of these](/special/stypeguide/helpers.html)
 |'monthStr'| similar to monthNum but always formatted to be 2 characters (01-12) |
 |'year'| returns the year (4 digits) of today, or optional date provided |
 
-### Math Helpers
+### Array Helpers
+
+View [working examples of these](/special/styleguide/helpers.html#array)
 
 | Option | Description |
 | ------ | ----------- |
-| 'add'| returns N1 + N2 |
-| 'subtract'| returns N1 - N2  |
-| 'multiply'| returns N1 * N2  |
-| 'divide'| returns N1 / N2  |
-| 'remainder'| returns the remainder of N1 / N2 |
-| 'exponent'| returns N1 to the power of N2 |
-| 'fixed'| returns N1 formatted with fixed-point notation to N2 decimals |
-| 'round'| returns N1 rounded off to closest integer |
-| 'ceiling'| returns N1 rounded up to closest integer |
-| 'floor'| returns N1 rounded down to closest integer |
-| 'abs'| returns absolute value of N1 |
-| 'random'| returns a random number beteween N1 and N2 |
+|'concat'| returns a new array containing items from the 2 arrays passed to it |
+|'inArray'| returns true if array contains specified string |
+|'join' | joins elements of an array into a string with specified separators |
+|'length'| returns the length of an array |
+|'pop'  | removes the last item from the array and returns it  (permanently modifies the array)|
+|'push' | returns the array with the new item added to the end  (permanently modifies the array)|
+|'randomize'| returns a copy of the array with the items in random order|
+|'reverse'| returns a copy of the array with the items in reversed order|
+|'shift'| removes the first item from the array and returns it (permanently modifies the array)|
+|'slice'| returns items from within the array, starting at nth item specified, up to an optional nth item |
+|'sort' | returns the array with the items in alphanumeric order (permanently modifies the array)|
+|'unshift'| returns the array with the new item added to the start  (permanently modifies the array)|
+
+### SetVar Helper
+
+View [working examples of these](/special/styleguide/helpers.html#setvar)
+
+| Option | Description |
+| ------ | ----------- |
+|'setVar'| stores a root level variable that can be retrieved later |
+
+### TypeOf Helper
+
+View [working examples of these](/special/styleguide/helpers.html#typeof)
+
+| Option | Description |
+| ------ | ----------- |
+| 'typeof'| returns true/false if item provided is of type specified |
+
+### IfCond Helpers
+
+View [working examples of these](/special/styleguide/helpers.html#ifcond)
+
+| Option | Description |
+| ------ | ----------- |
+| '=='| returns true if (item1 == item2), else false |
+| '==='| returns true if (item1 === item2), else false |
+| '!='| returns true if (item1 != item2), else false |
+| '!=='| returns true if (item1 !== item2), else false |
+| '<'| returns true if (item1 < item2), else false |
+| '<='| returns true if (item1 <= item2), else false |
+| '>'| returns true if (item1 > item2), else false |
+| '>='| returns true if (item1 >= item2), else false |
+| '&&'| returns true if both item1 & item2 are true, else false |
+| '&#124;&#124;' | returns true if either item1 or item2 is true, else false |
+
+### URL/URI Helpers
+
+View [working examples of these](/special/styleguide/helpers.html#uri)
+
+| Option | Description |
+| ------ | ----------- |
+| 'decodeURI'| returns a decoded URI (that was previously encoded) |
+| 'decodeURIComponent'| returns a decoded component URI (that was previously encoded) |
+| 'encodeURI'| returns an URI encoded string |
+| 'encodeURIComponent'| returns an URI component encoded string  |
+| 'getHash' | returns hash portion of a URL|
+| 'getHostName'| returns hostname of a URL, without query string or protocol |
+| 'getProtocol'| returns protocol of a URL |
+| 'getRelativePath' | returns path and filename of URL without protocol, domain, query string, or hash |
+| 'getQueryString'| returns Query string of a URL |
+| 'stripProtocol'| returns a URL without the protocol |
+| 'stripQueryString'| returns a URL without the query string or hash |
+
 
 
 # Custom Data
