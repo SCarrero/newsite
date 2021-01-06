@@ -1,7 +1,7 @@
 {{#if title}}
 <title>{{{string 'sanitize' title}}}</title>
-<meta property="og:title" content="{{{string 'sanitize' title}}}" />
-<meta name="twitter:title" content="{{{string 'sanitize' title}}}"/>
+<meta property="og:title" content="{{{string 'unquote' title}}}" />
+<meta name="twitter:title" content="{{{string 'unquote' title}}}"/>
 {{/if}}
 {{#if keywords}}
 <meta name="keywords" content="{{ keywords }}" />

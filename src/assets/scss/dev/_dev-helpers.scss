@@ -31,9 +31,6 @@ body::before {
   @include breakpoint(xlarge only) {
     content: "Breakpoint: xlarge";  
   }
-  @include breakpoint(xxlarge only) {
-    content: "Breakpoint: xxlarge";  
-  }
 }
 
 /*
@@ -348,11 +345,12 @@ p + div:not(:empty) + p:empty {
   box-shadow: none !important;
   top: calc(-1 * var(--spacing));
 }
+p:empty::before {
+  content: "<p> should not be empty" !important;
 
-p div::before,
-p + div:not(:empty) + p:empty::before {
-  content: "<div> is not allowed within <p>" !important
-  ;
+}
+p div::before {
+  content: "<div> is not allowed within <p>" !important;
 }
 
 /*

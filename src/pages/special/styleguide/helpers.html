@@ -62,8 +62,8 @@ lunch:
 <h3>charAt</h3>
 <p>'charAt' returns the character in the nth position</p>
 {{#code 'html'}} 
-<p>The 3rd character is \{{string  "charAt" txt 3 }}</p>{{/code}} 
-<p>The 3rd character is {{string  "charAt" txt 3 }}</p>
+<p>The 3rd character in "txt" is \{{string  "charAt" txt 3 }}</p>{{/code}} 
+<p>The 3rd character in "txt" is {{string  "charAt" txt 3 }}</p>
 
 <h3>chop</h3>
 <p>'chop' returns the string with whitespace and non-word characters removed from both ends</p>
@@ -86,20 +86,20 @@ lunch:
 <h3>indexOf</h3>
 <p>indexOf' returns the position # of the first instance of the substring within the string</p>
 {{#code 'html'}} 
-<p>The first "d" is at the index of \{{string  "indexOf" txt 'd'}}</p>{{/code}} 
-<p>The first "d" is at the index of {{string  "indexOf" txt 'd'}}</p>
+<p>The first "d" in "txt" is at the index of \{{string  "indexOf" txt 'd'}}</p>{{/code}} 
+<p>The first "d" in "txt" is at the index of {{string  "indexOf" txt 'd'}}</p>
 
 <h3>lastIndexOf</h3>
 <p>'lastIndexOf' returns the position # of the last instance of the substring within the string</p>
 {{#code 'html'}} 
-<p>The last "d" is at the index of \{{string  "lastIndexOf" txt "d"}}</p>{{/code}} 
-<p>The last "d" is at the index of {{string  "lastIndexOf" txt "d"}}</p>
+<p>The last "d" in "txt" is at the index of \{{string  "lastIndexOf" txt "d"}}</p>{{/code}} 
+<p>The last "d" in "txt" is at the index of {{string  "lastIndexOf" txt "d"}}</p>
 
 <h3>length</h3>
 <p>'length'returns length of string</p>
 {{#code 'html'}} 
-  <p>The string has \{{string  "length" txt }} characters</p>{{/code}} 
-<p>The string has {{string  "length" txt }} characters</p>
+  <p>The string "txt" has \{{string  "length" txt }} characters</p>{{/code}} 
+<p>The string "txt" has {{string  "length" txt }} characters</p>
 
 <h3>lowercase</h3>
 <p>'lowercase' returns string with all letters lowercased</p>
@@ -156,10 +156,10 @@ The string from 8th - 40th position: \{{string  "slice" txt 8 40}}</p>{{/code}}
 <h3>test</h3>
 <p>'test' returns true/false depending on if string contains the substring or expression provided, with optional modifiers ("g" is default)</p>
 {{#code 'html'}} 
-  <p>The string contains "Dad" (case-insensitive): \{{string  "test" txt "Dad" "gi"}}</p>
-<p>The string contains "Work": \{{string  "test" txt "Work"}}</p>{{/code}} 
-<p>The string contains "Dad" (case-insensitive): {{string  "test" txt "Dad" "gi"}}</p>
-<p>The string contains "Work": {{string  "test" txt "Work"}}</p>
+  <p>The string "txt" contains "Dad" (case-insensitive): \{{string  "test" txt "Dad" "gi"}}</p>
+<p>The string "txt" contains "Work": \{{string  "test" txt "Work"}}</p>{{/code}} 
+<p>The string "txt" contains "Dad" (case-insensitive): {{string  "test" txt "Dad" "gi"}}</p>
+<p>The string "txt" contains "Work": {{string  "test" txt "Work"}}</p>
 
 <h3>trim</h3>
 <p>'trim' returns the string with whitespace removed from both ends</p>
@@ -494,51 +494,51 @@ The string from 8th - 40th position: \{{string  "slice" txt 8 40}}</p>{{/code}}
 <h3>Condition '=='</h3>
 <p>'==' returns true if (item1 == item2), else false </p>
 {{#code 'html'}} 
-  <p>value of 'num' \{{#ifCond num '==' '5'}} is \{{else}} is not \{{/ifCond}} equal to '5'</p>{{/code}}   
-<p>value of 'num' {{#ifCond num '==' '5'}} is {{else}} is not {{/ifCond}} equal to '5'</p>
+  <p>value of 'num' \{{#if (ifCond num '==' '5')}} is \{{else}} is not \{{/if}} equal to '5'</p>{{/code}}   
+<p>value of 'num' {{#if (ifCond num '==' '5')}} is {{else}} is not {{/if}} equal to '5'</p>
 
 <h3>Condition '==='</h3>
 <p>'===' returns true if (item1 === item2), else false </p>
 {{#code 'html'}} 
-  <p>value and type of 'num' \{{#ifCond num '===' '5'}} is \{{else}} is not \{{/ifCond}} equal to '5'</p>{{/code}}   
-<p>value and type of 'num' {{#ifCond num '===' '5'}} is {{else}} is not {{/ifCond}} equal to '5'</p>
+  <p>value and type of 'num' \{{#if (ifCond num '===' '5')}} is \{{else}} is not \{{/if}} equal to '5'</p>{{/code}}   
+<p>value and type of 'num' {{#if (ifCond num '===' '5')}} is {{else}} is not {{/if}} equal to '5'</p>
 
 <h3>Condition '!='</h3>
 <p>'!=' returns true if (item1 != item2), else false </p>
 {{#code 'html'}} 
-  <p>value of 'num' \{{#ifCond num '!=' '5'}} is not \{{else}} is \{{/ifCond}} equal to '5'</p>{{/code}}   
-<p>value of 'num' {{#ifCond num '!=' '5'}} is not {{else}} is {{/ifCond}} equal to '5'</p>
+  <p>value of 'num' \{{#if (ifCond num '!=' '5')}} is not \{{else}} is \{{/if}} equal to '5'</p>{{/code}}   
+<p>value of 'num' {{#if (ifCond num '!=' '5')}} is not {{else}} is {{/if}} equal to '5'</p>
 
 
 <h3>Condition '!=='</h3>
 <p>'!==' returns true if (item1 !== item2), else false </p>
 {{#code 'html'}} 
-  <p>value and type of 'num' \{{#ifCond num '!==' '5'}} is not \{{else}} is \{{/ifCond}} equal to '5'</p>{{/code}}   
-<p>value and type of 'num' {{#ifCond num '!==' '5'}} is not {{else}} is {{/ifCond}} equal to '5'</p>
+  <p>value and type of 'num' \{{#if (ifCond num '!==' '5')}} is not \{{else}} is \{{/if}} equal to '5'</p>{{/code}}   
+<p>value and type of 'num' {{#if (ifCond num '!==' '5')}} is not {{else}} is {{/if}} equal to '5'</p>
 
 <h3>Condition '<'</h3>
 <p>'<' returns true if (item1 < item2), else false </p>
 {{#code 'html'}} 
-<p>'num' \{{#ifCond num '<' 6}} is \{{else}} is not \{{/ifCond}} less than 6</p>{{/code}}   
-<p>'num' {{#ifCond num '<' 6}} is {{else}} is not {{/ifCond}} less than 6</p>
+<p>'num' \{{#if (ifCond num '<' 6)}} is \{{else}} is not \{{/if}} less than 6</p>{{/code}}   
+<p>'num' {{#if (ifCond num '<' 6)}} is {{else}} is not {{/if}} less than 6</p>
 
 <h3>Condition '<='</h3>
 <p>'<=' returns true if (item1 <= item2), else false </p>
 {{#code 'html'}} 
-<p>'num' \{{#ifCond num '<=' 6}} is \{{else}} is not \{{/ifCond}} less than or equal to 5</p>{{/code}}   
-<p>'num' {{#ifCond num '<=' 6}} is {{else}} is not {{/ifCond}} less than or equal to 5</p>
+<p>'num' \{{#if (ifCond num '<=' 6)}} is \{{else}} is not \{{/if}} less than or equal to 5</p>{{/code}}   
+<p>'num' {{#if (ifCond num '<=' 6)}} is {{else}} is not {{/if}} less than or equal to 5</p>
 
 <h3>Condition '>'</h3>
 <p>'>' returns true if (item1 > item2), else false </p>
 {{#code 'html'}} 
-<p>'num' \{{#ifCond num '>' 6}} is \{{else}} is not \{{/ifCond}} greater than 6</p>{{/code}}   
-<p>'num' {{#ifCond num '>' 6}} is {{else}} is not {{/ifCond}} greater than 6</p>
+<p>'num' \{{#if (ifCond num '>' 6)}} is \{{else}} is not \{{/if}} greater than 6</p>{{/code}}   
+<p>'num' {{#if (ifCond num '>' 6)}} is {{else}} is not {{/if}} greater than 6</p>
 
 <h3>Condition '>='</h3>
 <p>'>=' returns true if (item1 >= item2), else false </p>
 {{#code 'html'}} 
-<p>'num' \{{#ifCond num '>=' 6}} is \{{else}} is not \{{/ifCond}} greater than or equal to 6</p>{{/code}}   
-<p>'num' {{#ifCond num '>=' 6}} is {{else}} is not {{/ifCond}} greater than or equal to 6</p>
+<p>'num' \{{#if (ifCond num '>=' 6)}} is \{{else}} is not \{{/if}} greater than or equal to 6</p>{{/code}}   
+<p>'num' {{#if (ifCond num '>=' 6)}} is {{else}} is not {{/if}} greater than or equal to 6</p>
 
 <h3>Condition '&&'</h3>
 <p>'&&' returns true if both item1 & item2 are true, else false </p>
@@ -595,8 +595,8 @@ The string from 8th - 40th position: \{{string  "slice" txt 8 40}}</p>{{/code}}
 <h3>getHash</h3>
 <p>'getHash' returns hostname of a URL, without query string or protocol </p>
 {{#code 'html'}} 
-<p>\{{uri 'getHash' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}</p>{{/code}}   
-<p>{{uri 'getHash' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}</p>
+<p>hash is &quot;\{{uri 'getHash' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}&quot;</p>{{/code}}   
+<p>hash is &quot;{{uri 'getHash' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}&quot;</p>
 
 <h3>getProtocol </h3>
 <p>'getProtocol' returns protocol of a URL </p>

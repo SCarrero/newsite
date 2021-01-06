@@ -6,17 +6,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-    <meta name="theme-color" content=""> 
     {{> metadata}}
     {{> metadata-static}}
-    {{#if (typeof stylesheet "string") }}
-      <link rel="stylesheet" href="{{stylesheet}}" />
-    {{/if}} 
-    {{#if (typeof stylesheet "array") }}
-      {{#each stylesheet}}
-      <link rel="stylesheet" href="{{.}}" />
-      {{/each}}    
-    {{/if}} 
+
+    {{#each (array "" stylesheet)}}
+    <link rel="stylesheet" href="{{.}}" />
+    {{/each}}  
   </head>  
   {{#if bodyclass}}
   <body class="{{ bodyclass }}">
@@ -30,13 +25,9 @@
          
   {{> js-footer}}
 
-  {{#if (typeof stylesheet "string") }}
-      <script src="{{ javascript }}"></script>
-  {{else}}
-    {{#each javascript}}
-      <script src="{{ this }}"></script>
-    {{/each}}    
-  {{/if}}
+  {{#each (array "" javascript)}}
+  <script src="{{ this }}"></script>
+  {{/each}} 
   {{#if onload}}
   <script type="text/javascript">
     window.onload = {{ onload }};

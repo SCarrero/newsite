@@ -12,7 +12,7 @@
 
 module.exports = function(operator, string) {
   const URL = (typeof string === 'string') ? string : string.toString();
-  const segments = URL.match('://') ? URL.split('://') : [URL];
+  const segments = URL.match('://') ? URL.split('://',2) : [URL];
     switch (operator) {
     case 'decodeURI':
       return decodeURI(URL);
@@ -23,7 +23,8 @@ module.exports = function(operator, string) {
     case 'encodeURIComponent':
       return encodeURIComponent(URL);
     case 'getHash':
-      return URL.split('#')[1];
+      const hash = URL.match('#') ? URL.split('#')[1] : '';
+      return null;
     case 'getHostName':
       return segments[1].split(/[/?#]/)[0];
     case 'getProtocol':
@@ -38,7 +39,7 @@ module.exports = function(operator, string) {
     case 'getQueryString':
       return URL.split('?',2)[1].split('#')[0];
     case 'stripProtocol':
-      return segments[0];
+      return URL.split(':',2)[1];
     case 'stripQueryString':
       return URL.split('?',2)[0];
     default:
