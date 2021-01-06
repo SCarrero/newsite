@@ -3,46 +3,24 @@ title: Helpers
 stylesheet: /special/styleguide/files/styleguide.css
 txt: 'in 2019, my dad went to work for the CIA — the Chefs, not the "Spooks."  '
 num: 5
-breakfast:
-  - eggs
-  - bacon
-  - toast
-  - juice
-  - coffee
-  - fruit
-lunch:
-  - sandwich
-  - chips
-  - pickle
-  - salad
-  - tea
-  - cookie
+breakfast: ["eggs", "bacon", "toast", "juice", "coffee", "fruit"]
+lunch: ["sandwich", "chips", "pickle", "salad", "tea", "cookie"]
 ---
 <div class="grid-container">
   <style>code {display: block; margin-bottom: 1rem;} code.html::before { display: none;}</style>
   <div class="grid-x grid-padding-x">
     <div class="large-12 cell">
       <h1>{{title}}</h1>
+
       <p>The helper scripts have been grouped: <a href="#string">Strings</a>, <a href="#number">Numbers</a>, <a href="#date">Dates</a>, <a href="#array">Arrays</a>, <a href="#setvar">setVar</a>, <a href="#typeof">Typeof</a>, <a href="#ifcond">ifConditionals</a>, <a href="#uri">URI/URL</a>.</p>
-      <p><strong>All examples use the following data bits, defined in the frontmatter:</strong></p>
-{{#code 'html'}}
-  txt: 'in 2019, my dad went to work for the CIA — the chefs, not the "spooks."  ' 
-num: 5
-breakfast:
-  - eggs
-  - bacon
-  - toast
-  - juice
-  - coffee
-  - fruit
-lunch:
-  - sandwich
-  - chips
-  - pickle
-  - salad
-  - tea
-  - cookie
-{{/code}}   
+
+<p><strong>All examples use the following data bits, defined in the frontmatter:</strong></p>
+<div class="code-example">
+  <code>    txt: 'in 2019, my dad went to work for the CIA — the chefs, not the "spooks."  '<br>
+  num: 5<br>
+  breakfast: ["eggs", "bacon", "toast", "juice", "coffee", "fruit"]<br>
+  lunch: ["sandwich", "chips", "pickle", "salad", "tea", "cookie"]</code>
+</div>
 
 
 <h2 id="string">String Helper Examples</h2>
@@ -598,6 +576,13 @@ The string from 8th - 40th position: \{{string  "slice" txt 8 40}}</p>{{/code}}
 <p>hash is &quot;\{{uri 'getHash' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}&quot;</p>{{/code}}   
 <p>hash is &quot;{{uri 'getHash' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}&quot;</p>
 
+<h3>getPageName</h3>
+<p>'getPageName' returns the pagename of a URL without the query string or hash </p>
+{{#code 'html'}} 
+<p>Pagename is &quot;\{{uri 'getPageName' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}&quot;</p>{{/code}}   
+<p>Pagename is &quot;{{uri 'getPageName' "https://myhome.freddiemac.com/page.html?a=example&b=sorry#bookmark"}}&quot;</p>
+
+
 <h3>getProtocol </h3>
 <p>'getProtocol' returns protocol of a URL </p>
 {{#code 'html'}} 
@@ -633,6 +618,7 @@ The string from 8th - 40th position: \{{string  "slice" txt 8 40}}</p>{{/code}}
 
 
 
+    
     </div>
   </div>
 </div>

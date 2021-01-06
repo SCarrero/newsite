@@ -8,7 +8,7 @@ Panini is a flat file compiler that uses the concepts of templates, pages, and p
 
 
 
-# Templating Basics
+# Basics: Templates & Pages
 
 A **template** is a common layout that every page in your design shares. It's possible to have multiple templates, but generally you'll only need one, and a page can only use one template. In the prototyping template, the default layout is found under `src/layouts/default.html`.
 
@@ -44,7 +44,7 @@ In the prototyping template, these finished files are compiled into a standalone
 
 
 
-## Partials
+# Partials
 
 Partials are a feature of Handlebars which allow you to inject HTML anywhere in a page or layout. They're really useful when you need to repeat certain chunks of code throughout your pages, or to keep individual files from getting too cluttered with HTML.
 
@@ -326,6 +326,7 @@ View [working examples of these](/special/styleguide/helpers.html#uri)
 | 'encodeURIComponent'| returns an URI component encoded string  |
 | 'getHash' | returns hash portion of a URL|
 | 'getHostName'| returns hostname of a URL, without query string or protocol |
+| 'getPageName'| returns the pagename of a URL without the query string or hash |
 | 'getProtocol'| returns protocol of a URL |
 | 'getRelativePath' | returns path and filename of URL without protocol, domain, query string, or hash |
 | 'getQueryString'| returns Query string of a URL |
@@ -338,27 +339,16 @@ View [working examples of these](/special/styleguide/helpers.html#uri)
 
 Custom data can be added to your pages. This data can then be inserted into your HTML through Handlebars. There are two ways to add data to a project.
 
-To add variables to a specific page only, add it at the top of the page's HTML as a [Front Matter](http://jekyllrb.com/docs/frontmatter/) block. Let's say the below content is inside `src/pages/index.html`.
+1. You can define variables which can be used on any page by adding a yml or json file in the /src/data folder.  
+1. You can add page-specific variables in the page's [Front Matter](http://jekyllrb.com/docs/frontmatter/) block, using strings, json arrays or yml lists.
 
 ```html
 ---
-title: My Typical Morning Meal
-breakfast:
-  - eggs
-  - bacon
-  - toast
+label: My typical meals
+breakfast: ["eggs", "bacon", "toast"]
+lunch:
+  - sandwich
+  - chips
+  - fruit
 ---
 ```
-
-Now, you can insert the values of these variables into your markup. To insert a variable, wrap the name of the variable in double curly braces, like so:
-
-```handlebars
-<h1>{{ title }}</h1>
-<ul class="breakfast-items">
-  {{#each breakfast}}
-    <li>{{ this }}</li>
-  {{/each}}
-</ul>
-```
-
-This code will print three `<li>`s, one for each item in the file.

@@ -27,6 +27,13 @@ module.exports = function(operator, string) {
       return null;
     case 'getHostName':
       return segments[1].split(/[/?#]/)[0];
+    case 'getPageName':
+      if (URL.lastIndexOf('/') >= 0 ){
+        return URL.slice(URL.lastIndexOf('/') - URL.length +1).split(/[?#]/)[0];
+      }
+      else {
+        return null;
+      }
     case 'getProtocol':
       return URL.split('://',2)[0];
     case 'getRelativePath':

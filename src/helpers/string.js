@@ -15,6 +15,9 @@
  */
 
 module.exports = function(operator, v1, v2, v3, v4) {
+  if (!v1) {
+    return null;
+  }
   const str1 = (typeof v1 === 'string') ? v1 : v1.toString();  
   switch (operator) {
     case 'capitalize':
