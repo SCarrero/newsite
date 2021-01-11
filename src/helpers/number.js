@@ -2,8 +2,8 @@
  * Helper to do math on 1-2 values
  *
  * @example
- *      {{#ifCond item1 '===' item2}}  {{/ifCond}}
- *      {{#ifCond var1 '!=' var2}}  {{/ifCond}}
+ *      {{number "add" item1 item2}}
+ *      {{#if (number 'isInteger' item1)}} xxx {{/if}}
  *
  * @param {string} operator  The math operator    
  * @param {any} v1    First value.

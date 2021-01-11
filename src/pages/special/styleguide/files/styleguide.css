@@ -39,11 +39,11 @@ form.form {
   position: relative;
 }
 .ss-section:not(:last-child) {
-  padding-bottom: 3rem;
+  margin-bottom: 3rem;
   clear: both;
 }
 .ss-section + .ss-section  {
-  padding-top: 4rem;    
+  margin-top: 4rem;    
 }
 .markup-wrapper > h1 {
   padding: 1.5rem;

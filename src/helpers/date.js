@@ -11,6 +11,10 @@
  * @returns {any}  result
  */
 module.exports = function(operator, newDt) { 
+  //had some weirdness with dates, but then it fixed itself... saving in case
+  //const re = new RegExp(/^\d{4}\/\d{1,2}\/\d{1,2}$/);
+  //const newDt2 = (newDt && newDt.match(re)) ? newDt + ' 00:00:00 GMT-5' : newDt;
+  //const dt = (newDt2 && Date.parse(newDt2)) ? new Date(newDt2) : new Date();
   const dt = (newDt && Date.parse(newDt)) ? new Date(newDt) : new Date();
   switch (operator) {
     case 'USCalendar':

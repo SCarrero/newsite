@@ -6,6 +6,14 @@
 
 
 
+# Panini
+
+Panini is the flat file compiler that powers our prototyping template. Panini has a dedicated page here in the docs that explains its various features. 
+
+[Learn more about Panini](/special/styleguide/panini.html).
+
+
+
 # Colors
 
 <p class="lead">Below you can find the different values we created that support the primary color variable you can change at any time in <code>\_settings.scss</code></p>

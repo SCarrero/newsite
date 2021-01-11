@@ -2,8 +2,8 @@
  * Helper to test 2 values conditionally
  *
  * @example
- *      {{#ifCond "item1" '===' "item2"}}  {{/ifCond}}
- *      {{#ifCond var1 '!=' var2}}  {{/ifCond}}
+ *      {{#if (ifCond "item1" '===' "item2")}} xx {{/if}}
+ *      {{#if (ifCond var1 '!=' var2)}} xx {{/if}}
  *
  * @param {any} v1    First value to compare.
  * @param {string} operator  The comparison operator    

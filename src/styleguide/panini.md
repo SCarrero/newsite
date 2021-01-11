@@ -254,6 +254,7 @@ View [working examples of these](/special/styleguide/helpers.html#date)
 |'dateNum'| returns the day of the month (1-31) of today, or optional date provided |
 |'dateStr'| similar to dateNum, but formatted to always be 2 characters (01-31) |
 |'USDate'| returns a date with US format (mm/dd/yyyy) of today, or optional date provided |
+|'USDateShort'| returns a date with US format (m/d/yyyy) of today, or optional date provided |
 |'weekdayNum'| returns the day of the week (1-7) of today, or optional date provided |
 |'weekdayStr'| returns the day of the week (Sunday - Saturday) of today, or optional date provided |
 |'month'| returns the month (January - December) of today, or optional date provided |
