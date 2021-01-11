@@ -1,7 +1,7 @@
 # Browsers that we support
 last 4 versions
 > 1% in US
-ie >= 9
+ie >= 10
 ios >= 7
 ios_saf 11
 android >= 5
