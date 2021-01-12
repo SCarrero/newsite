@@ -9,6 +9,10 @@ import rimraf        from 'rimraf';
 import sherpa        from 'style-sherpa';
 import yaml          from 'js-yaml';
 import fs            from 'fs';
+import webpackStream from 'webpack-stream';
+import webpack2      from 'webpack';
+import named         from 'vinyl-named';
+import uncss         from 'uncss';
 import autoprefixer  from 'autoprefixer';
 
 // Load all Gulp plugins into one variable
@@ -18,7 +22,7 @@ const $ = plugins();
 const PRODUCTION = !!(yargs.argv.production);
 
 // Load settings from settings.yml
-const { PORT, PATHS } = loadConfig();
+const { PORT, UNCSS_OPTIONS, PATHS } = loadConfig();
 
 function loadConfig() {
   let ymlFile = fs.readFileSync('config.yml', 'utf8');
@@ -30,8 +34,9 @@ gulp.task('styleGuide',
   gulp.series(styleGuide1, styleGuide2));
 
 // Build the "dist" folder by running all of the below tasks
+// to use webpage, add jspack in the gulp.parallel list
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, images, copy), javascript, sass, 'styleGuide'));
+ gulp.series(clean, gulp.parallel(pages, copy, images, javascript),  sass, 'styleGuide'));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -51,7 +56,7 @@ function copy() {
 
 // Copy page templates into finished HTML files
 function pages() {
-  return gulp.src('src/pages/**/*.{html,hbs,handlebars}')
+  return gulp.src('src/pages/**/*.html')
     .pipe(panini({
       root: 'src/pages/',
       layouts: 'src/layouts/',
@@ -86,11 +91,14 @@ return sherpa('src/styleguide/panini.md', {
 function sass() {
   const postCssPlugins = [
     // Autoprefixer
-    autoprefixer(),
+    autoprefixer(), 
+  // UnCSS - Uncomment to remove unused styles in production
+  // PRODUCTION && uncss.postcssPlugin(UNCSS_OPTIONS),
+
   ].filter(Boolean);
   var source = 'src/assets/scss/dev/app.scss';
   if(PRODUCTION) { source = 'src/assets/scss/app.scss'; }
-  $.sass.compiler = require('node-sass');
+  //$.sass.compiler = require('node-sass');
   return gulp.src(source)
     .pipe($.sourcemaps.init())
     .pipe($.sass({
@@ -98,43 +106,73 @@ function sass() {
     })
       .on('error', $.sass.logError))
     .pipe($.postcss(postCssPlugins))
-    .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie9' })))
+    .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie10' })))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + '/ss'))
     .pipe(browser.reload({ stream: true }));
 }
 
-// Generate Foundation JS
-function foundationJs(done) {
-  gulp.src(PATHS.entries)
-    .pipe($.concat('foundation-what-input.min.js'))
-    .pipe(gulp.dest('src/assets/js/vendor/'));
-  done();
+let webpackConfig = {
+  mode: (PRODUCTION ? 'production' : 'development'),
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [ "@babel/preset-env" ],
+            compact: false
+          }
+        }
+      }
+    ]
+  },
+  devtool: !PRODUCTION && 'source-map'
 }
-// Generate our JS
+
+function jspack(){
+  return gulp.src(PATHS.entries)
+    .pipe(named())
+    .pipe($.sourcemaps.init())
+    .pipe(webpackStream(webpackConfig, webpack2))
+    .pipe($.if(PRODUCTION, $.terser()
+      .on('error', e => { console.log(e); })
+    ))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe(gulp.dest(PATHS.dist + '/js'));
+}
+
 function javascript(done) {
   gulp.src(PATHS.javascript)
     .pipe($.sourcemaps.init())
     .pipe($.concat('app.js'))    
-    .pipe($.babel({
-      presets: [
-        ['@babel/env', {
-          modules: false
-        }]
-      ]
-    }))
     .pipe($.if(PRODUCTION, $.uglify()
       .on('error', e => { console.log(e); })
     ))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + '/js'));
-  done();
+  copyjs(done);
 }
+
+
 
 // Copy images to the "dist" folder
 function images() {
   return gulp.src('src/assets/img/**/*')
+    .pipe($.if(PRODUCTION, $.imagemin([
+      $.imagemin.mozjpeg({ progressive: true }),
+    ])))
     .pipe(gulp.dest(PATHS.dist + '/images'));
+}
+
+// Copy updated js vendor files
+function copyjs(done) {
+  gulp.src('src/assets/js/vendor/*.*')
+    .pipe(gulp.dest(PATHS.dist + '/js/vendor/'));
+  gulp.src('src/assets/js/custom/*.*')
+    .pipe(gulp.dest(PATHS.dist + '/js/custom/'));
+    done();
 }
 
 // Start a server with BrowserSync to preview the site in
@@ -154,7 +192,7 @@ function reload(done) {
 function watch() {
   gulp.watch(PATHS.assets, gulp.series(copy, browser.reload));
   gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, browser.reload));
-  gulp.watch('src/{layouts,partials,helpers}/**/*').on('all', gulp.series(resetPages, pages, browser.reload));
+  gulp.watch('src/{layouts,partials}/**/*').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/data/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, browser.reload));

@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Style Guide</title>>    
+    <title>Style Guide</title>
     {{> metadata-static}}
     <link rel="stylesheet" href="/special/styleguide/files/styleguide.css">
   </head>
@@ -44,11 +44,11 @@
       $ks.find('.ss-code').each(function() {
         var $code = $(this).find('pre');
 
-        $link = $('<a class="docs-code-toggle" href="javascript:void(0);">&lt; Toggle Code Display &gt;</a>');
-        $link.on('click', function() {
+        Sbtn = $('<button type="button" class="docs-code-toggle">&lt; Toggle Code Display &gt;</button>');
+        Sbtn.on('click', function() {
           $code.slideToggle(250);
         });
-        $link.insertBefore(this);
+        Sbtn.insertBefore(this);
         $code.hide(0);
       });
     }

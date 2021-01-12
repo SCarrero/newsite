@@ -17,9 +17,8 @@ PATHS:
   dist: "dist"
   # Paths to static assets
   assets:
-    - "src/assets/**/**/**/*"
-    - "!src/assets/js/*.js"
-    - "!src/assets/scss/**/*"
+    - "src/assets/js/{custom,vendor}/*.js"
+    - "src/assets/ss/**/*.css"
     - "src/pages/**/images/**/*"
     - "src/pages/**/**/images/*" 
     - "src/pages/**/files/**/*" 
@@ -27,10 +26,10 @@ PATHS:
   sass:
     - "node_modules/foundation-sites/scss"
     - "node_modules/motion-ui/src"
-  # Paths to JavaScript entry points for Foundation
+  # Paths to JavaScript entry points for webpack to bundle modules
   entries:
-    - "node_modules/what-input/dist/what-input.min.js"
-    - "node_modules/foundation-sites/dist/js/foundation.min.js"
-  javascript:  
-    # Paths to your own project code are here  
+    - "src/assets/js/fndtn.js"
+  # Paths to JavaScript to bundle and load apart from Foundation built-ins 
+  javascript:
     - "src/assets/js/app.js"
+    - "src/assets/js/shareWidget.js"
