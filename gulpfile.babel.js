@@ -152,6 +152,14 @@ function javascript(done) {
     ))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + '/js'));
+  gulp.src(PATHS.javascriptpack)
+    .pipe($.sourcemaps.init())
+    .pipe($.concat('app-pack.js'))    
+    .pipe($.if(PRODUCTION, $.uglify()
+      .on('error', e => { console.log(e); })
+    ))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe(gulp.dest(PATHS.dist + '/js'));
   copyjs(done);
 }
 

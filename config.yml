@@ -26,10 +26,15 @@ PATHS:
   sass:
     - "node_modules/foundation-sites/scss"
     - "node_modules/motion-ui/src"
-  # Paths to JavaScript entry points for webpack to bundle modules
+  # Paths to JavaScript entry points for webpack to bundle modules if you desire
   entries:
-    - "src/assets/js/fndtn.js"
-  # Paths to JavaScript to bundle and load apart from Foundation built-ins 
+    - "src/assets/js/foundation-pack.js"
+  # Paths to JavaScript to bundle and load in addition to the webpack list
+  javascriptpack:
+    - "src/assets/js/app-pack.js"
+    - "src/assets/js/shareWidget.js"
+  # Paths to JavaScript to bundle and load if using prebuilt Foundation instead of webpack
   javascript:
+    - "src/assets/js/foundation-prebuilt.js"
     - "src/assets/js/app.js"
     - "src/assets/js/shareWidget.js"

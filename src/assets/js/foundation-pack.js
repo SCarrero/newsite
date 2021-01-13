@@ -1,14 +1,9 @@
+// if this is used, swap template to js-footer-pack
+
 import $ from 'jquery';
 import 'what-input';
 
 window.jQuery = $;
-// Foundation JS relies on a global variable. In ES6, all imports are hoisted
-// to the top of the file so if we used `import` to import Foundation,
-// it would execute earlier than we have assigned the global variable.
-// This is why we have to use CommonJS require() here since it doesn't
-// have the hoisting behavior.
-require('foundation-sites');
-
 
 /* any settings that need to change prior to foundation getting initialized go here. */
 // for example:
@@ -68,4 +63,4 @@ Foundation.Abide.defaults['validators']['checked_required'] =
 // typically the full bundle is smaller than the pieces, so unless you can live without several components,
 // your js will be smaller if you don't go piecemeal. 
 
-// import './lib/foundation-explicit-pieces';
+import './lib/foundation-explicit-pieces';
