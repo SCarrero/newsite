@@ -1,0 +1,90 @@
+/// Expands a button to make it full-width.
+/// @param {Boolean} $expand [true] - Set to `true` to enable the expand behavior. Set to `false` to reverse this behavior.
+@mixin button-expand($expand: true) {
+  @if $expand {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  @else {
+    display: inline-block;
+    width: auto;
+    margin: $button-margin;
+  }
+}
+
+/// Adds disabled styles to a button by fading the element and reseting the cursor.
+/// @param {Number} $opacity [$button-opacity-disabled] - Opacity of the disabled button.
+@mixin button-disabled(
+  $opacity: $button-opacity-disabled
+) {
+  opacity: $button-opacity-disabled;
+  cursor: not-allowed;
+}
+
+a.button { // sass-lint:disable-line no-qualifying-elements
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+a.button {
+  color: $button-color;
+}
+.button {
+  @include disable-mouse-outline;
+  display: inline-block;
+  vertical-align: middle;
+  margin: $button-margin;
+  text-transform: uppercase;
+  @if (type-of($button-padding) == 'map') {
+    @each $size, $padding in $button-padding {
+      @include breakpoint($size) {
+        padding: $padding;
+      }
+    }
+  }
+  @else {
+    padding: $button-padding;
+  }
+  border: $button-border;
+  border-radius: $button-radius;
+  transition: $button-transition;  
+  font-size: map-get($button-sizes, default);
+  background: map-get($button-palette, default);
+  color: $button-color;
+  font-weight: $button-font-weight;
+  -webkit-appearance: none; // sass-lint:disable-line no-vendor-prefixes
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  // Sizes
+  @each $size, $value in map-remove($button-sizes, default) {
+    &.#{$size} {
+      font-size: $value;
+    }
+  }
+  // Colors
+  @each $name, $color in map-remove($button-palette, default) {
+    &.#{$name} {
+      background-color: $color;
+      color: color-pick-contrast($color, ($button-color, $button-color-alt));
+      &:hover, &:focus {
+        background-color: map-get($button-hover-palette, $name);
+      }
+    }
+  }
+  //expanded
+  &.expanded { 
+    @include button-expand; 
+  }
+  // Disabled state
+  &[disabled] {
+    @include button-disabled;
+  }
+}
+
+.button-group .button {
+  border-radius: 0;
+}

@@ -67,28 +67,59 @@
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
+$global-width-min:  320px;
 $global-lineheight: 1.5;
-$foundation-palette: (
-  primary: #1779ba,
-  secondary: #767676,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #cc4b37,
+$light-gray: #F3F3F3; 
+$medium-gray: #868686;
+$dark-gray: #434343;
+$black: #000;
+$white: #fff;
+$colors: (
+  green1: #95D055,
+  green2: #8EC94E,
+  green3: #89C24B,
+  green4: #80B744,
+  green5: #659E27,
+  green6: #A5E163,
+  blue1: #11B6F1,
+  blue2: #00AEEB,
+  blue3: #00A9E6,
+  blue4: #00A3DC,
+  blue5: #027EAC,
+  navy1: #25457C,
+  navy2: #214177,
+  navy3: #1D3C71,
+  navy4: #183567,
+  navy5: #021D45,
+  navy6: #355893,
 );
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
-$black: #0a0a0a;
-$white: #fefefe;
+$primary-color: map-get($colors, blue5);
+$fm-green: map-get($colors, green5);
+$fm-yellow: #f6bb42;
+$fm-red: #cf0a2c;
+$fm-blue: map-get($colors, navy5);
+$fm-teal: #46C8A6;
+$foundation-palette: (
+  primary: map-get($colors, blue5), 
+  secondary: map-get($colors, green1), 
+  alert: $fm-red,
+  warning: $fm-yellow,
+);
+
+@include add-foundation-colors;
 $body-background: $white;
-$body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-color: $dark-gray;
+$body-font-family: 'canada-type-gibson', Arial, Lucida Sans Unicode, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
 $global-position: 1rem;
-$global-weight-normal: normal;
-$global-weight-bold: bold;
+$global-weight-light: 200;
+$global-weight-normal: 300;  
+$global-weight-regular: 400;
+$global-weight-medium: 500;
+$global-weight-bold: 600;
+
 $global-radius: 0;
 $global-menu-padding: 0.7rem 1rem;
 $global-menu-nested-margin: 1rem;
@@ -99,7 +130,6 @@ $global-button-cursor: auto;
 $global-color-pick-contrast-tolerance: 0;
 $print-transparent-backgrounds: true;
 
-@include add-foundation-colors;
 $print-hrefs: true;
 
 // 2. Breakpoints
@@ -122,11 +152,10 @@ $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
   small: 20px,
-  medium: 30px,
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
-$block-grid-max: 8;
+$block-grid-max: 6;
 
 // 4. Base Typography
 // ------------------
@@ -280,27 +309,41 @@ $breadcrumbs-item-separator-color: $medium-gray;
 // ----------
 
 $button-font-family: inherit;
-$button-padding: 0.85em 1em;
-$button-margin: 0 0 $global-margin 0;
-$button-fill: solid;
-$button-background: $primary-color;
-$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-padding: rem-calc(13 27 12);
+$button-margin: 0.5em 0 0;
+$button-fill: solid;  
+$button-background: $medium-gray;
 $button-color: $white;
-$button-color-alt: $black;
-$button-radius: $global-radius;
-$button-hollow-border-width: 1px;
+//$button-background-hover: inherit;
+$button-color-alt: map-get($colors, navy5);
+$button-radius: 999em;   //guaranteed pill shape at all heights
+//$button-hollow-border-width: 2px;
 $button-sizes: (
-  tiny: 0.6rem,
-  small: 0.75rem,
-  default: 0.9rem,
-  large: 1.25rem,
+  //small: rem-calc(11),
+  default: rem-calc(13),
+  large: rem-calc(16),
 );
-$button-palette: $foundation-palette;
-$button-opacity-disabled: 0.25;
-$button-background-hover-lightness: -20%;
-$button-hollow-hover-lightness: -50%;
-$button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
-$button-responsive-expanded: false;
+$button-palette: (
+  primary: map-get($colors, green1), 
+  secondary: map-get($colors, blue5), 
+  tertiary: map-get($colors, navy3), 
+  alert: $fm-red,
+  default: $medium-gray,
+  // warning: $fm-yellow,
+);
+$button-hover-palette: (
+  primary: map-get($colors, green6), 
+  secondary: map-get($colors, blue4), 
+  tertiary: map-get($colors, navy6), 
+  alert: lighten($fm-red, 12%),
+  default: lighten($medium-gray, 12%),
+  // warning: lighten($fm-yellow, 12%),
+);
+$button-opacity-disabled: 0.35;
+//$button-background-hover-lightness: 20%;
+//$button-hollow-hover-lightness: 0%;
+$button-transition: background-color 0.25s ease-out, color 0.25s ease-out, border-color 0.25s ease-out;
+$button-responsive-expanded: true;
 
 // 12. Button Group
 // ----------------

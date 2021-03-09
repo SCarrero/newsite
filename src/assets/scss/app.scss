@@ -15,7 +15,7 @@
 // @include foundation-flex-grid;
 
 // Generic components
-@include foundation-button;
+//@include foundation-button;
 @include foundation-button-group;
 @include foundation-close-button;
 @include foundation-label;
@@ -69,3 +69,4 @@
 // import any local project scss files here
 @import 'components/typography';
 @import 'components/vertical-spacing';
+@import 'components/buttons';

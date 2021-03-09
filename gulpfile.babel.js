@@ -26,9 +26,9 @@ const { PORT, UNCSS_OPTIONS, PATHS } = loadConfig();
 
 function loadConfig() {
   let ymlFile = fs.readFileSync('config.yml', 'utf8');
-  return yaml.load(ymlFile);
+  const schema = yaml.DEFAULT_SCHEMA.extend(require('js-yaml-js-types').all);
+  return yaml.load(ymlFile, { schema });
 }
-
 
 gulp.task('styleGuide',
   gulp.series(styleGuide1, styleGuide2));
@@ -98,7 +98,7 @@ function sass() {
   ].filter(Boolean);
   var source = 'src/assets/scss/dev/app.scss';
   if(PRODUCTION) { source = 'src/assets/scss/app.scss'; }
-  //$.sass.compiler = require('node-sass');
+  $.sass.compiler = require('node-sass');
   return gulp.src(source)
     .pipe($.sourcemaps.init())
     .pipe($.sass({
@@ -205,6 +205,7 @@ function watch() {
   gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, browser.reload));
   gulp.watch('src/assets/js/*.js').on('all', gulp.series(javascript, browser.reload));
+  gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
   gulp.watch('src/styleguide/*').on('all', gulp.series('styleGuide', browser.reload));
 }
 // end

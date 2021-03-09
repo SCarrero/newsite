@@ -8,16 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
     {{> metadata}}
     {{> metadata-static}}
-
+    <link rel="stylesheet" href="https://use.typekit.net/izj2zwr.css">  
     {{#each (array "" stylesheet)}}
     <link rel="stylesheet" href="{{.}}" />
     {{/each}}  
   </head>  
-  {{#if bodyclass}}
-  <body class="{{ bodyclass }}">
-    {{else}}
   <body>
-  {{/if}}  
 
   {{> body}} 
              
