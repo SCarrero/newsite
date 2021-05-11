@@ -41,7 +41,7 @@
     "js-yaml": "^4.0.0",
     "js-yaml-js-types": "^1.0.0",
     "panini": "^1.6.3",
-    "postcss": "^8.2.7",
+    "postcss": "^8.2.10",
     "rimraf": "^3.0.2",
     "style-sherpa": "^1.0.2",
     "uncss": "^0.17.3",
