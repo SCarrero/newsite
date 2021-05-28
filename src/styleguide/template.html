@@ -12,16 +12,29 @@
   <body>
     <div class="show-for-print">Domain.com</div>     
  
-    <div id="top" class="page-title">
-      <form class="form float-right">
-        <select id="ssnav">
-          <option value="">Select Component</option>
-          {{#each pages}}
-            <option value="#{{ anchor }}">{{ title }}</option>
-          {{/each}}
-        </select>
-      </form>
-    </div> 
+    <div class="iw_section"> 
+      <div class="row iw_row iw_stretch"> 
+        <div class="column iw_columns large-12"> 
+          <div class="iw_component">  
+            <div id="top" class="background-concrete row-wrapper">
+              <div class="row">
+                <div class="column">
+                  <form class="form float-right">
+                    <select id="ssnav">
+                      <option value="">Select Component</option>
+                      {{#each pages}}
+                        <option value="#{{ anchor }}">{{ title }}</option>
+                      {{/each}}
+                    </select>
+                  </form>
+                  <h1 class="subtitle">Style Guide</h1>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div id="code-content">
       {{#each pages}}
@@ -38,35 +51,47 @@
     {{> js-footer}}
     
     <script>
-    // suppress the code view blocks by default and hide them under a toggle.
-    var $ks = $('#code-content');
-    if ($ks.length) {
-      $ks.find('.ss-code').each(function() {
-        var $code = $(this).find('pre');
-
-        Sbtn = $('<button type="button" class="docs-code-toggle">&lt; Toggle Code Display &gt;</button>');
-        Sbtn.on('click', function() {
-          $code.slideToggle(250);
+      // suppress the code view blocks by default and hide them under a toggle.
+      var $ks = $('#code-content');
+      if ($ks.length) {
+        $ks.find('.ss-code').each(function() {
+          var $code = $(this).find('pre');
+  
+          $link = $('<a class="docs-code-toggle" href="javascript:void(0);">&lt; Toggle Code Display &gt;</a>');
+          $link.on('click', function() {
+            $code.slideToggle(250);
+          });
+          $link.insertBefore(this);
+          $code.hide(0);
         });
-        Sbtn.insertBefore(this);
-        $code.hide(0);
-      });
-    }
-    
-    if($("#ssnav").children('option').length<3) {
-      $("#ssnav").hide();
-    }   
-    else {
-      $("#ssnav").change(function() { 
-        var x = $(this).val() || ''; 
-        if(x!==''){
-        location.hash = '';
-        location.hash = x;
-        }
-        $("#ssnav")[0].selectedIndex = 0;
-      });
-    }
-    </script>
+      }
+      
+      if($("#ssnav").children('option').length<3) {
+        $("#ssnav").hide();
+      }   
+      else {
+        $("#ssnav").change(function() { 
+          var x = $(this).val() || ''; 
+          if(x!==''){
+          location.hash = '';
+          location.hash = x;
+          }
+          $("#ssnav")[0].selectedIndex = 0;
+        });
+      }
+      function  motionExample(){
+        var $transitionDemo = $('.docs-transition-demo');
+        $('.docs-transitions').change(function() {
+          var value = $(this).val();
+          var method = value.match('-in') ? 'animateIn' : 'animateOut';
+  
+          Foundation.Motion[method]($transitionDemo, value, function() {
+            $transitionDemo.show();
+          });
+        });
+      }   
+      window.onload =   motionExample;  
+      </script>
 
   </body>
 </html>

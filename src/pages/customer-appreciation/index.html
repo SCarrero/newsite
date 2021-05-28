@@ -1,0 +1,90 @@
+---
+title: "2020 Top Lenders"
+layout: default
+bodyclass: top-lender
+description: "Customer Appreciation"
+image: https://mf.freddiemac.com/customer-appreciation/images/customer-appreciation-social.jpg
+url:  https://mf.freddiemac.com/customer-appreciation/
+hero-image: top-lender-green
+stylesheet: /ss/app_landing.css
+javascript: ['/js/vendor/gsap.min.js','/js/custom/odometer.js']
+onload:
+---
+<style>
+ html{​​
+  @media screen and (min-width: 120.02em){​​  
+    font-size: 140%;
+  }​​
+  @media screen and (min-width: 150em){​​
+    font-size: 180%;
+  }​​
+  @media screen and (min-width: 187.5em){​​
+    font-size: 200%;
+  }​​
+}​​
+</style>
+<div class="ca-container">
+  <div class="landing-hero ca-hero background-green position-relative">
+    <div class="row-container">
+      <div class="row">
+        <div class="column no-padding">
+          <div class="heroContentContainer gutter-top">
+            <!-- HERO-CONTENT -->
+            <div class="ca-hero-content">
+              <a href="/index.html" onclick="FM.form.cta('logo link')">
+                <div class="ca-lender-logo gutter-top">
+                  <img alt="Freddie Mac logo no-border" src="/images/multifamily_logo_reverse.svg" class="no-border">
+                </div>
+              </a>
+              <h1 class="left-hero text-flex-50-88 weight-bold">Thank you<br class="hide-for-medium"> for <br class="show-for-medium">your partnership!</h1>
+              <div class="dynamic-sub">
+                <div class="dynamic-sub-intro">
+                  <p class="text-left weight-normal text-flex-30-42">Together we financed <span class="show-for-sr">$80 billion in
+                      2020.</span></p>
+                  <div class="text-flex-30-42 dynamic-sub-odometer text-left flex-container flex-dir-row">
+                    <div class="weight-bold">$</div>
+                    <div class="dynamic-sub-odometer--anim">
+                      <!-- animate numbers up -->
+                      <!-- <div class="weight-bold seven-up">7</div> -->
+                      <div class="weight-bold eight-up">7<br>8</div>
+                    </div>
+                    <div class="dynamic-sub-odometer--anim">
+                      <!-- <div class="weight-bold">8</div> -->
+                      <div class="weight-bold zero-up">8<br>3</div>
+                    </div>
+                    <div class="dynamic-sub-odometer--anim">
+                      <div class="weight-bold decimal">.</div>
+                    </div>
+                    <div class="dynamic-sub-odometer--anim">
+                      <div class="weight-bold four-up">4<br>0</div>
+                    </div>
+                    <span class="weight-normal"><span class="weight-bold">&nbsp;billion</span> in 2020.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END-HERO-CONTENT -->
+          </div>        
+        </div>
+      </div>
+      <div class="hero-graphic-container">
+        <img class="no-border hide-for-sr" src="images/optigo-toplender-award.png" alt="award">      
+      </div>    
+    </div>
+    <svg aria-hidden="true" class="dt-hero-curve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path d="M0 37.6V320h1440V37.6c-221.6 92.5-464.8 143.7-720 143.7S221.6 130.2 0 37.6z" fill="#fff"/></svg>
+  </div>
+  <!--End DT-->
+  
+  <section>
+    {{> by-volume}}
+  </section>
+  <section>
+    {{> by-category}}
+  </section>
+  <section>
+    {{> testimonial}}
+  </section>
+</div>
+<!-- End -->
+<!-- {{> footer-landing }} -->
+<div class="ca-gray">{{>vets-footer}}</div>

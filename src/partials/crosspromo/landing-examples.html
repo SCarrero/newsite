@@ -1,0 +1,359 @@
+
+<div class="landing-inner-band">
+  <div class="row-container-stretch">
+    <div class="row">
+      <div class="column">
+        <h2 class="gutter-top weight-regular">Full-bleed bands</h2>
+        <p>To create full bleed bands, you must define several nested &lt;div&gt; tags, starting from the outside and working inwards.  Full bleed bands must go in the cross promo container in the TeamSite template. </p>
+        <ol>
+          <li><strong>Background</strong> 
+            <p>The outermost &lt;div&gt; is typically where you define the background for the band.  Sometimes there are multiple bands that share a background.</p>
+          </li>
+          <li><strong>Landing Band</strong>
+            <p>Next, add a landing-band &lt;div&gt; to applies minimal left/right padding to prevent the 12-col grid content from touching the edge of the window at smaller screensizes.  The 3 options vary depending upon how much padding is desired above/below the band contents.</p>
+            <ul>
+              <li>Class <code>.landing-band</code> has the largest top/bottom padding
+              </li>
+              <li>Class <code>.landing-inner-band</code> has a smaller amount of top/bottom padding
+              </li>
+              <li>Class <code>.landing-band-sides-only</code> has no top/bottom padding.
+              </li>
+              <li>Additional padding can always be added inside the band, using gutter classes or an empty callout.</li>
+            </ul>
+            <p>Note: If there is just one band within one background, you can apply the landing-band class to the outermost div with the background to avoid nesting.</p>
+          </li>
+          <li><strong>Row Container</strong><p>Next, add a &lt;div&gt; with a row-container based upon the maximum width that is desired for the content.  Note: at screen widths below 1000px, all of these will look the same.  The containers control how wide the 12-column grid can grow.</p>
+            <ul>
+              <li>Class <code>.row-container-narrow</code> sets the max width of the contained rows to 1000px.</li>
+              <li>Class <code>.row-container</code>  sets the max width of the contained rows to 1200px.</li>
+              <li>Class <code>.row-container-wide</code>  sets the max width of the contained rows to 1300px.</li>
+              <li>Class <code>.row-container-stretch</code>  sets the max width of the contained rows to 1500px.</li>
+            </ul>
+          </li>
+          <li><strong>Rows</strong>
+            <p>Next, add the basic divs for the row(s). Do <em>not</em> apply left/right padding or margins to the rows.</p>   
+          <li><strong>Columns</strong>
+            <p>Next, add the basic divs the column(s). Do <em>not</em> apply left/right padding or margins to the columns.</p>   
+          </li>        
+          <li><strong>Content</strong>
+            <p>Next, add in whatever content containers you need (cards, callouts, etc). Additional vertical or horizontal padding can be added as needed by using breakpoint specific gutter classes, small-to-default, small-to-large, empty callouts, etc. </p>
+          </li>
+        </ol>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="landing-band-sides-only">  
+  <div class="row-container-stretch">  
+    <div class="row">
+      <div class="column">
+        <hr>
+        <h3 class="text-flex-16-20 weight-normal">Landing Band</h3>
+        <p>Class .landing-band (shown in blue below) adds 60px of padding to the top and bottom of the band. Multiple row containers can used inside a single band.</p>
+      </div> 
+    </div>
+  </div>  
+</div> 
+
+<div class="landing-band background-primary">
+  <div class="row-container-narrow background-white">
+    <div class="row">
+      <div class="column">  
+         <p class="no-margin">Content contained by .row-container-narrow (max width: 1000px).</p>      
+      </div> 
+    </div>
+  </div>
+  <div class="row-container background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container (max width: 1200px).</p>
+      </div> 
+    </div>
+  </div>
+  <div class="row-container-wide background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container-wide (max width: 1300px). </p>
+      </div> 
+    </div>
+  </div>
+  <div class="row-container-stretch background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container-stretch (max width: 1500px).  The stretch container's contents line up with the left/right edge of the FM header and footer content.</p> 
+      </div> 
+    </div>
+  </div>  
+</div>
+<br>
+<div class="landing-band-sides-only">
+{{#code 'html'}}
+
+<div class="landing-band background-primary">
+  <div class="row-container-narrow background-white">
+    <div class="row">
+      <div class="column">  
+         <p class="no-margin">Content contained by .row-container-narrow (max width: 1000px).</p>      
+      </div> 
+    </div>
+  </div>
+  <div class="row-container background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container (max width: 1200px).</p>
+      </div> 
+    </div>
+  </div>
+  <div class="row-container-wide background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container-wide (max width: 1300px). </p>
+      </div> 
+    </div>
+  </div>
+  <div class="row-container-stretch background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container-stretch (max width: 1500px).  The stretch container's contents line up with the left/right edge of the FM header and footer content.</p> 
+      </div> 
+    </div>
+  </div> 
+</div>
+{{/code}}
+</div>
+
+<div class="landing-band-sides-only">  
+  <div class="row-container-stretch">  
+    <div class="row">
+      <div class="column">
+        <hr>
+        <h3 class="text-flex-16-20 weight-normal">Landing Inner Band</h3>
+        <p>Class .landing-inner-band (shown in blue below) adds 30px of padding to the top and bottom of the band. Multiple row containers can used inside a single band.</p>
+      </div> 
+    </div>
+  </div>  
+</div> 
+
+<div class="landing-inner-band background-primary">
+  <div class="row-container-narrow background-white">
+    <div class="row">
+      <div class="column">  
+         <p class="no-margin">Content contained by .row-container-narrow (max width: 1000px).</p>      
+      </div> 
+    </div>
+  </div>
+  <div class="row-container background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container (max width: 1200px).</p>
+      </div> 
+    </div>
+  </div>
+  <div class="row-container-wide background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container-wide (max width: 1300px).</p>
+      </div> 
+    </div>
+  </div>
+  <div class="row-container-stretch background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container-stretch (max width: 1500px).  The stretch container's contents line up with the left/right edge of the FM header and footer content.</p> 
+      </div> 
+    </div>
+  </div>  
+</div>
+<br>
+<div class="landing-band-sides-only">
+{{#code 'html'}}
+        <div class="landing-inner-band background-primary">
+  <div class="row-container-narrow background-white">
+    <div class="row">
+      <div class="column">  
+         <p class="no-margin">Content contained by .row-container-narrow (max width: 1000px).</p>      
+      </div> 
+    </div>
+  </div>
+  <div class="row-container background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container (max width: 1200px).</p>
+      </div> 
+    </div>
+  </div>
+  <div class="row-container-wide background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container-wide (max width: 1300px).</p>
+      </div> 
+    </div>
+  </div>
+  <div class="row-container-stretch background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container-stretch (max width: 1500px).  The stretch container's contents line up with the left/right edge of the FM header and footer content.</p> 
+      </div> 
+    </div>
+  </div>  
+</div>
+{{/code}}
+</div>
+<div class="landing-band-sides-only">  
+  <div class="row-container-stretch">  
+    <div class="row">
+      <div class="column">
+        <hr>
+        <h3 class="weight-normal text-flex-16-20">Landing Band Sides Only</h3>
+        <p>Class .landing-band-sides-only (shown in blue below) adds <strong>no</strong> padding to the top and bottom of the band. Multiple row containers can used inside a single band.</p>
+      </div> 
+    </div>
+  </div>  
+</div> 
+
+<div class="landing-band-sides-only background-primary">
+  <div class="row-container-narrow background-white">
+    <div class="row">
+      <div class="column">  
+         <p class="no-margin">Content contained by .row-container-narrow (max width: 1000px).</p>      
+      </div> 
+    </div>
+  </div>
+  <div class="row-container background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container (max width: 1200px).</p>
+      </div> 
+    </div>
+  </div>
+  <div class="row-container-wide background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container-wide (max width: 1300px).</p>
+      </div> 
+    </div>
+  </div>
+  <div class="row-container-stretch background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container-stretch (max width: 1500px).  The stretch container's contents line up with the left/right edge of the FM header and footer content.</p> 
+      </div> 
+    </div>
+  </div>  
+</div>
+<br>
+<div class="landing-band-sides-only">
+{{#code 'html'}}
+
+<div class="landing-band-sides-only background-primary">
+  <div class="row-container-narrow background-white">
+    <div class="row">
+      <div class="column">  
+         <p class="no-margin">Content contained by .row-container-narrow (max width: 1000px).</p>      
+      </div> 
+    </div>
+  </div>
+  <div class="row-container background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container (max width: 1200px).</p>
+      </div> 
+    </div>
+  </div>
+  <div class="row-container-wide background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container-wide (max width: 1300px).</p>
+      </div> 
+    </div>
+  </div>
+  <div class="row-container-stretch background-white">  
+    <div class="row">
+      <div class="column">
+        <p class="no-margin">Content contained by .row-container-stretch (max width: 1500px).  The stretch container's contents line up with the left/right edge of the FM header and footer content.</p> 
+      </div> 
+    </div>
+  </div> 
+</div> 
+{{/code}}
+</div>
+
+<div class="landing-band-sides-only">  
+  <div class="row-container-stretch">  
+    <div class="row">
+      <div class="column">
+        <hr>
+        <h3 class="weight-normal text-flex-16-20">Nested row containers</h3>
+        <p>While it should be obvious, you can nest multiple row containers (smaller ones inside of larger ones). Below is an example with each container using a different background color so you can more easily visualize each container.</p>
+      </div> 
+    </div>
+  </div>  
+</div> 
+
+<div class="landing-inner-band background-primary">
+  <div class="row-container-stretch background-white">  
+    <div class="row">
+      <div class="column">
+        <p>Content contained by .row-container-stretch (max width: 1500px).  The stretch container's contents line up with the left/right edge of the FM header and footer content.</p> 
+      </div> 
+    </div>
+    <div class="row-container-wide background-yellow">  
+      <div class="row">
+        <div class="column">
+          <p>Nested content inside .row-container-wide (max width: 1300px).</p>
+        </div> 
+      </div>
+      <div class="row-container background-green">  
+        <div class="row">
+          <div class="column">
+            <p>Nested content inside  .row-container (max width: 1200px).</p>
+          </div> 
+        </div>
+        <div class="row-container-narrow background-orange">
+          <div class="row">
+            <div class="column">  
+               <p>Nested content inside .row-container-narrow (max width: 1000px).</p>      
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<br>
+<div class="landing-band-sides-only">
+{{#code 'html'}}
+
+<div class="landing-inner-band background-primary">
+  <div class="row-container-stretch background-white">  
+    <div class="row">
+      <div class="column">
+        <p>Content contained by .row-container-stretch (max width: 1500px).  The stretch container's contents line up with the left/right edge of the FM header and footer content.</p> 
+      </div> 
+    </div>
+    <div class="row-container-wide background-yellow">  
+      <div class="row">
+        <div class="column">
+          <p>Nested content inside .row-container-wide (max width: 1300px).</p>
+        </div> 
+      </div>
+      <div class="row-container background-green">  
+        <div class="row">
+          <div class="column">
+            <p>Nested content inside  .row-container (max width: 1200px).</p>
+          </div> 
+        </div>
+        <div class="row-container-narrow background-orange">
+          <div class="row">
+            <div class="column">  
+               <p>Nested content inside .row-container-narrow (max width: 1000px).</p>      
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+{{/code}}
+</div>

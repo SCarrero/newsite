@@ -1,0 +1,109 @@
+<style>
+.position-relative{
+  position: relative;
+}
+.horizontal-white-green-band {
+    background-image: linear-gradient(to right, #88BD45 45%, #88BD45 45.2%);
+}
+.orb-container{
+  width:50%;
+  margin: auto;
+}
+.optigo-logo-container{
+  width:53%;
+  margin: auto;
+}
+/*medium*/
+@media screen and (min-width:35.625em){
+  .orb-container, .optigo-logo-container{
+    width:38%;
+  }
+}
+
+/* large */
+@media screen and (min-width: 61.25em) { 
+  
+  .opt-background-mobile {
+    background: transparent url(/images/optigo-green750.png) -15% 16%/33.125rem 33.125rem no-repeat;
+    padding: 9rem 0 1.5rem;    
+  }
+  .optigo-logo-container{
+    width:80%;
+  }
+  .opti-wrapper-background{
+    overflow: hidden;
+  }
+  .horizontal-white-green-band {
+    background-image: linear-gradient(to right, white 0, white 45%, #88BD45 45.2%);
+    overflow: hidden;
+  }
+  .diagonal-gray,
+  .diagonal-green {
+    position: relative;
+  }
+  .diagonal-gray {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(169deg, #9fcf36 0%, #9fcf36 35.9%, transparent 36.1%);
+  }
+  .diagonal-green::before {
+    content:"";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -1px;
+    width: 120px;
+    background-image: linear-gradient(to top right, transparent 0, transparent 49.8%, #88BD45 50.2%);
+    z-index: 2;
+  }
+}
+
+/*xxlarge*/
+@media screen and (min-width: 93.75em) {
+  .opt-background-mobile{
+    background: transparent url(/images/optigo-green750.png) 43% 27%/33.125rem 33.125rem no-repeat;
+  }
+  .optigo-logo-container {
+    width: 60%;
+  }
+  
+  .row.margin-auto{
+    margin: auto;
+  }
+}
+
+</style>
+<div class="position-relative" style="background-color:#88bd45;" data-equalizer  data-equalize-on="large">  
+  <div class="diagonal-gray position-relative"></div>
+  <div class="position-relative clearfix opti-wrapper-background">
+    <div class="row margin-auto">
+      <div class="column  small-centered-only large-7 opt-background-mobile">
+        <div class="" data-equalizer-watch>
+          <div class="text-center large-text-center">
+            <div class="callout small-to-default no-margin"></div>            
+              <div class="orb-container">
+                <img class="hide-for-large no-border" src="/images/optigo-green750.png" alt="Optigo" class="no-border">                        
+                <!--<img src="/sparky/images/o-art-green.png" alt="Optigo" class="no-border"> -->
+              </div>
+            <div class="callout small-to-default no-margin"></div> 
+          </div>
+        </div>
+      </div>
+      <div class="column large-5">
+        <div class="position-relative" data-equalizer-watch>
+          <div class="callout small-to-default no-margin"></div>
+            <div class="optigo-logo-container gutter-top gutter-bottom">
+              <img src="/images/Optigo_horiz_white.svg" alt="Optigo" class="no-border">
+              <!--<img src="/sparky/images/Optigo logo vertical white.svg" alt="Optigo" class="no-border">-->                
+            </div>
+          <div class="callout small-to-default no-margin"></div>
+        </div>
+      </div>
+    </div>
+      
+  </div>  
+</div>
+<div class="hero-edge"> </div>

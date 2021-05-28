@@ -1,0 +1,291 @@
+$animateSpeed: .2s;
+// **************************************//
+// -------   TOP NAV RIBBON  ------- //  
+// **************************************// 
+.top-bar-right li {
+  a {
+    padding: $global-menu-padding;
+  }
+}
+
+.main-nav .dropdown.menu > li {
+  > a { 
+    padding: .7em 0;
+  }
+}
+.top-nav-wrapper {
+  position: relative;
+  z-index: 20;
+  .top-nav, 
+  .top-bar-left, 
+  .top-bar-right, 
+  .menu
+  {
+    z-index: 30;
+  }
+}
+
+.top-nav {
+  li a { 
+    color: $white;
+    font-size: rem-calc(15);
+    font-weight: $global-weight-normal;
+    opacity: 0.7;
+    &:hover,
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .top-nav-nested{
+    li {
+      border-bottom: rem-calc(1px) solid map-get($colors, navy3);  
+      a {
+        opacity: 1;
+      }
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+    strong {
+      font-weight: 500;
+      font-size: rem-calc(18);
+      padding-bottom: rem-calc(8px);
+    }
+    a:hover strong {
+      color: map-get($colors, blue1);
+    }
+    span {
+      font-weight: normal;
+      font-size: rem-calc(15);
+    }
+  }
+
+  .dropdown.menu > li > a {
+    background-color: transparent;
+  }
+}
+
+li.renters-link {
+  &.is-dropdown-submenu-parent a::after {
+    transform: rotate(0deg);
+    transition: .3s;
+  }
+  &.is-active {
+    a {
+      opacity: 1;
+      &::after {
+        transform: rotate(180deg);
+      }
+    }    
+  }
+}
+
+/******* TOP NAV GRADIENT *********/
+.top-nav-wrapper {
+  background-color: map-get($colors, navy5);
+  @include breakpoint(large) {
+    background: map-get($colors, navy5) 
+    repeating-linear-gradient(147deg, 
+    lighten(map-get($colors, navy5), 8%) 0%, 
+    lighten(map-get($colors, navy5), 8%) 21.5%, 
+    lighten(map-get($colors, navy5), 5%) 21.5%, 
+    lighten(map-get($colors, navy5), 5%) 39.25%, 
+    lighten(map-get($colors, navy5), 2%) 39.25%, 
+    map-get($colors, navy5) 100%);
+  }
+ }
+
+.top-nav ul.menu.top-nav-parent.dropdown {
+  float: right;
+  @include clearfix();
+  @include breakpoint(large only) {
+    right: rem-calc(30);
+  }
+  a {
+    @include breakpoint(large only) {
+      //override $global-menu-padding just for large breakpoint so "Division" labels fit in ribbon
+      padding-left: rem-calc(16);
+    }
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+///////////////// testing alternate ribbon /////
+.ribbon {
+  @include breakpoint(medium down) {
+    font-size: rem-calc(15);
+    padding-right: 0;
+    padding-left: 0;   
+  }
+}
+.ribbon-nav {
+  width: 100%;
+  @include breakpoint(medium down){     
+    .hamburger-icon {
+      display: inline-block;
+      height: rem-calc(12);
+      width: rem-calc(12);
+      margin-left: rem-calc(5);
+      > span {
+        background: $white;
+        border-radius: 0;
+        display: block;
+        position: absolute;
+        height: rem-calc(2px);
+        width: 100%;
+        left: 0;
+        transition: all $animateSpeed linear;
+        &:nth-child(1) {
+          top: rem-calc(2px);
+        }
+        &:nth-child(2) {
+          top: rem-calc(6px);
+        }
+        &:nth-child(3) {
+          top: rem-calc(10px);
+        }
+      }
+    }
+    &.is-mobile-expanded  {
+      .hamburger-icon > span {
+        &:nth-child(1) {
+          top: rem-calc(5);
+          transform: rotate(135deg) scaleX(1.2);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          top: rem-calc(5);
+          transform: rotate(-135deg) scaleX(1.2);
+        }
+      }
+    }
+    .submenu {
+      background: rgba($black, 0.4);
+    }
+  }
+  .ribbon-links {
+    width: 100%; 
+    @include breakpoint(large){
+      .ribbon-rbo-toggle {
+        margin-right: rem-calc(-10);   
+      }
+    } 
+    .accordion-menu {
+      margin-top: 0.5rem;
+    }
+    > li {
+      width: 100%;  
+    }  
+    &.menu {
+      a {
+        @include breakpoint(medium down){
+          padding: rem-calc(17 10 16 30);  
+          &#mobile-ribbon-trigger {
+            padding-left: rem-calc(20);
+          } 
+        }
+        @include breakpoint(large){
+          padding: rem-calc(12 10 13 16);        
+          opacity: 0.7;
+          &:hover,
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    &.menu .menu {
+      @include breakpoint(large){
+        a {
+          padding: rem-calc(26 30 30 16);
+          opacity: 1;
+        }
+      }
+    }
+    &.menu .menu li + li {
+      @include breakpoint(large){
+        border-top: .0625rem solid map-get($colors, navy3);
+      }
+    };
+  }
+  li {
+    margin: 0;
+  }
+  &:not(.is-mobile-expanded){
+    .large-inline {
+      @include breakpoint(medium down){
+        display: none;
+      }
+    }
+  }
+  &.is-mobile-expanded {
+    @include breakpoint(medium down){
+      min-height: 100vh;
+      .large-inline {
+        overflow-y: auto;
+        max-height: calc(100vh);
+      }
+    }    
+  }
+  p {
+    @include breakpoint(medium down){
+      margin: 0;
+    }
+    @include breakpoint(large){
+      font-weight: $global-weight-medium;
+    }
+  }  
+  a {
+    color: $white;
+    &.icon-chevron-down {
+      @include breakpoint(large){
+        padding-right: 1.5rem;
+      }
+    }
+  }
+  a:hover p {
+    color: map-get($colors, blue1);
+  }
+  .menu .is-active > a {
+    background: transparent !important;
+    color: map-get($colors, blue1);
+  }
+  span {
+    font-weight: normal;
+    font-size: rem-calc(15);
+  }
+  .large-inline {
+    @include breakpoint(large){
+      font-size: rem-calc(15);
+      right:0;
+      width: 100%;
+      @include flex;
+      @include flex-align(right, middle);
+      li {
+        padding: 0;
+      }
+      p {
+        font-size: rem-calc(18);
+      }
+      .is-dropdown-submenu-parent > .is-dropdown-submenu {
+        top: rem-calc(39.5);
+      }
+      .ribbon-sf-toggle {
+        &.is-dropdown-submenu-parent > .is-dropdown-submenu {
+          left: rem-calc(-48px);
+        }
+      }
+      .ribbon-rbo-toggle {
+        &.is-dropdown-submenu-parent > .is-dropdown-submenu {
+          right: 0;
+        }
+        
+      }
+    }
+  }
+}

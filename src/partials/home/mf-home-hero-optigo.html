@@ -1,0 +1,110 @@
+<style>
+h1.hero-text {
+  font-size: calc(32px +  28 * (100vw - 320px)/1180); 
+  text-align: inherit;
+  margin-top: 0.35em;
+}
+h2.hero-text {
+  font-size: calc(18px +  10 * (100vw - 320px)/1180);
+  text-align: inherit;
+}
+.position-relative{
+  position: relative;
+}
+@media screen and (min-width: 93.75em) {
+  h1.hero-text { font-size: 4rem; }
+  h2.hero-text { font-size:1.75rem; } 
+}
+.horizontal-white-green-band {
+    background-image: linear-gradient(to right, #88BD45 45%, #88BD45 45.2%);
+}
+
+@media screen and (min-width: 61.25em) {
+  h1.hero-text { margin-top: 0;}
+  .large-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    max-width: 100%;
+  }
+  .horizontal-white-green-band {
+    background-image: linear-gradient(to right, white 0, white 45%, #88BD45 45.2%);
+    overflow: hidden;
+  }
+  .diagonal-gray,
+  .diagonal-green {
+    position: relative;
+  }
+  .diagonal-gray {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    background-image: linear-gradient(160deg, #efefef 0%, #efefef 35.9%, transparent 36.1%);
+  }
+  .diagonal-green::before {
+    content:"";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -1px;
+    width: 120px;
+    background-image: linear-gradient(to top right, transparent 0, transparent 49.8%, #88BD45 50.2%);
+    z-index: 2;
+  }
+}
+@media screen and (min-width: 93.75em) {
+  .diagonal-gray {
+    width: 70%;
+  }
+}
+
+</style>
+<div class="position-relative horizontal-white-green-band" data-equalizer  data-equalize-on="large">  
+  <div class="diagonal-gray position-relative"></div>
+  <div class="row-wrapper position-relative clearfix">
+    <div class="row">    
+      <div class="column large-3"> 
+        <div class="row">
+          <div class="column small-5 medium-4 large-12 small-centered">
+            <div class="large-table-cell" data-equalizer-watch>
+              <div class="text-center large-text-left block">
+                <div class="callout small-to-default no-margin"></div>
+                <img src="/sparky/images/o-art-green.png" alt="Optigo" class="no-border"> 
+                <div class="callout small-to-default no-margin"></div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+      <div class="diagonal-green column large-1 position-relative" data-equalizer-watch>
+      </div>
+      <div class="column large-8 position-relative background-green">      
+        <div class="row">        
+          <div class="column small-12 large-10 xlarge-9">      
+            <div class="large-table-cell text-center large-text-left" data-equalizer-watch>
+              <div class="gutter-top-xlarge gutter-bottom-xlarge">
+              <h1 class="weight-normal hero-text weight-bold">Introducing Optigo<span class="reduce">&#8480;</span></h1>
+              <h2 class="weight-light hero-text">Taking the future of multifamily finance further.</h2>            
+              <p class="no-margin show-for-large"><a class="button play weight-medium">What is Optigo?</a></p>  
+</div>              
+            </div>
+          </div>
+          <div class="column large-2 xlarge-3">
+            <div class="large-table-cell" data-equalizer-watch>
+              <div class="row">
+                <div class="column small-4 medium-3 large-12 small-centered">
+                  <div class="text-center large-text-right gutter-top gutter-bottom block">
+                  <img src="/sparky/images/Optigo logo vertical white.svg" alt="Optigo" class="no-border">            
+                  </div>
+                </div>
+              </div>       
+              <p class="hide-for-large text-center"><a class="button play weight-medium">What is Optigo?</a></p>  
+            </div>              
+          </div>
+        </div>         
+      </div>    
+    </div>
+  </div>  
+</div>
+<div class="hero-edge"> </div>

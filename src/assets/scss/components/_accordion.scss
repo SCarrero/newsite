@@ -1,0 +1,155 @@
+/// styles for the accordion title when active/expanded
+@mixin accordion-pointers-active($color: $accordion-item-color, $background: $accordion-content-background, $icon-color: $anchor-color) {
+  background:$background;
+  color: $color;
+  &::before { 
+    background-image: icon(chevron-up, $primary-color,  0.875rem, 0.875rem); 
+  }
+}
+// the standard  non-active state of the item
+@mixin accordion-pointers-title($color: $primary-color, $background-hover: $accordion-item-background-hover, $transform: false) {
+  font-weight: $global-weight-medium;
+  color: $color;
+  transition: background 0.2s ease;
+  &:hover,
+  &:focus {
+    background-color: $background-hover;
+    color: scale-color($color, $lightness: -10%);
+  }
+  @if $transform {  
+    text-transform: uppercase;
+  }  
+  &::before {
+    content: ' ';  
+    background: transparent icon(chevron-down, $primary-color, 0.875rem, 0.875rem) no-repeat right center;    
+    transition: background 0.25s ease;
+    width: 1rem;
+    height: 1rem;
+    margin-left: -0.15rem;
+    position: absolute;
+    top: 50%;
+    #{$global-right}: 1rem;
+    margin-top: -0.5rem;  
+  } 
+  &[aria-expanded="true"] {   
+    @include accordion-pointers-active;
+  }
+}
+
+/// Change +/- to up down carets item. 
+@mixin accordion-pointers {  
+  box-shadow: rem-calc(0px 1px 4px 1px) rgba($black, 0.1);
+  margin-left: 0;
+  background: $accordion-background;
+  list-style-type: none;
+  section & {
+    box-shadow: none;
+    border: 1px solid $accordion-background;
+  }
+  .accordion-title {
+    @include accordion-pointers-title;
+    
+    section & {
+      padding-left: $gutter * 1.5;      
+      @include breakpoint(large only) {
+        padding-left: $gutter;
+      }  
+    }
+  }
+  .accordion-item {
+    margin: 0;    
+    border-top: rem-calc(1) solid $white; 
+    border-bottom: rem-calc(1) solid $white; 
+    &.is-active {
+       + .accordion-item.is-active {
+        border-top-color: $accordion-background; 
+        border-top-width: rem-calc(2);
+        section & {
+          border-top-width: rem-calc(1);
+        }           
+      }
+    }
+    &:first-child {
+      border-top-width: 0;
+      &.is-active {
+        border-top-color: $accordion-background; 
+        border-top-width: rem-calc(2);
+      }
+    } 
+    &:last-child {
+      border-bottom-width: 0;
+    }
+ 
+  }
+  .accordion-content {   
+    ul:first-child {
+      margin-top: 0;
+      li:first-child {
+        margin-top: 0;
+      }
+    }
+    section & {
+      padding-left: $gutter * 1.5;      
+      @include breakpoint(large only) {
+        padding-left: $gutter;
+      }      
+    }
+  }
+}
+
+/// Drop +/- and carets 
+@mixin accordion-faq {
+  @include accordion-container($white);
+  counter-reset: section;
+  .accordion-title {
+    @include accordion-title(0.5rem 0.5rem 0.5rem 2.5rem, rem-calc(18), $anchor-color, 0, $white);
+    line-height: inherit;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+    &::before {
+      counter-increment: section;
+      content: counters(section, ".", decimal) ". ";
+      display: inline-block;
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+    }
+  }  
+  .accordion-item {
+      margin: 0;
+    &.is-active {
+      background: $white;
+      margin: 0 0 $gutter;
+      .accordion-title {
+        background: $white;
+      }
+    }
+  }
+  :last-child:not(.is-active) > .accordion-title {
+    border-bottom-width: 0;
+  }
+  .accordion-content {
+    @include accordion-content(0.5rem $gutter 1rem 2.5rem, 0, transparent, $body-font-color); 
+    @media screen and (max-width: 25em) {  
+      padding: 0.5rem 0.8rem 1rem;
+    } 
+    :last-child {
+      margin-bottom: 0;
+    }    
+   }
+}
+
+a.accordion-title {
+  text-decoration: none;
+}
+///styles for .accordion-pointer
+.accordion-pointer:not(.tabs),
+.accordion.accordion-pointer {
+  @include accordion-pointers;
+}
+
+.accordion-faq {
+  @include accordion-faq;
+}

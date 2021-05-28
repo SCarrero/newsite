@@ -1,0 +1,639 @@
+---
+layout: default
+title: Freddie Mac Multifamily Small Balance loans 
+description:  Fast and Flexible Small Balance Loans
+url:  https://mf.freddiemac.com/small-loans/
+image: https://mf.freddiemac.com/images/sbl_hero-apartments.jpg
+javascript: ['/js/vendor/gsap.min.js','/js/vendor/ScrollTrigger.min.js','/js/custom/sbl2.js']
+stylesheet: /ss/app_landing.css
+---
+<!-- -->
+<style>    
+  img{border:0;}
+</style>
+
+<div id="home" data-magellan-target="home"></div>
+<!-- <div class="text-center logo-wrapper show-for-large">  
+  <img alt="Multifamily logo" src="/images/multifamily-logo.svg">
+</div> -->
+<a href="/index.html" onclick="FM.form.cta('logo link')">
+  <div class="logo-containter show-for-large">
+    <div href="/index.html" class="logo-content">
+      {{> multifamily-logo}}
+    </div>
+  </div>
+</a>
+<div class="text-center">
+  <!-- // Anchor Nav -->
+  <div class="background-green hide-for-large mobile-nav-container">
+    <div class="row">
+      <div class="top-bar background-green">
+        <div class="column small-6 text-left sbl-mobile-logo">
+          {{>sbl-mobile-logo}}
+        </div>
+        <div class="column small-6 text-right">
+          <button id="menu-toggle" class="toggle-icon trigger-mobile-nav" data-toggler=".is-mobile-shown" type="button" data-toggle="mobile-nav-menu menu-toggle" aria-label="toggle sbl-mobile-menu">
+            <svg class="fill-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="-3 -3 54 54" stroke-width="6">
+              <g class="menu">
+                <line x1="1" y1="44" x2="47" y2="44"/>
+                <line x1="1" y1="24" x2="47" y2="24"/>
+                <line x1="1" y1="4" x2="47" y2="4"/>
+              </g>
+              <g class="menu-close" data-close>
+                <line x1="1" y1="1" x2="47" y2="47"/>
+                <line x1="47" y1="1" x2="1" y2="47"/>
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+   </div>
+   <div class="row background-green">
+     <div class="column">
+       <nav role="navigation" class="sbl-mobile-nav" id="mobile-nav-menu" data-toggler=".is-shown" data-closable>
+        <ul class="no-bullet menu vertical sbl-mobile-menu text-flex-18-24 weight-bold" data-magellan  data-auto-height="true" data-animate-height="true">
+          <li id="nav-mobile-difference"><a data-toggle="mobile-nav-menu menu-toggle" href="#difference">The Difference</a></li>
+          <li id="nav-mobile-financing"><a data-toggle="mobile-nav-menu menu-toggle" href="#financing">Financing</a></li>
+          <li id="nav-mobile-fast-easy"><a data-toggle="mobile-nav-menu menu-toggle" href="#fast-easy">Fast and Easy</a></li>
+          <!--<li id="nav-mobile-tips-insights"><a data-toggle="mobile-nav-menu menu-toggle" href="#tips-insights">Tips and Insights</a></li>-->
+          <li id="nav-mobile-testimonials"><a data-toggle="mobile-nav-menu menu-toggle" href="#testimonials">Testimonials</a></li>
+        </ul>
+       </nav>
+      </div>
+   </div>
+  </div>
+  <div class="background-yellow sbl-covid-banner">
+    <div class="row">
+      <div class="large-2 column show-for-large">&nbsp;</div>
+      <div class="column small-centered large-uncentered medium-11 large-10 large-offset-2 xlarge-10 large-offset-2">
+        <p class=" gutter-top text-left accent-dark-gray weight-normal"><span class="weight-medium">Our Coronavirus Response:</span> Freddie Mac has business continuity plans in place to ensure we are fulfilling our mission while protecting our staff <span class="no-wrap">and community... <a href="http://www.freddiemac.com/about/covid-19.html" class="offsite weight-medium">More <span class="show-for-sr">about our coronavirus response</span> </a></span></p>
+      </div>
+    </div>
+  </div>
+ <div class="background-green show-for-large" style="" data-sticky-container id="green-sticky-wrap">
+    <div data-sticky data-margin-top='0' data-top-anchor="sbl-hero:top" style="padding-left:0;padding-right:0; z-index:600;">
+      <div class="background-green" data-top-bar role="navigation" top-bar-sticky-shrink>
+        <div class="menu-centered">
+          <div id="sticky-menu" role="navigation">
+            <ul class="text-flex-16-20 dropdown menu sticky-nav-list weight-medium data-smooth-scroll" style="background-color:inherit;" data-magellan  data-auto-height="true" data-animate-height="true">
+              <li class="text-left">
+                <a href="#home" class="sticky-logo-link no-padding" style="padding-left:0;padding-right:0;">
+                  <div  class="sbl-med-lg-logo" style="max-height:60px;">
+                    <div class="sticky-logo">
+                      {{>sbl-med-logo-sticky}}
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li id="nav-difference"><a href="#difference">The Difference</a></li>
+              <li id="nav-financing"><a href="#financing">Financing</a></li>
+              <li id="nav-fast-easy"><a href="#fast-easy">Fast and Easy</a></li>              
+              <!--<li id="nav-tips-insights"><a href="#tips-insights">Tips and Insights</a></li>-->
+              <li id="nav-testimonials"><a href="#testimonials">Testimonials</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="sbl-hero" class="landing-band landing-hero sbl-landing-hero background-primary"
+    style="overflow: hidden;padding-bottom:0;padding-top:0;">
+    <!-- clouds -->
+    <div class="cloud2-right position-absolute">
+      <img class="no-border" src="/images/cloud-trimmed.png" aria-hidden="true" alt="graphic">
+    </div>
+    <div class="cloud1-left position-absolute">
+      <img class="no-border" src="/images/cloud-trimmed-left.png" aria-hidden="true" alt="graphic">
+    </div>
+    <!-- end clouds -->
+    <!-- <div class="row-wrapper">-->
+      <div class="row position-relative">
+        <div class="column medium-10 small-centered"> 
+        <!-- <div class="callout small-to-large"></div> -->
+          <img class="no-border sun" src="/images/sun-trimmed.png" aria-hidden="true" alt="graphic">
+          <img class="no-border house" src="/images/optigo-sbl_houses-crop.png" aria-hidden="true" alt="graphic">
+          <img class="no-border people" src="/images/people-trimmed.png" aria-hidden="true" alt="graphic">
+
+          <div class="sbl-hero-cta-wrapper">
+            <img id="" class="white-orb no-border" src="/images/Optigo-O-White.png" aria-hidden="true" alt="ignore">
+            
+            <h1 class="text-flex-26-35 no-margin weight-bold hero-h1">
+              <span class="weight-light">Optigo </span>Small <br class="hide-for-medium">Balance Loans
+            </h1>
+            <h3 class="text-flex-26-35 weight-normal hero-h3 gutter-bottom">At home in local markets</h3>
+            
+            <div class="sbl-cta">
+              <a class="xlarge button primary hero-quote-btn"
+                onclick="FM.form.cta('Button', 'Hero')">Get a quote today</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="footer-bottom-edge"> </div>
+  
+  <!-- // THE FREDDIE MAC DIFFERENCE -->
+  <div id="difference" data-magellan-target="difference" class="background-white landing-band">
+    <div class="row-container gutter-top-large">
+      <div class="row">
+        <div class="column">
+          <h1 class=" gutter-top-xlarge gutter-bottom">The Freddie Mac Difference</h1>
+          <p class="text-flex-18-24 accent-gray weight-normal gutter-top-large" style="line-height: 1.7;">
+            We are the leader in multifamily financing. Whether you want to grow your portfolio, improve performance, or meet other goals, we can get you there.
+          </p>
+        </div>
+      </div>
+      <div class="row medium-up-3 gutter-top" data-equalizer="fmDifference">
+        <!-- // Strength -->
+        <div class="column">
+          <div class="callout small-to-large" data-equalizer-watch="fmDifference">
+            <img src="/images/sbl_icon_strength.svg" alt="Strength">
+            <h3 class="text-flex-22-30 accent-dark-gray weight-normal no-margin gutter-top">Strength</h3>
+            <p class="card-subtitle text-flex-16-20 weight-normal">We've funded over $12 billion in small loans, offering
+              the best terms and choice nationwide.</p>
+          </div>
+        </div>
+        <!-- // END Strength -->
+  
+        <!-- // Reliability -->
+        <div class="column">
+          <div class="callout small-to-large" data-equalizer-watch="fmDifference">
+            <img src="/images/sbl_icon_reliability.svg" alt="Reliability">
+            <h3 class="text-flex-22-30 accent-dark-gray weight-normal no-margin gutter-top">Reliability</h3>
+            <p class="card-subtitle text-flex-16-20 weight-normal">We oversee servicing on each loan to ensure you get the
+              attention you deserve.</p>
+          </div>
+        </div>
+        <!-- //END Reliability -->
+        <!-- // Commitment -->
+        <div class="column">
+          <div class="callout small-to-large" data-equalizer-watch="fmDifference">
+            <img src="/images/sbl_icon_commitment.svg" alt="Commitment">
+            <h3 class="text-flex-22-30 accent-dark-gray weight-normal no-margin gutter-top">Commitment</h3>
+            <p class="card-subtitle text-flex-16-20 weight-normal">We're always in the market, ready to provide the
+              financing you need.</p>
+          </div>
+        </div>
+        <!-- END Commitment -->
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="callout">
+            <p>
+              <a href="/small-loans/form.html" class="xlarge button tertiary" onclick="FM.form.cta('Button', 'The Difference')">                
+                Request A Quote 
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // END THE FREDDIE MAC DIFFERENCE -->
+<!-- // HERO BANNER II FLEXIBLE FINANCING -->
+<div id="financing" class="background-concrete background-stripes landing-band" data-magellan-target="financing">
+  <div class="row-container-narrow">
+    <div class="row gutter-top">
+      <div class="column">
+        <div class="callout">
+          <h1 class="gutter-top-large gutter-bottom">Flexible Financing That Fits Your Needs</h1>
+          <p class="text-flex-18-24 accent-gray weight-normal gutter-top">Choose from fixed- or floating-rate loans with
+            flexible terms that work for you. </p>
+        </div>
+        <!-- // TWO COLUMN -->
+        <div data-equalizer="flexibleFinance">
+          <div class="row">
+            <div class="column medium-6 large-5 text-right">
+              <div class="callout background-white hollow-thick width-medium-360 text-center"
+                data-equalizer-watch="flexibleFinance">
+                <h3 class="accent-green">Fixed-Rate Loans</h3>
+                <p class="weight-normal reduce accent-dark-gray" style="line-height:1.4;">Enjoy fixed payments that
+                  never change plus the benefits of extended amortization</p>
+                <hr class="divider-offwhite" />
+                <p class="text-static-16-18 weight-medium accent-dark-gray" style="line-height:1.66;">5-, 7- and 10-year
+                  term<br>30-year amortization</p>
+              </div>
+            </div>
+            <div class="column medium-6 large-5 large-offset-2 text-left">
+              <div class="hide-for-medium gutter-top"></div>
+              <div class="callout background-white hollow-thick width-medium-360 text-center"
+                data-equalizer-watch="flexibleFinance">
+                <h3 class="accent-green">Hybrid ARM Loans</h3>
+                <p class="weight-normal reduce accent-dark-gray" style="line-height:1.4">Get the lowest rates during an
+                  initial fixed-rate term, then periodic adjustments based on LIBOR</p>
+                <hr class="divider-offwhite" />
+                <p class="text-static-16-18 weight-medium accent-dark-gray" style="line-height: 1.66">5-, 7- or 10-year
+                  initial fixed-rate period <br>30-year amortization</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column medium-10 large-8 medium-centered">
+              <div class="box-outline-medium">
+                <div class="box-overlap-medium">
+                  <h3 class="accent-gray gutter-top text-static-24-28 no-margin gutter-bottom">Unbeatable Terms</h3>
+                  <div
+                    class="center-connectors callout background-white no-margin hollow-thick width-medium-360 small-to-default">
+                    <p class="text-static-16-18 weight-medium accent-dark-gray" style="line-height: 1.66">
+                      Non-recourse<br>Coupon pricing<br>Up to 80% LTV<br>Interest-only available<br>Cash-out
+                      options<br>Declining prepayment</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gutter-top gutter-bottom-large"></div>
+        </div>
+        <div class="callout">
+          <p class="gutter-bottom">
+            <a href="/small-loans/form.html" class="xlarge button tertiary" onclick="FM.form.cta('Button', 'Flexible Financing')">
+              Request A Quote </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- // END HERO BANNER II FLEXIBLE FINANCING  -->
+  
+  
+     <!-- //   WE MAKE IT FAST AND EASY-->
+  
+    <div id="fast-easy" class="background-white landing-hero landing-band" data-magellan-target="fast-easy">  
+      <div class="row-container gutter-bottom gutter-top">
+        <div class="row">
+          <div class="column">
+            <h1 class="gutter-top-large gutter-bottom">We Make It Fast and Easy</h1>
+            <div class="show-for-medium gutter-top"></div>
+            <p class="text-flex-18-24 weight-normal" style="line-height:1.77;">Our straightforward process eliminates headaches and hassles that can slow you down.</p>   
+          </div>
+        </div>
+      </div>
+      <div class="row-container gutter-top">
+        <div class="row medium-up-3">                              
+          <!-- // STEP 1 -->
+          <div class="column">
+            <div class="callout small-to-large">
+              <div class="text-flex-26-65 weight-bold gutter-bottom" style="line-height: 1.1;">1</div>            
+              <div class="gutter-bottom"><img src="/images/sbl-quote-step-1.svg" alt="Quote"></div>              
+              <p class="text-flex-24-32">Quote</p>
+              <p class="flex-up weight-normal" style="line-height:1.77;">Fill out an application with an approved lender. They'll provide a simple coupon quote, which can be locked until closing.</p>
+            </div>
+          </div>
+          <!-- // END STEP 1 -->
+  
+          <!-- // STEP 2 -->
+          <div class="column">
+            <div class="callout small-to-large">  
+              <div class="text-flex-26-65 weight-bold gutter-bottom" style="line-height: 1.1;">2</div>
+              <div class="gutter-bottom"><img src="/images/sbl-underwrite-step-2.svg" alt="Underwrite"></div>            
+              <p class="text-flex-24-32">Underwrite</p>
+              <p class="flex-up weight-normal" style="line-height:1.77;">Your lender completes due diligence and sends your loan to us for approval. No cookie cutters here; we review each loan and provide creative solutions for unique or complex transactions.</p>
+            </div>
+          </div>
+          <!-- //END STEP 2 -->
+  
+          <!-- // STEP 3 -->
+          <div class="column">
+            <div class="callout small-to-large">
+              <div class="text-flex-26-65 weight-bold gutter-bottom" style="line-height: 1.1;">3</div>
+              <div class="gutter-bottom"><img src="/images/sbl-close-step-3.svg" alt="Close"></div>            
+              <p class="text-flex-24-32">Close</p>
+              <p class="flex-up weight-normal" style="line-height:1.77;">Once approved, you sign a commitment letter that outlines terms. Then, set a date to close.</p>  
+            </div>
+          </div>    
+          <!-- END STEP 3 -->      
+        </div>
+      </div>
+      <div class="row-container gutter-bottom">
+        <div class="row">
+          <div class="column">
+            <div class="gutter-bottom">
+              <a href="/small-loans/form.html" class="xlarge button tertiary" onclick="FM.form.cta('Button', 'Fast and Easy')">
+                Request A Quote 
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="triangle-out-coolwhite"></div>  
+    </div>                        
+    <!-- //   WE MAKE IT FAST AND EASY-->
+
+   <!--   ####// INVESTOR INSIGHTS####
+    <div id="tips-insights" class="landing-band" data-magellan-target="tips-insights">
+      <div class="row-container-wide">
+        <div class="row">
+          <div class="column medium-8 medium-centered large-12"> 
+            <h1 class="gutter-top gutter-bottom">Investor Tips and Insights </h1>
+            <div class="row large-up-3 text-left gutter-bottom" data-equalizer="tips" data-equalize-by-row="true">
+              <div class="column"> 
+                <div class="callout small">
+                  <div class="card border-match">
+                    <div class="callout small-to-large" data-equalizer-watch="tips">
+                      <a class="overlay" href="/small-loans/tips_and_insights.html#article1">
+                        <img class="no-border" src="/small-loans/images/moe-thumb.jpg" alt="Make a Difference in Your Community" />
+                      </a>
+                      <div class="accent-dark-gray gutter-top">
+                        <h3 class="text-flex-24-32 weight-normal"><a href="/small-loans/tips_and_insights.html#article1">Make a Difference in Your Community</a></h3>
+                        <p class="text-static-16-18 weight-light">Owners like Moe Faroud and John Nechiporchik are invested in improving their communities. Watch how they do it with Freddie Mac funding and support.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>        
+              <div class="column"> 
+                <div class="callout small">
+                  <div class="card border-match">
+                    <div class="callout small-to-large" data-equalizer-watch="tips">
+                      <a class="overlay" href="/small-loans/tips_and_insights.html#article2">
+                        <img class="no-border" src="/images/sbl_blog_image1_thumb.jpg" alt="Cash In" />
+                      </a>
+                      <div class="accent-dark-gray gutter-top">
+                        <h3 class="text-flex-24-32 weight-normal"><a href="/small-loans/tips_and_insights.html#article2">Cash in on Market Improvements: 5 Tips</a></h3>   <p class="text-static-16-18 weight-light">If you own a small multifamily property&ndash;now, more than ever&ndash;it's good to be you.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column"> 
+                <div class="callout small">
+                  <div class="card border-match">
+                    <div class="callout small-to-large" data-equalizer-watch="tips">
+                      <a class="overlay" href="/small-loans/tips_and_insights.html#article3">
+                        <img class="no-border" src="/images/sbl_blog_image2_thumb.jpg" alt="Rising Rates" />
+                      </a>
+                      <div class="accent-dark-gray gutter-top">
+                        <h3 class="text-flex-24-32 weight-normal"><a href="/small-loans/tips_and_insights.html#article3">Rising Rates: 3 Things to Know Before Financing</a></h3>
+                        <p class="text-static-16-18 weight-light">Rising rates have the potential to reduce your loan proceeds.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    ####// INVESTOR INSIGHTS#### -->
+    <!-- SELLER PERSPECTIVES -->
+    <div id="testimonials" class="landing-band background-coolwhite" data-magellan-target="testimonials">
+      <div class="gutter-top-xlarge"></div>
+      <h1 class="gutter-bottom">What People Say About Us</h1>  
+      <div class="row-container-wide gutter-top gutter-bottom">  
+        <!-- ROTATOR For SMALL WIDTHS -->
+        <div class="row hide-for-large">
+          <div class="column small-11 medium-8 small-centered text-centered">
+            <div class="callout">
+              <div class="orbit orbit-controls-outside orbit-controls-raised" role="region" aria-label="Seller Perspectives" data-orbit data-auto-play="false">
+                <ul class="orbit-container">
+                  <li class="orbit-slide">
+                    <div class="feature-block" data-equalizer-watch="video">
+                      <a id="customization" name="customization" href="https://youtu.be/CN-MHJPVOJs" data-src="//www.youtube-nocookie.com/embed/CN-MHJPVOJs?list=PLW5POpIyDNJpJPmJ8-w4rp3EN6AibElNN&amp;controls=1&amp;rel=0&amp;autoplay=1&amp;wmode=transparent&amp;autoplay=1" class="overlay mask-gray video-modal widescreen-video block" onclick="FM.form.cta('Modal', 'Mobile Customization Video')">
+                      <span class="video-length" area-label="video length in minutes">0:47</span>
+                        <img src="/images/sbl_customization.jpg" alt="Customization"/>
+                        <div class="center-absolute">
+                          <h3 class="text-flex-26-35 weight-normal">Customization</h3>                  
+                          <p class="no-margin"><strong class="uppercase flex-up weight-bold">Matthew Nelson</strong><br>Community Preservation Corporation</p>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="orbit-slide">
+                    <div class="feature-block" data-equalizer-watch="video">
+                      <a id="expertise" name="expertise" href="https://youtu.be/mCiGJscUBRA" data-src="//www.youtube-nocookie.com/embed/mCiGJscUBRA?list=PLW5POpIyDNJpJPmJ8-w4rp3EN6AibElNN&amp;controls=1&amp;rel=0&amp;autoplay=1&amp;wmode=transparent&amp;autoplay=1" class="overlay mask-gray video-modal widescreen-video block" onclick="FM.form.cta('Modal', 'Mobile Expertise Video')">
+                      <span class="video-length" area-label="video length in minutes">0:37</span>
+                        <img src="/images/sbl_expertise.jpg" alt="Expertise"/>
+                        <div class="center-absolute">
+                          <h3 class="text-flex-26-35 weight-normal">Expertise</h3>                  
+                          <p class="no-margin"><strong class="uppercase flex-up weight-bold">Leah Purvis</strong><br>Greystone</p>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="orbit-slide">
+                    <div class="feature-block" data-equalizer-watch="video">
+                      <a id="affordability" name="affordability" href="https://youtu.be/o8z9-58_qIs" data-src="//www.youtube-nocookie.com/embed/o8z9-58_qIs?list=PLW5POpIyDNJpJPmJ8-w4rp3EN6AibElNN&amp;controls=1&amp;rel=0&amp;autoplay=1&amp;wmode=transparent&amp;autoplay=1" class="overlay mask-gray video-modal widescreen-video block" onclick="FM.form.cta('Modal', 'Mobile Neighborhood Improvement Video')">
+                      <span class="video-length" area-label="video length in minutes">2:05</span>
+                        <img src="/images/moe2.jpg" alt="Moe Farhoud"/>
+                        <div class="center-absolute">
+                          <h3 class="text-flex-26-35 weight-normal">Neighborhood Improvement</h3>                  
+                          <p class="no-margin"><strong class="uppercase flex-up weight-bold">Moe Farhoud</strong><br>Stark Firs Management</p>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="orbit-slide">
+                    <div class="feature-block" data-equalizer-watch="video">
+                      <a id="nonrecourse" name="nonrecourse" href="https://youtu.be/ob7Zo9Fx08M" data-src="//www.youtube-nocookie.com/embed/ob7Zo9Fx08M?list=PLW5POpIyDNJpJPmJ8-w4rp3EN6AibElNN&amp;controls=1&amp;rel=0&amp;autoplay=1&amp;wmode=transparent&amp;autoplay=1" class="overlay mask-gray video-modal widescreen-video block" onclick="FM.form.cta('Modal', 'Mobile Community Investment Video')">
+                      <span class="video-length" area-label="video length in minutes">1:38</span>
+                        <img src="/images/sbl_nonrecourse.jpg" alt="John Nechiporchik"/>
+                        <div class="center-absolute">
+                          <h3 class="text-flex-26-35 weight-normal">Community Investment</h3>                  
+                          <p class="no-margin"><strong class="uppercase flex-up weight-bold">John Nechiporchik</strong><br>Watermark Partners</p>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- // END ROTATOR For SMALL WIDTHS -->
+        <!-- ROTATOR For LARGE WIDTHS -->
+        <div class="row show-for-large gutter-bottom">
+          <div class="column medium-11 xlarge-12 medium-centered">
+            <div class="gutter-left gutter-right">
+              <div class="orbit no-margin orbit-controls-outside orbit-controls-raised" role="region" aria-label="Seller Perspectives" data-orbit data-auto-play="false">           <!-- ROTATOR DESKTOP SLIDES--> 
+                <ul class="orbit-container">
+                  <li class="orbit-slide">
+                    <div class="row large-up-2">
+                      <div class="column">
+                        <div class="feature-block" data-equalizer-watch="video">
+                          <a id="customization" name="customization" href="https://youtu.be/CN-MHJPVOJs" data-src="//www.youtube-nocookie.com/embed/CN-MHJPVOJs?list=PLW5POpIyDNJpJPmJ8-w4rp3EN6AibElNN&amp;controls=1&amp;rel=0&amp;autoplay=1&amp;wmode=transparent&amp;autoplay=1" class="overlay mask-gray video-modal widescreen-video block" onclick="FM.form.cta('Modal', 'Customization Video')">
+                            <span class="video-length" area-label="video length in minutes">0:47</span>
+                              <img src="/images/sbl_customization.jpg" alt="Customization"/>
+                              <div class="center-absolute">
+                                <h3 class="text-flex-26-35 weight-normal">Customization</h3>                  
+                                <p class="no-margin"><strong class="uppercase flex-up weight-bold">Matthew Nelson</strong><br>Community Preservation Corporation</p>
+                              </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="column">
+                        <div class="feature-block" data-equalizer-watch="video">
+                          <a id="expertise" name="expertise" href="https://youtu.be/mCiGJscUBRA"
+                            data-src="//www.youtube-nocookie.com/embed/mCiGJscUBRA?list=PLW5POpIyDNJpJPmJ8-w4rp3EN6AibElNN&amp;controls=1&amp;rel=0&amp;autoplay=1&amp;wmode=transparent&amp;autoplay=1"
+                            class="overlay mask-gray video-modal widescreen-video block" onclick="FM.form.cta('Modal', 'Expertise Video')">
+                            <span class="video-length" area-label="video length in minutes">0:37</span>
+                            <img src="/images/sbl_expertise.jpg" alt="Expertise" />
+                            <div class="center-absolute">
+                              <h3 class="text-flex-26-35 weight-normal">Expertise</h3>
+                              <p class="no-margin"><strong class="uppercase flex-up weight-bold">Leah Purvis</strong><br>Greystone</p>
+                            </div>
+                          </a>
+                        </div>
+                      </div>                      
+                  </li>
+                  <li class="orbit-slide">
+                    <div class="row large-up-2">                      
+                      <div class="column">
+                        <div class="feature-block" data-equalizer-watch="video">
+                          <a id="affordability" name="affordability" href="https://youtu.be/o8z9-58_qIs" data-src="//www.youtube-nocookie.com/embed/o8z9-58_qIs?list=PLW5POpIyDNJpJPmJ8-w4rp3EN6AibElNN&amp;controls=1&amp;rel=0&amp;autoplay=1&amp;wmode=transparent&amp;autoplay=1" class="overlay mask-gray video-modal widescreen-video block" onclick="FM.form.cta('Modal', 'Neighborhood Improvement Video')">
+                            <span class="video-length" area-label="video length in minutes">2:05</span>
+                              <img src="/images/moe2.jpg" alt="Moe Farhoud"/>
+                                <div class="center-absolute">
+                                  <h3 class="text-flex-26-35 weight-normal">Neighborhood Improvement</h3> 
+                                  <p class="no-margin"><strong class="uppercase flex-up weight-bold">Moe Farhoud</strong><br>Watermark Partners</p>
+                                </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="column">
+                        <div class="feature-block" data-equalizer-watch="video">
+                          <a id="nonrecourse" name="nonrecourse" href="https://youtu.be/ob7Zo9Fx08M" data-src="//www.youtube-nocookie.com/embed/ob7Zo9Fx08M?list=PLW5POpIyDNJpJPmJ8-w4rp3EN6AibElNN&amp;controls=1&amp;rel=0&amp;autoplay=1&amp;wmode=transparent&amp;autoplay=1" class="overlay mask-gray video-modal widescreen-video block" onclick="FM.form.cta('Modal', 'Community Investment Video')">
+                            <span class="video-length" area-label="video length in minutes">1:38</span>
+                              <img src="/images/john2.jpg" alt="John Nechiporchik"/>
+                                <div class="center-absolute">
+                                  <h3 class="text-flex-26-35 weight-normal">Community Investment</h3>                  
+                                  <p class="no-margin"><strong class="uppercase flex-up weight-bold">John Nechiporchik</strong><br>Stark Firs Management</p>
+                                </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END SELLER PERSPECTIVES -->
+    <!-- // Testimonials -->
+    <div class="background-primary landing-band">
+      <div class="triangle-in-coolwhite"></div> 
+      <div class="row-container-stretch">
+        <div class="row">
+          <div class="column">
+            <div class="gutter-bottom"></div> 
+            <h1 class="gutter-top gutter-bottom">Our Lenders</h1>
+            <div id="dropBlockWrapper" class="drop-block-wrapper" data-equalizer="testimonials" data-equalize-by-row="true">
+              <!-- JS Load -->
+            </div>
+            <!--SCRIPT-->
+            <script>
+              function randomizeContent() {
+
+                var pics = [
+                  "https://mf.freddiemac.com/images/sbl_logo_cbre.png",
+                  "https://mf.freddiemac.com/images/sbl_logo_cpc.png",
+                  "https://mf.freddiemac.com/images/sbl_logo_arbor.png",
+                  "https://mf.freddiemac.com/images/sbl_logo_greystone.png",
+                  "https://mf.freddiemac.com/images/sbl_logo_capitalone.png",
+                  "https://mf.freddiemac.com/images/sbl_logo_hunt.png",
+                  "https://mf.freddiemac.com/images/sbl_logo_redcapital.png",
+                  "https://mf.freddiemac.com/images/sbl_logo_basis.png",
+                  "https://mf.freddiemac.com/images/sbl_logo_sabal.png",
+                  "https://mf.freddiemac.com/images/sbl_logo_readycap.png",
+                  "https://mf.freddiemac.com/images/sbl_logo_berkadia.png"
+                ],
+                  alts = [
+                    "CBRE",
+                    "Community Preservation Cooperation",
+                    "Arbor",
+                    "Greystone",
+                    "Capital One",
+                    "Hunt",
+                    "Red Capital",
+                    "Basis Investment Group",
+                    "Sabal",
+                    "ReadyCap",
+                    "Berkadia"
+                  ],
+                  toggleValue = [
+                    "cbre-dropdown",
+                    "cpc-dropdown",
+                    "arbor-dropdown",
+                    "greystone-dropdown",
+                    "capitalone-dropdown",
+                    "hunt-dropdown",
+                    "redcapital-dropdown",
+                    "basis-dropdown",
+                    "sabal-dropdown",
+                    "readycap-dropdown",
+                    "berkadia-dropdown"
+                  ],
+                  dropdownID = [
+                    "cbre-dropdown",
+                    "cpc-dropdown",
+                    "arbor-dropdown",
+                    "greystone-dropdown",
+                    "capitalone-dropdown",
+                    "hunt-dropdown",
+                    "redcapital-dropdown",
+                    "basis-dropdown",
+                    "sabal-dropdown",
+                    "readycap-dropdown",
+                    "berkadia-dropdown"
+                  ],
+                  blurbs = [
+                    " brings local market expertise and experience to the table. They provide unique solutions for small balance investors with their underwriting, closing and servicing departments. CBRE offers Freddie Mac loans throughout the country.",
+                    " offers flexible terms and prepayment options, competitive low rates, and streamlined pricing, underwriting, closing, and funding process.",
+                    " has a long-established presence in the small loans market offering personalized service, flexible terms and certainty of execution. Arbor provides Freddie Mac loans for properties in New York, New Jersey and Connecticut.",
+                    " provides reliable and fast apartment building loans with competitive rates and fee structures.",
+                    " provides a full range of competitively priced mortgage products for the acquisition, refinancing and rehabilitation of multifamily high-rises and communities. Capital One offers Freddie Mac financing extensively in the Northeast, Southeast and West Coast.",
+                    " is committed to speed and innovation with small properties. Their in-market experts can deliver flexible solutions that simplify due diligence and loan documents.",
+                    " offers streamlined small balance loan documentation and processing from pricing to underwriting and closing.",
+                    " with a focus on women- and minority-owned businesses, Basis Investment Group brings customer focus to small apartment lending.",
+                    " originates loans through a trusted network of brokers who work directly with borrowers. SNAP, their secure online platform, provides instant access to quotes and loan documents.",
+                    " specializes in small balance properties, offering a diverse array of loan products with efficient process and closings. They work with brokers, bankers and borrowers directly to find unique financing solutions for commercial real estate.",
+                    " provides a team ready and willing to assist you with getting your first or next small apartment building financed quickly and painlessly."
+                  ],
+                  markup = '',
+                  numbers = [];
+                for (var i = 0; i < pics.length; i++) {
+                  var temp = Math.floor(Math.random() * pics.length);
+                  if (numbers.indexOf(temp) == -1) {
+                    numbers.push(temp);
+                  } else {
+                    i--;
+                  }
+                }
+                while (numbers.length > 0) {
+                  x = numbers.pop();
+                  markup +=
+                    '<div class="drop-block" data-equalizer-watch="testimonials"><button class="dropdown-trigger" type="button" data-toggle="' + toggleValue[x] + '" aria-controls="' + toggleValue[x] + '" data-yeti-box="' + toggleValue[x] + '" aria-haspopup="true" aria-expanded=""><img class="no-border" src="' + pics[x] + '" alt="' + alts[x] + '"></button><div class="dropdown-pane" id="' + dropdownID[x] + '" data-dropdown="" data-hover="true" data-hover-pane="true" aria-hidden="true" data-yeti-box="' + toggleValue[x] + '" data-resize="' + toggleValue[x] + '" aria-labelledby="" data-events="resize"><p><strong>' + alts[x] + '</strong>' + blurbs[x] + '</p></div></div>';
+                }
+                document.getElementById("dropBlockWrapper").innerHTML = markup;
+              }
+              randomizeContent();
+
+            </script>
+            <!--END SCRIPT-->
+          </div>
+        </div>
+      </div>      
+      <div class="row">
+        <div class="column">
+          <div class="callout">                        
+            <h4 class="gutter-bottom gutter-top weight-normal">Request a quote from one of our approved nationwide lenders today!</h4>
+            <p class="gutter-top gutter-bottom">
+              <a href="/small-loans/form.html" class="xlarge button tertiary" onclick="FM.form.cta('Button', 'Testimonials')">
+                Request A Quote </a>
+            </p>
+          </div>
+        </div>                          
+      </div>
+    </div>
+    <!-- // END Testimonials -->
+  </div>
+  <!-- END CONTENT BAND -->
+  {{> footer-landing}} 
+
+
+

@@ -1,0 +1,44 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
+<g id="Outline_Icons">
+	<g>
+		
+			<polyline fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			599.25,306.75 446.25,408.75 318.75,408.75 		"/>
+		
+			<polyline fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			599.25,357.75 446.25,459.75 318.75,459.75 		"/>
+		
+			<polyline fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			599.25,408.75 446.25,510.75 318.75,510.75 		"/>
+		
+			<polyline fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			599.25,459.75 446.25,561.75 318.75,561.75 		"/>
+		
+			<polygon fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			318.75,587.25 140.25,587.25 140.25,345 293.25,230.25 471.75,230.25 318.75,345 		"/>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="140.25" y1="408.75" x2="12.75" y2="408.75"/>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="140.25" y1="459.75" x2="12.75" y2="459.75"/>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="140.25" y1="510.75" x2="12.75" y2="510.75"/>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="140.25" y1="561.75" x2="12.75" y2="561.75"/>
+		<polyline fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linejoin="round" stroke-miterlimit="10" points="438.6,255.75 
+			599.25,255.75 446.25,357.75 318.75,357.75 		"/>
+		<polyline fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linejoin="round" stroke-miterlimit="10" points="140.25,357.75 
+			12.75,357.75 165.75,255.75 260.1,255.75 		"/>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="229.5" y1="523.5" x2="229.5" y2="549"/>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="229.5" y1="345" x2="229.5" y2="370.5"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M191.25,485.25c0,20.4,17.85,38.25,38.25,38.25s38.25-17.85,38.25-38.25S249.9,447,229.5,447s-38.25-17.85-38.25-38.25
+			c0-20.4,17.85-38.25,38.25-38.25s38.25,17.85,38.25,38.25"/>
+	</g>
+</g>
+<g id="Invisible_Shape">
+	<rect y="90" fill="none" width="612" height="612"/>
+</g>
+</svg>

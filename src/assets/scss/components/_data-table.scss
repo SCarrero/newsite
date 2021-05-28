@@ -1,0 +1,164 @@
+$divider-color: map-get($colors, navy5);
+// fix for table hover striping affecting header rows
+table.hover:not(.unstriped) {
+  thead {
+    tr:nth-of-type(n):hover    {
+      background-color: $table-head-row-hover;
+    }
+  }
+}
+table {
+  border-collapse:separate; 
+  border-spacing: 0; 
+  border-bottom: 2px solid $divider-color;
+  td, th {  
+    border: $table-border; 
+  }
+}
+thead th,
+tbody th,
+tfoot th {
+  font-weight: $global-weight-medium;
+}
+thead,
+tbody {
+  .row-subheader th {
+    font-weight: $global-weight-normal;
+  }
+}
+tbody th:not([class]) {
+  text-align: #{$global-left};
+}
+
+thead[class] th:not([class]) {
+  text-align: inherit;
+}
+
+table tfoot td {
+  font-weight: inherit;
+}
+table.stack {
+  &.show-header{
+    @include breakpoint(medium down) {
+      thead {
+        display: block;
+        th:not(:first-child ) {
+          display: none;
+        }
+      }  
+    }
+  }
+  tfoot,
+  tbody  {
+    @include breakpoint(medium down) {
+      display: block;
+    }
+  }
+}
+table.large-stack {
+  @include breakpoint(large down) {
+    @include table-stack;
+    .show-header {
+      thead {
+        display: block;
+        th {
+          display: none;
+        }
+        th:first-child {
+          display: block;
+        }
+      }  
+    }
+    tfoot,
+    tbody {
+      display: block;
+    }    
+  }
+}
+.table-scroll {  
+  .full.stack {
+    @include breakpoint(medium down){
+      width: 100%;
+    } 
+  }
+  .full.large-stack {
+    @include breakpoint(large down){
+      width: 100%;
+    } 
+  }
+}
+.stack .row-divided {
+  tr::before {
+    @include breakpoint(medium down){
+      content: "";
+      display: block;
+      width: 100%;
+      border-bottom: 2px solid 2px solid;
+    }    
+  }  
+}
+.large-stack .row-divided {
+  tr::before {
+    @include breakpoint(large down){
+      content: "";
+      display: block;
+      border-bottom: 2px solid 2px solid;
+    }
+  }
+}
+.research-table {
+  border-collapse:collapse;  
+  border-bottom-width: 0;
+  .reduce {
+    line-height: 1.1;
+    display: inline-block;
+  }
+  
+  thead tr th {
+    font-weight: $global-weight-normal;
+  }
+  strong {
+    font-weight: $global-weight-medium;
+  }
+  tbody {
+    tr:nth-child(n) {  
+      background: #fff;
+      td {
+        border: 1px solid darken($light-gray, 5%);
+      }
+    }
+  }
+}
+tr.row-subheader {
+  th, td {
+    background: map-get($colors, blue5);
+    color: $white;
+  }
+  &:hover {
+    th, td {
+      background: lighten(map-get($colors, blue5), 3%);
+    }
+  }
+}
+.vertical-middle { vertical-align: middle; } 
+.vertical-top { vertical-align: top; } 
+.vertical-baseline {   vertical-align: baseline; } 
+.vertical-bottom {   vertical-align: bottom; }
+.overflow-horizontal { overflow-x: auto; }
+
+
+table:not(.research-table) {
+  tbody tr:not(.row-subheader):not(:first-child):hover td,
+  tbody tr:not(.row-subheader):not(:first-child):hover th,
+  tfoot tr:hover td,
+  tfoot tr:hover th {
+    border-top: 1px solid $dark-gray;
+  }
+  
+  tbody tr:not(.row-subheader):hover td,
+  tbody tr:not(.row-subheader):hover th,
+  tfoot tr:not(:last-child):hover td,
+  tfoot tr:not(:last-child):hover th {
+    border-bottom: 1px solid $dark-gray;
+  }
+}

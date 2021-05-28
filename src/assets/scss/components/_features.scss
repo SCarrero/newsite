@@ -1,0 +1,41 @@
+.release-featured,
+.research-featured,
+.investors-featured {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 4rem;
+  p + p {
+    margin-top: $global-margin * 1.5;
+  }
+}
+.tall-content-band {
+  padding-top: rem-calc(30);
+  padding-bottom: rem-calc(30);
+  @include breakpoint(large) {
+    padding-top: rem-calc(130);
+    padding-bottom: rem-calc(130);
+  }
+  &.heading {
+    @include breakpoint(large) {
+      padding-top: rem-calc(110);
+    }
+  }
+}
+
+.medium-content-band {
+  padding-top: rem-calc(20);
+  padding-bottom: rem-calc(20);
+  @include breakpoint(large) {
+    padding-top: rem-calc(40);
+    padding-bottom: rem-calc(40);
+  }
+  @include breakpoint(xlarge) {
+    padding-top: rem-calc(55);
+    padding-bottom: rem-calc(55);
+  }
+  @include breakpoint(xxlarge) {
+    padding-top: rem-calc(80);
+    padding-bottom: rem-calc(80);
+  }
+}

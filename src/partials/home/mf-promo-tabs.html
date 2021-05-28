@@ -1,0 +1,119 @@
+<style>
+.home-tabs .tabs { 
+  background: none;
+}
+.home-tabs .tabs-title {
+  font-size: 1rem;
+  font-size: calc(16px +  4 * (100vw - 320px) / 1180);
+  border-color: rgba(255,255,255,0.2);
+  opacity: 0.8;
+  border-right-width: 0;
+  background: rgba(255,255,255,0.05);
+}
+.home-tabs .tabs.vertical .tabs-title {
+  border-right-width: 8px;
+}
+@media screen and (min-width: 93.75em) {
+  .home-tabs .tabs-title {
+    font-size: 1.25rem; 
+  } 
+}
+.home-tabs .tabs-title:hover, 
+.home-tabs .tabs-title:focus {
+  border-color: rgba(255, 183, 24, 0.9); 
+  background: rgba(255,255,255,0.07);
+}
+.home-tabs .tabs-title.is-active {
+  border-color: #ffb718; 
+  opacity: 1;
+  background: rgba(255,255,255,0.1);
+}
+.home-tabs .tabs-title > a {
+  text-transform: none;
+  padding: 0.9em 0.9em 1em 1.1em;
+}
+.home-tabs .tabs-title > a,
+.home-tabs .tabs-title > a:focus, 
+.home-tabs .tabs-title > a:hover,
+.home-tabs .tabs-title > a[aria-selected='true'] {
+  color: white; 
+}
+@media screen and (min-width: 61.25em) {
+  .home-tabs .tabs-title.edge-left-large {
+    border-left-width: 8px;
+    border-right-width: 0;
+  } 
+}
+
+</style>
+
+<div class="background-primary background-stripes clearfix">
+  <div class="content-band even tab-wrapper home-tabs row-wrapper" data-equalizer data-equalize-on="large">
+    <div class="row gutter-top-large gutter-bottom-large">
+      <div class="large-3 column large-push-9">
+        <ul class="tabs vertical" id="vert-tabs-home" data-tabs data-equalizer-watch data-match-height="true">
+          <li class="tabs-title edge-left-large is-active"><a class="weight-medium" href="#promo1" aria-selected="true">Innovation Keeps NY Housing Community Affordable</a></li>
+          <li class="tabs-title edge-left-large"><a class="weight-medium" href="#promo2">David Brickman and John Cannon Named in Most Important Figures List</a></li>
+          <li class="tabs-title edge-left-large"><a class="weight-medium" href="#promo3">First Half of 2017 in Review: Growth Continued</a></li>
+        </ul>
+      </div>
+      <div class="large-9 column large-pull-3">
+        <div class="gutter-top hide-for-large"></div>
+        <div class="tabs-content" data-tabs-content="vert-tabs-home" data-equalizer-watch>
+          <div class="tabs-panel is-active" id="promo1">
+            <div class="row">
+              <div class="column large-6">
+                <img class="full" src="/images/promo-temp.jpg">
+                <div class="gutter-bottom hide-for-large"></div>
+              </div>
+              <div class="column large-6">
+                <div>
+                  <h2>Innovation Keeps NY Housing Community Affordable</h2>
+                  <p>Financial innovation is as basic to preserving affordable housing today as wiring, plumbing and bricks. This is especially true when one of the few affordable apartments left in pricey Westchester County, New York needs $50.5 million in improvements but the partnership has a limited amount of capital ($20,000) and capacity to take on additional liabilities.</p>
+                  <a href="#" class="button hollow">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tabs-panel" id="promo2"><div class="row">
+              <div class="column medium-5 large-6 xlarge-5">
+                <div class="row">
+                  <div class="column small-6 medium-6">
+                    <img class="full" src="https://mf.freddiemac.com/images/authors/EP_David_Brickman-80.jpg" alt="EVP David Brickman">
+                  </div>
+                  <div class="column small-6 medium-6 end">
+                    <img class="full" src="https://mf.freddiemac.com/images/staff/John_Cannon.jpg" alt="SVP John Cannon">
+                  </div>
+                </div>
+                <div class="gutter-bottom hide-for-large"></div>
+              </div>
+              <div class="column medium-7 large-6 xlarge-7">
+                <div>
+                  <h2>David Brickman and John Cannon Named in Most Important Figures List</h2>
+                  <p>Freddie Mac Multifamily EVP David Brickman and SVP John Cannon were recently recognized for their industry leadership by being ranked in the Commercial Observer magazine's fourth annual 50 Most Important People in Commercial Real Estate Finance list.</p>
+                  <a href="#" class="button hollow">Read More</a>
+                </div>
+              </div>
+            </div>            
+          </div>
+          <div class="tabs-panel" id="promo3">
+            <div class="row">
+              <div class="column medium-8 large-5 end">
+                <a tabindex="0" class="video-modal widescreen-video overlay block" aria-haspopup="true" href="https://www.youtube.com/watch?v=GWPpHH0MyGE" data-src="https://www.youtube-nocookie.com/embed/GWPpHH0MyGE?rel=0&amp;wmode=transparent"><span class="video-length" aria-label="video length in minutes">2:41</span><img alt="July Insight video" src="https://mf.freddiemac.com/images/research/Steve-Sara.jpg"></a>
+                <div class="gutter-bottom hide-for-large"></div>
+              </div>
+              <div class="column medium-12 large-7">
+                <div>
+                  <h2>First Half of 2017 in Review: Growth Continued</h2>
+                  <p>•Multifamily performance, by most measures, remained near the historical average across the nation and in most markets in the first half of 2017. </p>
+                  <a href="#" class="button hollow">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+<div class="hero-edge"> </div> 

@@ -1,0 +1,53 @@
+
+<div class="row-wrapper gutter-top gutter-bottom">
+  <div class="row">
+    <div class="column small-centered-only no-padding">
+      
+        <div class="hero-lottie show-for-large" id="hero-lottie""></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.0/lottie.js"></script>
+        <script>
+          var anim;
+          var elem = document.getElementById('hero-lottie')
+          var animData = {
+            container: elem,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            rendererSettings: {
+              progressiveLoad:false,
+              preserveAspectRatio: 'xMaxYMax meet',
+              viewBoxOnly: true,
+              viewBoxSize: '0 0 1265 243',
+            },
+            path: '/js/vendor/optigotogether-hero.json',
+            name: 'myHeroAnimation',
+          };
+          anim = bodymovin.loadAnimation(animData);
+        </script>
+        <div class="hero-lottie-mobile hide-for-large" id="hero-lottie-mobile">
+        <!--<lottie-player class="lottie-svg" src="js/data.json" background="transparent"  speed="1"  style="width: 100%; height: 100%;" loop autoplay></lottie-player>-->
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.0/lottie.js"></script>
+        <script>
+          var anim2;
+          var elem = document.getElementById('hero-lottie-mobile')
+          var animData = {
+            container: elem,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            rendererSettings: {
+              progressiveLoad:false,
+              preserveAspectRatio: 'xMidYMin meet',
+              viewBoxOnly: true,
+              viewBoxSize: '0 0 500 500'
+            },
+            path: '/js/vendor/hero-mobile-data.json',
+            name: 'myHeroAnimation',
+          };
+          anim2 = bodymovin.loadAnimation(animData);
+        </script>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,222 @@
+---
+title: "Veterans Village"
+layout: default
+description: "Veterans Village"
+image:
+url: https://mf.freddiemac.com/veterans-village/index.html
+stylesheet: "/ss/app_landing.css"
+javascript: ['/js/vendor/gsap.min.js','/js/vendor/ScrollTrigger.min.js','/js/custom/veterans_scroll_interactions_g3.js']
+---
+  <a href="/index.html">
+    <div class="logo-containter vets">
+      <div href="/index.html" class="logo-content vets">
+        {{> reverse-logo}}
+      </div>
+    </div>
+  </a>
+  <div id="intro">     
+    <a id="deactiveScene" aria-label="Launch Veterans Village Video" class="video-modal widescreen-video video-cursor-play" href="https://www.youtube.com/watch?v=AlI4Y675mIk"
+      data-src="//www.youtube-nocookie.com/embed/AlI4Y675mIk?rel=0&amp;wmode=transparent;autoplay;" onclick="FM.form.cta('video button', 'Homepage Hero')">
+      <div class="background-gray landing-hero vets-village-hero">
+        <div class="vets-row-container text-center landing-band">
+          
+          <div class="row">
+            <div class="column medium-offset-1 medium-11 text-left">
+              <div class="callout small-to-large"></div>
+              <div class="callout show-for-xlarge"></div>
+              <h1 class="text-left position-relative">Home<br>
+                for the<br> Brave <span class="show-for-large hero-play-wrapper">
+                  {{> play-button}}
+                </span></h1>
+              <div class="hide-for-large">
+                {{> play-button}}
+              </div>
+              <div class="callout small"></div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div> 
+  
+
+  <div id="main">
+    <div class="vets-row-container landing-band">
+      <div class="row">
+        <div class="large-8 large-offset-3 column">
+          <div id="pinHero2">
+            <h2 class="header2 text-flex-36-60">The challenge is massive, but the mission is simple.</h2>
+            <p class="text-static-16-18 blurb">Veterans Village was founded to provide reliable housing for those who have served our
+              country. With help from Freddie Mac and Berkadia, they have helped tens of thousands of veterans and their families
+              find a place to <span class="no-wrap">call home.</span></p>
+          </div>          
+          <div class="callout small-to-large"></div>
+        </div>
+      </div>
+    </div>
+    <div class="vets-row-wrapper custom-left challenge" id="sceneOne">
+      <div class="vets-row-container landing-band" style="padding-bottom:0;">
+        <div class="row">
+          <!--20px-->
+          <div class="gutter-top small-to-large no-margin"></div>
+          <div class="column large-7">
+            <div class="gutter-right-large gutter-bottom">
+              <a aria-label="Launch the Franklin's Video" class="video-modal widescreen-video" href="https://www.youtube.com/watch?v=2vw74Mj8aKU"
+        data-src="//www.youtube-nocookie.com/embed/2vw74Mj8aKU?rel=0&amp;wmode=transparent;autoplay;" onclick="FM.form.cta('link','Franklins image')">
+                <div class="feature-wrap">
+                  <img class="no-border" src="/veterans-village/images/franklins_story.jpg" alt="The Franklins">
+                </div>
+              </a> 
+            </div>
+          </div>
+          <div class="column large-5">
+            <div class="gutter-left-large">         
+              <h2 class="header2 text-flex-36-60">
+                A New Start
+              </h2>
+              <p class="text-static-16-18 blurb">
+                Home is more than a roof over your head—it’s a place where you feel safe, supported, and cared for. At Veterans
+                Village, residents are supported holistically, with access to an on-site food pantry, therapy, job counseling, a
+                medical clinic <span class="no-wrap">and more.</span>
+              </p>
+              <a href="https://www.youtube.com/watch?v=2vw74Mj8aKU"
+        data-src="//www.youtube-nocookie.com/embed/2vw74Mj8aKU?rel=0&amp;wmode=transparent;autoplay;" class="video-modal widescreen-video cta-play text-flex-22-30" onclick="FM.form.cta('link','Franklins story')">
+                <div class="cta-wrapper">
+                  See the Franklins' Story
+                  {{> content-play}}
+                </div>
+              </a>              
+            </div>
+            <div class="callout show-for-large"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="gallery" class="landing-hero vets-gallery-banner">
+      <div class="row">
+        <div class="column medium-8 large-10 medium-centered">
+          <div class="gallery-content-wrapper">
+            <div class="gallery-cta-wrap">
+              
+                <a href="/veterans-village/gallery.html" class="accent-white text-flex-22-30 weight-bold" id="gallery-trigger" onclick="FM.form.cta('link', 'Gallery Hero')"><span class="gallery-shadow">View Gallery</span> {{> icon-view-gallery}}</a> 
+              
+              
+            </div>
+          </div>
+          <div class="gallery-caption-wrap show-for-medium">
+            <p class="text-left blurb-gallery">
+              "When you're on that side of the property line you are a homeless veteran. When you are on this side, you never have to be <span class="no-wrap">homeless again."</span><br>
+              <span class="blurb-caption weight-light"><em>Arnold Stalk, Founder Veterans Village</em></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row hide-for-medium">
+      <div class="column">
+        <div class="callout">
+          <p class="blurb-gallery text-left" style="color: #777874;font-size: 1.5rem;">
+            "When you're on that side of the property line you are a homeless veteran. When you are on this side, you never
+            have to <span class="no-wrap">be homeless again."</span><br>
+            <span class="blurb-caption weight-light"><em>Arnold Stalk, Founder Veterans Village</em></span>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="vets-row-wrapper custom-right">
+      <div class="vets-row-container landing-band">
+        <!--20px-->
+        <div class="gutter-top small-to-large no-margin"></div>
+        <div class="gutter-top small-to-large no-margin"></div>
+        <div class="row">
+          <div class="column large-7 large-push-5">
+            <div class="gutter-bottom">
+              <a aria-label="Launch the video about Multifamily's mission" class="video-modal widescreen-video" href="https://www.youtube.com/watch?v=8ery74YFDUA"
+        data-src="//www.youtube-nocookie.com/embed/8ery74YFDUA?rel=0&amp;wmode=transparent;autoplay;" onclick="FM.form.cta('link', 'Our Mission Image')">
+                <div class="feature-wrap">
+                  <img class="no-border" src="/veterans-village/images/our_mission.jpg" alt="Our Mission">
+                </div>
+              </a>            
+            </div>
+          </div>
+          <div class="column large-5 large-pull-7">
+            <div class="gutter-right-large">
+              <h2 class="header2 text-flex-36-60">
+                Our Mission
+              </h2>
+              <p class="text-static-16-18 blurb">
+                With its Optigo network, Freddie Mac Multifamily helps lenders and borrowers—like Veterans Village—make home possible by offering flexible financing options and innovative loan solutions. We are proud of the work we do to provide opportunities for communities and families across <span class="no-wrap">the country.</span>
+              </p>
+              <a href="https://www.youtube.com/watch?v=8ery74YFDUA"
+                data-src="//www.youtube-nocookie.com/embed/8ery74YFDUA?rel=0&amp;wmode=transparent;autoplay;"
+                class="video-modal widescreen-video cta-play text-flex-22-30" onclick="FM.form.cta('link', 'Our Mission')">
+                <div class="cta-wrapper">
+                  See How it's Done
+                  {{> content-play}}            
+                </div>
+              </a>
+              <ul class="no-bullet">
+                <li>
+                  <a class="weight-bold cta-conversion" href="/about/our-mission.html" onclick="FM.form.cta('link', 'Our Mission page')">
+                    Multifamily Mission &nbsp;&nbsp;&nbsp;<span>{{> animated-arrow}}</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="weight-bold offsite cta-conversion" href="https://www.linkedin.com/showcase/freddie-mac-multifamily/" onclick="FM.form.cta('link', 'Our Mission LinkedIn')">
+                    Multifamily LinkedIn &nbsp;&nbsp;<span>{{> animated-arrow}}</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="callout show-for-large"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="background-white">
+      <div class="vets-row-container landing-band" style="padding-top: 0;">
+        <div class="row">
+          <div class="column large-3">
+            <div class="hide-for-large text-center">
+              <img class="no-border" src="/veterans-village/images/share-village-logo.png" alt="Share Village Logo">         
+            </div>
+            <div class="show-for-large text-left">
+              <img class="no-border share-village-logo" src="/veterans-village/images/share-village-logo.png" alt="Share Village Logo">         
+            </div>
+          </div>
+          <div class="column large-offset-1 large-7 end">
+            <div class="callout small-to-large hide-for-large"></div>
+            <div class="callout small-to-large hide-for-large"></div>
+            <h2 class="header2 text-flex-36-60" style="padding-top: 0;">Veterans Village</h2>
+            <p class="text-static-16-18 blurb">
+            is a part of Share Village, a non-profit working to meet the wider issue of homelessness in America. Learn more about <a href="https://sharelasvegas.org/" class="offsite" style="color:#777874;text-decoration: underline;" onclick="FM.form.cta('link', 'Share Village description')"><strong>Share Village's Mission </strong></a> and find out how you can support their cause
+            </p>
+            <ul class="no-bullet">
+              <li>
+                <a href="https://sharelasvegas.org/" class="weight-bold offsite cta-conversion" onclick="FM.form.cta('link', 'Share Village')">
+                  Learn More &nbsp;&nbsp;<span class="show-for-sr">about Share Village's mission</span><span>{{> animated-arrow}}</span>
+                </a>
+              </li>
+            </ul>
+            <div class="callout small-to-large"></div>
+            <div class="callout small-to-large"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--For in page trigger, place gallery here -->
+ <div class="vets-gray">{{>vets-footer}}</div>  
+<div class="vv-edge"></div>
+
+
+ 
+
+
+
+
+
+		
+

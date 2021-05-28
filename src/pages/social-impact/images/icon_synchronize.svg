@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="57px" height="43px" viewBox="0 0 57 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_synchronize</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Social-Impact-Investing-v3" transform="translate(-540.000000, -3355.000000)">
+            <g id="Products" transform="translate(0.000000, 2991.000000)">
+                <g id="Box-2" transform="translate(430.000000, 336.000000)">
+                    <g id="icon_synchronize" transform="translate(111.000000, 22.000000)">
+                        <g id="Outline_Icons_1_" transform="translate(0.846154, 7.721154)" stroke="#88BD45" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                            <g id="New_icons_1_">
+                                <g id="Group">
+                                    <path d="M34.6746795,39.2580128 L14.0496795,39.2580128 C10.2523878,39.2580128 7.17467949,36.1825962 7.17467949,32.3830128 L7.17467949,14.0496795" id="Shape"></path>
+                                    <path d="M18.6330128,0.299679487 L39.2580128,0.299679487 C43.0530128,0.299679487 46.1330128,3.37967949 46.1330128,7.17467949 L46.1330128,25.5080128" id="Shape"></path>
+                                    <polyline id="Shape" points="0.299679487 18.6330128 7.17467949 14.0496795 14.0496795 18.6330128"></polyline>
+                                    <polyline id="Shape" points="39.2580128 20.9246795 46.1330128 25.5080128 53.0080128 20.9246795"></polyline>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Invisible_Shape">
+                            <rect id="Rectangle-path" x="0" y="0" width="55" height="55"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

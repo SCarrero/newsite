@@ -1,34 +1,85 @@
-﻿<!doctype html>
+﻿{{!-- This is the default layout --}}
 
+<!doctype html>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{> metadata}}
-    {{> metadata-static}}
-    <link rel="stylesheet" href="https://use.typekit.net/izj2zwr.css">  
-    {{#each (array "" stylesheet)}}
-    <link rel="stylesheet" href="{{.}}" />
-    {{/each}}  
-  </head>  
-  <body>
+    {{!-- only output url if url exists --}}
+    {{#if url}}
+    <meta property="og:url" content="{{ url }}" />
+    {{/if}}
+    {{!-- only output author if author exists --}}
+    {{#if author}}
+    <meta name="author" content="{{ author }}" />
+    {{/if}}
+    <meta name="theme-color" content="#88BD45">
+    <script>document.documentElement.classList.remove("no-js");
+    function preferReducedMotion() {
+      const query = '(prefers-reduced-motion: no-preference)';
+      const mediaQueryList = window.matchMedia(query);
+      const prefersReducedMotion = !mediaQueryList.matches;
+      return prefersReducedMotion;
+    }
+    </script>
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    {{>metadata}}
+    {{>metadata-static}}
 
-  {{> body}} 
-             
-  {{> main-footer}}      
-         
-  {{> js-footer}}
-  {{!-- {{if you enable the webpack option and the pieces, swap to js-footer-pack}} --}}
+    <link rel="stylesheet" href="/ss/app.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/xnm7jtg.css">
+     {{!-- output link to extra stylesheet, if one is defined --}}
+    
+     {{#each (array "" stylesheet)}}
+    <link rel="stylesheet" href="{{.}}" />
+    {{/each}}   
+    
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KZFS9PD');</script>
+    <!-- End Google Tag Manager -->
+    
+  </head> 
+ {{#if bodyclass}}
+    <body class="{{ bodyclass }}">
+  {{else}}
+    <body>
+ {{/if}}  
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KZFS9PD"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe> </noscript>
+  <!-- End Google Tag Manager --> 
+ 
+  <div class="show-for-print">https://MF.FreddieMac.com/</div> 
+  
+  {{> body}}
+    
+   
+  {{!-- output link to extra or optional javascript file, if one is defined --}}
+  
+  {{> main-footer-js }}
 
   {{#each (array "" javascript)}}
-  <script src="{{ this }}"></script>
-  {{/each}} 
-  {{#if onload}}
-  <script type="text/javascript">
-    window.onload = {{ onload }};
-  </script>
+    <script src="{{ this }}"></script>
+  {{/each}}  
+  
+  {{#if onload }}
+    <script type="text/javascript">
+    window.onload = {{onload}};
+    </script>
   {{/if}}
+
+
+
+
   </body>
+
 </html>

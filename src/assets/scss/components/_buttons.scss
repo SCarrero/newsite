@@ -1,4 +1,4 @@
-/// Expands a button to make it full-width.
+//// Expands a button to make it full-width.
 /// @param {Boolean} $expand [true] - Set to `true` to enable the expand behavior. Set to `false` to reverse this behavior.
 @mixin button-expand($expand: true) {
   @if $expand {
@@ -24,11 +24,13 @@
 }
 
 a.button { // sass-lint:disable-line no-qualifying-elements
+  text-decoration: none !important;
   &:hover,
   &:focus {
     text-decoration: none;
   }
 }
+
 a.button {
   color: $button-color;
 }
@@ -37,7 +39,7 @@ a.button {
   display: inline-block;
   vertical-align: middle;
   margin: $button-margin;
-  text-transform: uppercase;
+  text-transform: uppercase;  
   @if (type-of($button-padding) == 'map') {
     @each $size, $padding in $button-padding {
       @include breakpoint($size) {
@@ -54,11 +56,12 @@ a.button {
   font-size: map-get($button-sizes, default);
   background: map-get($button-palette, default);
   color: $button-color;
-  font-weight: $button-font-weight;
+  font-weight: $global-weight-medium;
   -webkit-appearance: none; // sass-lint:disable-line no-vendor-prefixes
   line-height: 1;
   text-align: center;
   cursor: pointer;
+  letter-spacing: rem-calc(1px);
   // Sizes
   @each $size, $value in map-remove($button-sizes, default) {
     &.#{$size} {
@@ -75,9 +78,29 @@ a.button {
       }
     }
   }
+  &.square {
+    border-radius: 0;
+  }
+  &.icon-only {
+    display: inline-flex;
+    @include flex-align(center, middle);
+    padding: rem-calc(0 10);
+    min-height: rem-calc(38);
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+  //small
+  &.small {
+    padding: rem-calc(11 12 10);
+  }
   //expanded
   &.expanded { 
     @include button-expand; 
+  }
+  &:not([disabled]) {
+    opacity: 1 !important;
   }
   // Disabled state
   &[disabled] {
@@ -85,6 +108,26 @@ a.button {
   }
 }
 
-.button-group .button {
-  border-radius: 0;
+.button ~ .button {
+  margin-left: 2.5rem;
+}
+.button > .filemarker {
+  padding-left: 0.25em;
+  font-size: 0.9em;
+}
+
+.input-group a, 
+.input-group button, 
+.input-group input, 
+.input-group label {
+  height: rem-calc(41.5);
+}    
+
+@media print {
+  .button {
+    border-width: 0px !important;
+  }
+  .filemarker {
+    display: none;
+  }
 }

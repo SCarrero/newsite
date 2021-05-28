@@ -1,0 +1,39 @@
+<div class="hero-blended {{heroclass}}">
+  {{> breadcrumbs}}
+  <div class="row">
+    <div class="column hero-blended-content">
+      {{#if herodate}}<div class="intro"><span class="weight-medium">Multifamily</span> | {{ herodate }}</div>{{/if}}
+      
+      <h1 class="hero-title">{{{ title }}}</h1>
+      <div class="gutter-top media-object stack-for-small align-middle{{#unless heroavatarA}} collapse{{/unless}}">
+      {{#if heroavatarA}}
+        <div class="media-object-section">
+          <figure class="avatar no-margin">
+            <div>
+              <img src="{{ heroavatarA }}" alt="{{ heroavataraltA }}" />
+            </div>
+            {{#if heroavatarB}}
+            <div>
+              <img src="{{ heroavatarB }}" alt="{{ heroavataraltB }}" />
+            </div>
+            {{/if}}         
+          </figure>
+        </div>
+        {{/if}}
+        <div class="media-object-section main-section">
+          {{#if heroarticlebyA}}
+          <div class="reduce">
+            <div>By</div>
+            <div class="half-margin-bottom">{{{heroarticlebyA }}}</div>
+            {{#if heroarticlebyB}}
+            <div>{{{ heroarticlebyB }}}</div>
+            {{/if}}
+          </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{> share-widget}}
+</div>
+

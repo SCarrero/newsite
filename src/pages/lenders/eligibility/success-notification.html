@@ -1,0 +1,138 @@
+---
+layout: default
+title: Notification of Interest Form Submission Success 
+description: Lender Eligibility
+url:  https://mf.freddiemac.com/lenders/eligibility/success-notification.html
+image: 
+stylesheet: /ss/app_landing.css
+bodyclass: background-primary
+onload:
+---
+<style>
+  .faux-reveal {
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    margin-left: 0;
+    border: 0;
+    border-radius: 0;
+    padding-top: 2.5rem;
+    padding-top: calc(40px +  54 * (100vw - 320px)/1180); 
+  } 
+  @media screen and (min-width: 93.75em) {
+    .faux-reveal {
+      padding-top: rem-cal(94); 
+    } 
+  }
+  .modal-header {
+    position: relative; 
+  }
+  .close-button {
+    font-size: calc(20px + 16 * (100vw - 320px)/1180);
+  }
+  @media screen and (min-width: 79.375em) {
+    close-button {
+      font-size: 2.25rem; 
+    }
+  }
+</style>
+<div class="landing-band faux-reveal">
+  <div class="row-container-narrow">
+    <div class="row">
+      <div class="column">
+        <div class="modal-header">
+          <h1>Notification of Interest Form</h1>
+          <p class="text-right">
+            <a class="close-button" aria-label="close form" href="/lenders/eligibility/">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.39 167.39">
+                <path fill="#fff" d="M83.7 0a83.7 83.7 0 1 0 83.7 83.7A83.7 83.7 0 0 0 83.7 0zm42.67 127.06a6.13 6.13 0 0 1-8.67-.07l-34-34.55L49.69 127a6.13 6.13 0 1 1-8.74-8.6L75.1 83.7 41 49a6.13 6.13 0 1 1 8.74-8.6L83.7 75l34-34.55a6.13 6.13 0 1 1 8.74 8.6L92.29 83.7l34.14 34.69a6.13 6.13 0 0 1-.06 8.67z"/>
+              </svg>
+            </a>
+          </p>         
+        </div>
+        <div class="callout xlarge background-concrete">
+          <div class="row">
+            <div class="column large-10 medium-11 medium-centered">
+              <h1 class="text-center accent-green">
+                <img alt="Success" src="/images/sbl_thumbs-up-2.svg" class="gutter-right gutter-bottom"><br class="hide-for-medium"><span class="enlarge">Success</span>
+              </h1>
+              <h3 style="line-height:1.75" class="text-center accent-gray gutter-bottom">Thank you for submitting your notification of interest. A Freddie Mac representative will respond to <span class="no-wrap">your request.</span></p>
+            </div>
+          </div>
+              <dl>
+                <dt>Program Type</dt>
+                  <dd>1. %convLender%</dd>
+                  <dd>2. %seniorLender%</dd>
+                  <dd>3. %tahLender%</dd>
+                  <dd>4. %sblLender%</dd>
+                <dt>Institution Name</dt>
+                  <dd>%Institution Name%</dd>
+                <dt>Institution URL</dt>
+                  <dd>%institution-url%</dd>
+                <dt>Questions</dt>
+                  <dd>%Questions%</dd>
+                <dt>Headquarters Address</dt>
+                  <dd>%address0%</dd>
+                  <dd>%address1%</dd>
+                  <dd>%city%</dd>
+                  <dd>%state%</dd>
+                  <dd>%zipcode%</dd>
+                  <dd>%zipcodeExt%</dd>
+                  <dd>%different-address%</dd>
+                <dt>Institution Gap Net Worth</dt>
+                  <dd>%netWorth%</dd>
+                <dt>Length of Time in Multifamily Business</dt>
+                  <dd>%years-in-business%</dd>
+                  <dd>%months-in-business%</dd>
+                <dt>Institution Type</dt>
+                  <dd>%domesticBank%</dd>
+                  <dd>%domesticBank%</dd>
+                  <dd>%CDFI%</dd>
+                  <dd>%mortgageBank%</dd>
+                  <dd>%creditUnion%</dd>
+                  <dd>%HFA%</dd>
+                  <dd>%other%</dd>
+                <dt>TIN/EIN</dt>
+                  <dd>%TIN-EIN%</dd>
+                <dt>HUD / FHA Mortgage Number</dt>
+                  <dd>%hudNumber%</dd>
+                <dt>Existing Freddie Mac Relationship</dt>
+                  <dd>%existingSellerServicer%</dd>
+                  <dd>%otherExistingRelationship0%</dd>
+                  <dd>%otherExistingRelationship1%</dd>
+                <dt>Diversity Ownership</dt>
+                  <dd>%asianAmerican%</dd>
+                  <dd>%blackAfricanAmerican%</dd>
+                  <dd>%communityLending%</dd>
+                  <dd>%disabledOwned%</dd>
+                  <dd>%LGBTQ%</dd>
+                  <dd>%hispanic%</dd>
+                  <dd>%nativeAmerican%</dd>
+                  <dd>%womenOwned%</dd>
+                  <dd>%noAnswer%</dd>
+                  <dd>%na%</dd>
+                <dt>Point of Contact</dt>
+                  <dd>%fName%</dd>
+                  <dd>%lName%</dd>
+                  <dd>%jobTitle%</dd>
+                  <dd>%Email%</dd>
+                  <dd>%phone%</dd>
+                  <dd>%extension%</dd>
+                <dt>Additional Comments</dt>
+                  <dd>%comments%</dd>
+                <dt>Confirmation</dt>
+                  <dd>%confirmation%</dd>
+                  <dd>%sustainability-measures%</dd>
+              </dl>
+              <p>&nbsp;</p>
+              <p>Print this page if you want a copy of your feedback.</p>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

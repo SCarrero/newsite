@@ -76,7 +76,7 @@ function resetPages(done) {
 // Generate a style guide from the Markdown content and HTML template in styleguide/
 function styleGuide1(done){
   return sherpa('src/styleguide/index.md', {
-    output: PATHS.dist + '/special/styleguide/index.html',
+    output: PATHS.dist + '/special/styleguide/multifamily.html',
     template: 'src/styleguide/template.html'
   }, done );
 }

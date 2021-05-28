@@ -1,0 +1,87 @@
+﻿{ "page": [
+   {
+      "name": "Post-MVP Global Styles (Corp only)",
+      "url" : "http://prototype.freddiemac.com/special/styleguide/styleguide_fm.html"
+   },
+   {
+      "name": "Pre-MVP Global Styles (for CM and MF)",
+      "url" : "http://www.freddiemac.com/special/styleguide/styleguide_old.html"
+   },
+   {
+      "name": "Corporate-Specific Styles",
+      "url" : "http://www.freddiemac.com/special/styleguide/styleguide_corp.html"
+   },
+   {
+      "name": "Capital Market-Specific Styles",
+      "url" : "http://www.freddiemac.com/special/styleguide/styleguide_capital.html"
+   },
+   {
+      "name": "Multifamily-Specific Styles",
+      "url" : "/special/styleguide/multifamily.html"
+   },
+   {
+      "name": "Pre-MVP Corporate/Marketing Page Styles (which are not part of regular template)",
+      "url" : "http://www.freddiemac.com/special/styleguide/landing.html"
+   }, 
+   {
+      "name": "Multifamily Landing/Marketing Page Styles (which are not part of regular template)",
+      "url" : "https://mf.freddiemac.com/special/styleguide/landing.html"
+   }, 
+   {
+      "name": "Foundation 12-column Grid (Not applicable for My Home)",
+      "url" : "http://www.freddiemac.com/special/styleguide/grid-rows.html"
+   },
+   {
+      "name": "Foundation XY Grid (Only used on My Home and Corporate Post-MVP)",
+      "url": "http://www.freddiemac.com/special/styleguide/grid.html"
+   },
+   {
+      "name": "Motion-UI Examples (Foundation's library for CSS Transitions & Animation)",
+      "url" : "http://www.freddiemac.com/special/styleguide/animations/"
+   },
+   {
+      "name": "Foundation Orbit (Carousels)",
+      "url" : "http://www.freddiemac.com/special/styleguide/orbit.html"
+   },
+   {
+      "name": "Foundation Reveal (Modals)",
+      "url" : "http://www.freddiemac.com/special/styleguide/reveal.html"
+   },
+   {
+      "name": "Foundation Tabs (and Accordion/Tabs)",
+      "url" : "http://www.freddiemac.com/special/styleguide/tabs.html"
+   },
+   {
+      "name": "Foundation Embeds",
+      "url" : "http://www.freddiemac.com/special/styleguide/embeds.html"
+   },
+   {
+      "name": "Fluid Type",
+      "url" : "http://www.freddiemac.com/special/styleguide/fluid.html"
+   },
+   {
+      "name": "Freddie Mac Scripts",
+      "url" : "http://www.freddiemac.com/special/styleguide/scripts_corp.html"
+   },
+   {
+      "name": "Foundation Abide (Form Validation)",
+      "url" : "http://www.freddiemac.com/special/styleguide/abide.html"
+   },
+   {
+      "name": "Foundation Equalizer (Height Matching)",
+      "url" : "http://www.freddiemac.com/special/styleguide/equalizer.html"
+   },
+   {
+      "name": "Foundation and Accessibility",
+      "url" : "http://www.freddiemac.com/special/styleguide/accessibility.html"
+   },
+   {
+      "name": "Color Accessibility of Corporate Pallette",
+      "url" : "http://www.freddiemac.com/special/styleguide/color-accessibility.html"
+   },
+   {
+      "name": "My Home by Freddie Mac<sup>®</sup>",
+      "url" : "https://myhome.freddiemac.com/special/styleguide/"
+   }
+  ]
+}

@@ -1,0 +1,499 @@
+---
+title: "Digital Transformation"
+layout: default
+description: "Digital Transformation"
+image: https://mf.freddiemac.com/images/banner/gen_social_image.jpg
+url: https://mf.freddiemac.com/digital-transformation/index.html
+stylesheet: /ss/app_landing.css
+javascript: ['https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js','/js/vendor/gsap.min.js','/js/vendor/ScrollTrigger.min.js','/js/custom/myOptigo.js']
+---
+<style>
+.heroContentContainer h1 {
+    position: relative;
+    z-index: 999;
+    opacity: 1;
+    color: #fff;
+}
+
+#latestInnovations h3,
+#latestInnovations li .press-button {
+    opacity: 1;
+}
+
+#myOptigoContent {
+  padding-bottom: 100px;
+}
+
+.myoptigo-media-video, .myoptigo-media-img {
+    z-index: 3;
+    position: relative;
+}
+
+.inspector-icon {
+  width: 8em;
+}
+
+.sticky.is-anchored, .sticky.is-stuck {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    /* opacity: 1.0 !important; */
+}
+
+.dt.landing-band.myOptigo {
+  padding-top: 7.5rem;
+}
+
+.myoptigo-svg {
+  margin-left: -3%;
+}
+
+.circle-orange-mobile-wrapper {
+  top: 150px;
+}
+
+.badge-space-left {
+  margin-left: 12px;
+}
+
+
+@media screen and (min-width: 61.25em){
+  .dt .content h2.title {
+      padding-top: 0;
+  }
+}
+
+/* MEDIUM */
+@media screen and (min-width:570px and max-width: 980px) {
+  .myoptigo-media {
+    position: relative;
+    width: 100%;
+    padding: 9em 0 9em 20px;
+  }
+  .myoptigo-media-video{
+    transform: translate(10%, -4%);
+    width: 100%;
+  }
+
+  .myoptigo-media-video img{
+    transform: translate(0);
+    width: 100%;
+  }
+}
+
+/* LARGE */
+@media screen and (min-width: 980px) {
+  .myoptigo-media {
+    position: relative;
+    width: 85%;
+    padding: 9em 0 9em 20px;
+  }
+  .myoptigo-media-video{
+    transform: translate(10%, -4%);
+    width: 87%;
+  }
+}
+
+</style>
+
+
+<!-- '/js/vendor/scrooth.js','/js/vendor/debug.addIndicators.min.js' -->
+<div id="scrollWrapper">
+<a href="/index.html" onclick="FM.form.cta('logo link')">
+    <div class="logo-containter">
+      <div href="/index.html" class="logo-content">
+        {{> multifamily-logo}}
+      </div>
+    </div>
+  </a>
+<div class="landing-hero dt-hero background-green position-relative">
+  <div class="row-container">
+    <div class="row">
+      <div class="column no-padding">
+        <div class="heroContentContainer">
+          <div class="trigger h1-down"></div>
+          <div class="trigger h1-opacity"></div>
+          <h1 class="text-left">
+            Transforming<br>our business —<br> and yours.
+         </h1>
+        </div>        
+      </div>
+    </div>
+    <div class="lottie-container">
+      <div class="optigo-lottie" id="optigo-lottie"></div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.0/lottie.js"></script>
+      <script>
+        var animation = bodymovin.loadAnimation({
+          container: document.getElementById('optigo-lottie'),
+          renderer: 'svg',
+          loop: true,
+          autoplay:true,
+          rendererSettings:{progressiveLoad:false, preserveAspectRatio: 'xMaxYMax meet', viewBoxOnly: true,},
+          path: '/js/vendor/optigo-loadingscreen.json'
+        })
+      </script>
+    </div>    
+  </div>
+  
+  <svg aria-hidden="true" class="dt-hero-curve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path d="M0 37.6V320h1440V37.6c-221.6 92.5-464.8 143.7-720 143.7S221.6 130.2 0 37.6z" fill="#fff"/></svg>
+  <!-- <svg class="dt-hero-curve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,32L120,69.3C240,107,480,181,720,181.3C960,181,1200,107,1320,69.3L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg> -->
+</div>
+
+<div class="landing-band dt-hero-mobile hide background-green">
+  <div class="row-container">
+    <div class="row">
+      <div class="column">
+        <h1>Transforming our business — and yours.</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="dt landing-band position-relative">
+  <div class="row-container">
+    <div class="row collapse medium-uncollapse">
+      <div class="column small-centered medium-9 large-8">
+        <div class="intro">
+          <p>We're creating the future of multifamily  finance — a future where your business is simpler, streamlined and more intuitive. A future that provides a better all-around experience for <span class="no-wrap">our customers</span>.</p>
+          <p>With a suite of technologies, mobile apps and features in development, you will be empowered to connect with us <span class="no-wrap">anytime, anywhere</span>.</p>
+        </div>        
+      </div>
+      <div class="column small-centered medium-9 text-center">
+        <div id="latestInnovations" class="content menu-block">
+          <h3 class="title">Our Latest Innovations</h3>
+          <nav>
+            <ul class="no-bullet menu optigo-menu">
+              <!-- ACTION ITEM 06/16/2020 - Add anchor transition. -->
+              <li><a href="#myOptigo" class="press-button" data-smooth-scroll data-offset="-25" onclick="FM.form.cta('myOptigo section link')">myOptigo</a></li>
+              <li><a href="#optigoHappy" class="press-button" data-smooth-scroll data-offset="-25" onclick="FM.form.cta('Optigo Happy section link')">Optigo Happy</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="fade-in-intro trigger"></div>
+    </div>
+  </div>
+</div>
+<div class="dt landing-band myOptigo position-relative background-fade-white" id="myOptigo">
+  <div class="fade-in-myOptigo trigger"></div>
+  <div class="row-container">
+    <div class="row collapse medium-uncollapse">
+      <div class="column large-8 large-push-4">
+        <div class="blue-circle trigger"></div>
+        <!-- <div class="graphic-wrapper"> -->
+        <div class="myoptigo-media">
+          <img class="no-border full myoptigo-media-img" src="/images/myoptigo-laptop.png" alt="laptop graphic">
+          <a class="video-modal widescreen-video myoptigo-media-video show-for-large" href="https://www.youtube.com/watch?v=cC9cqXmwzD4" data-src="//www.youtube-nocookie.com/embed/cC9cqXmwzD4?rel=0&amp;wmode=transparent" data-open="videoWideYT" aria-controls="videoWideYT" aria-haspopup="true" tabindex="0">
+            <div class="cta-video-wrapper position-relative">
+              <svg class="cta-video myoptigo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 139" aria-hidden="true"><g fill="none" fill-rule="evenodd"><circle cx="69.5" cy="69.5" r="69.5" fill="#88BD45"></circle><path fill="#FFF" d="M55.877 39.353L98.77 70l-42.893 30.647z"></path></g></svg>
+            <img src="/images/myoptigo-video-screenshot.png" class="cta-video-graphic" alt="video thumbnail">
+            </div>
+          </a>
+        </div>
+        <div class="circle-blue-wrapper">
+            <div class="circle-B blue"></div>
+          </div>        
+      </div>
+      <div class="column large-4 large-pull-8">
+
+        <!-- MyOptiogo Content Sticky Start -->
+        <div id="myoptigo-sticky-start"></div>
+
+        <div data-sticky-container>
+            <div data-sticky data-top-anchor="myoptigo-sticky-start" data-btm-anchor="myoptigo-sticky-end">
+
+              <div id="myOptigoContent" class="content">
+                <h2 class="title">myOptigo</h2>        
+                <p>
+                Access your Optigo® account via a single centralized hub. With myOptigo<span class="inline-block weight-normal position-relative" style="opacity: 0.9; top: -0.2em; font-size: 0.80em;">SM</span> you can manage all your Freddie Mac business on one convenient platform.
+                </p>
+                <ul class="no-bullet">
+                  <li class="media-object gutter-bottom">
+                    <div class="media-object-section">  
+                      {{> icon-green-check}}
+                    </div>
+                    <div class="media-object-section">                
+                      <p>Submit Conventional Loan <span class="no-wrap">quotes digitally</span></p>
+                    </div>
+                  </li>
+                  <li class="media-object gutter-bottom">
+                    <div class="media-object-section">  
+                      {{> icon-green-check}}
+                    </div>
+                    <div class="media-object-section">
+                      <p>Track deals with real-time <span class="no-wrap">status updates</span></p>
+                    </div>
+                  </li>
+                  <li class="media-object gutter-bottom">
+                    <div class="media-object-section">  
+                      {{> icon-green-check}}
+                    </div>
+                    <div class="media-object-section">
+                      <p>Manage your workflow with a <span class="no-wrap">custom dashboard</span></p>
+                    </div>
+                  </li>
+                  <li class="media-object gutter-bottom">
+                    <div class="media-object-section">  
+                      {{> icon-green-check}}
+                    </div>
+                    <div class="media-object-section">
+                      <p>Report on <span class="no-wrap">your loans</span></p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="optigo-mobile-video__small hide-for-large gutter-bottom" >
+                  <a class="video-modal widescreen-video myoptigo-media-video" href="https://www.youtube.com/watch?v=cC9cqXmwzD4" data-src="//www.youtube-nocookie.com/embed/cC9cqXmwzD4?rel=0&amp;wmode=transparent" data-open="videoWideYT" aria-controls="videoWideYT" aria-haspopup="true" tabindex="0">
+                    <div class="cta-video-wrapper position-relative">            
+                      <svg class="cta-video myoptigo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 139" aria-hidden="true"><g fill="none" fill-rule="evenodd"><circle cx="69.5" cy="69.5" r="69.5" fill="#88BD45"></circle><path fill="#FFF" d="M55.877 39.353L98.77 70l-42.893 30.647z"></path></g></svg>
+                    <img src="/images/myoptigo-video-screenshot.png" class="cta-video-graphic" alt="video thumbnail">
+                    </div>
+                  </a>
+                </div>
+                <p class="gutter-top">For myOptigo resources, <a data-open="myOptigoModal" aria-controls="myOptigoModal" class="modal"><span class="no-wrap" onclick="FM.form.cta('myOptigo resources','secondary link')">click here</span></a>.</p>
+                {{> myOptigoModal}}
+                <div class="features">
+                  <h3 class="title">
+                    <span class="eyebrow">Features coming soon</span>
+                  </h3>
+                  <ul class="no-bullet gutter-top list">
+                    <!-- <li class="media-object gutter-bottom">
+                      <div class="media-object-section">  
+                        {{> icon-service-loan}}
+                      </div>
+                      <div class="media-object-section">
+                        <p class="icon-label">Service your loans</p>
+                      </div>
+                    </li> -->
+                    <li class="media-object gutter-bottom">
+                      <div class="media-object-section">  
+                        {{> icon-exchange-data}}
+                      </div>
+                      <div class="media-object-section">
+                        <p class="icon-label">Exchange data with third parties</p>
+                      </div>
+                    </li>
+                    <li class="media-object gutter-bottom">
+                      <div class="media-object-section">  
+                        {{> icon-automation}}
+                      </div>
+                      <div class="media-object-section">
+                        <p class="icon-label">Receive automated reports</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+        </div>     
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MyOptiogo Content Sticky End -->
+<div id="myoptigo-sticky-end"></div>
+
+<div class="dt landing-band optigoHappy background-fade-white position-relative" id="optigoHappy">
+  <!-- <div class="pin-optigoHappy trigger"></div> -->
+  <div class="row-container">
+    <div class="row">
+      <div class="column small-12 large-7 gutter-right-large" id="stickyOptigoHappy">
+        <div class="trigger orange-circle"></div>
+        <div class="show-for-large" style="margin-right:4%;">
+          <div class="phone-graphic-wrapper parallax-bcg2">
+            <div class="circle-O orange"></div>
+            <div class="phone-graphic-content position-relative">
+              <span class="position-relative">
+                <img class="app-icon no-border" src="/images/logo-optigohappy-app.png" alt="App Icon">
+                <img class="no-border phone" src="/images/optigo-happy-phone.png" alt="myOptigo Application Graphic">
+              </span>
+            </div>
+          </div>        
+            <a class="video-modal widescreen-video" href="https://www.youtube.com/watch?v=PZ3z9d49r4I"  data-src="//www.youtube-nocookie.com/embed/PZ3z9d49r4I?rel=0&amp;wmode=transparent">
+            <div class="cta-video-wrapper position-relative">            {{> play-icon}}
+              <img src="/images/optigo-happy-videoscreenshot.png" class="cta-video-graphic" alt="video thumbnail">
+              </div>
+            </a>
+         </div>
+        </div>       
+        <div class="column large-5 show-for-large" data-sticky-container>
+        <div id="pin-optigoHappy" class="content desktop" data-sticky data-margin-top="" data-anchor="stickyOptigoHappy">
+          <div class="optigoHappyContent">
+          <!-- <div> -->
+            <h2 class="title optigoHappy">Optigo Happy</h2>
+            <p>A time-saving mobile inspection platform, Optigo Happy offers greater simplicity, precision and flexibility than traditional paper-based methods. It supports inspections for all our primary business lines.</p>
+            <ul class="no-bullet gutter-top list">
+              <li class="media-object gutter-bottom">
+                <div class="media-object-section">  
+                  {{> icon-green-check}}
+                </div>
+                <div class="media-object-section">
+                  <p>Save hours on processing with digital submission</p>
+                </div>
+              </li>
+              <li class="media-object gutter-bottom">
+                <div class="media-object-section">  
+                  {{> icon-green-check}}
+                </div>
+                <div class="media-object-section">
+                  <p>Improve inspection accuracy with on-site photos and documentation</p>
+                </div>
+              </li>
+              <li class="media-object gutter-bottom">
+                <div class="media-object-section">  
+                  {{> icon-green-check}}
+                </div>
+                <div class="media-object-section">
+                  <p>Reduce forms and paperwork by up to 75%</p>
+                </div>
+              </li>
+              <li class="media-object gutter-bottom">
+                <div class="media-object-section">  
+                  {{> icon-green-check}}
+                </div>
+                <div class="media-object-section">
+                  <p>Conduct multiple inspections at once with auto-save</p>
+                </div>
+              </li>
+            </ul>
+            <div class="happy-badge">
+              <p>
+                <img class="no-border" src="/images/happy-inspector.png" alt="Happy Insptector">
+              </p>
+              <a class="offsite" href="https://apps.apple.com/us/app/happy-inspector-by-happyco/id981301626"><img class="inspector-icon no-border" src="/images/app.png" alt="Apple Store Icon"></a>
+              <a class="offsite" href="https://play.google.com/store/apps/details?id=com.happyinspector.mildred&hl=en_US"><img class="inspector-icon no-border badge-space-left" src="/images/google.png" alt="Google Play Icon"></a>
+            </div>
+              <a class="video-modal widescreen-video hide-for-large" href="https://www.youtube.com/watch?v=PZ3z9d49r4I"  data-src="//www.youtube-nocookie.com/embed/PZ3z9d49r4I?rel=0&amp;wmode=transparent">
+              <div class="cta-video-wrapper position-relative">            {{> play-icon}}
+              <img src="/images/optigo-happy-videoscreenshot.png" class="cta-video-graphic" alt="video thumbnail">
+              </div>
+            </a>
+            <hr>
+            <div class="row vertical-center-equalizers" data-equalizer data-equalize-on="small">
+              <div class="column small-6 text-center">
+                <div class="cta" data-equalizer-watch>
+                  {{> icon-pricing}}
+                  <p class="oh-content">Learn about licensing <span class="no-wrap">and pricing</span></p>                  
+                </div>
+                <a href="/docs/optigo_happy_flyer.pdf" class="button secondary press-button" onclick="FM.form.cta('secondary button', 'Learn about optigoHappy')">learn more <span class="show-for-sr">about optigo happy</span> </a>
+              </div>
+              <div class="column small-6 text-center">
+                <div class="cta" data-equalizer-watch>
+                  {{> icon-question}}
+                  <p class="oh-content">For additional questions visit <span class="no-wrap">our FAQs</span></p>                  
+                </div>
+                <a href="/docs/dt_optigo_happy_FAQ.pdf" class="button secondary press-button" onclick="FM.form.cta('secondary button', 'FAQs')">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;faqs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>        
+      </div>
+      <!--Mobile view -->
+      <div class="column hide-for-large">        
+        <div class="content hide-for-large position-relative">
+          <div class="orange-circle-mobile trigger"></div>
+          <div class="circle-orange-mobile-wrapper">
+            <div class="circle-2 orange-2"></div>
+          </div>
+          <div class="phone-graphic-wrapper">
+            
+            <div class="phone-graphic-content position-relative">
+              <span class="position-relative">
+                <img class="app-icon no-border" src="/images/logo-optigohappy-app.png" alt="App Icon"> &nbsp;&nbsp;&nbsp; 
+                <img class="no-border phone" src="/images/optigo-happy-phone.png" alt="myOptigo Application Graphic">
+              </span>
+            </div>
+          </div> 
+          <h2 class="title">Optigo Happy</h2>
+          <p>A time-saving mobile inspection platform, Optigo Happy offers greater simplicity, precision, and flexibility than traditional paper-based methods. It supports inspections for all our primary business lines.</p>
+          <ul class="no-bullet gutter-top list">
+            <li class="media-object gutter-bottom">
+              <div class="media-object-section">  
+                {{> icon-green-check}}
+              </div>
+              <div class="media-object-section">
+                <p>Save hours on processing with digital submission</p>
+              </div>
+            </li>
+            <li class="media-object gutter-bottom">
+              <div class="media-object-section">  
+                {{> icon-green-check}}
+              </div>
+              <div class="media-object-section">
+                <p>Improve inspection accuracy with on-site photos and documentation</p>
+              </div>
+            </li>
+            <li class="media-object gutter-bottom">
+              <div class="media-object-section">  
+                {{> icon-green-check}}
+              </div>
+              <div class="media-object-section">
+                <p>Reduce forms and paperwork by up to 75%</p>
+              </div>
+            </li>
+            <li class="media-object gutter-bottom">
+              <div class="media-object-section">  
+                {{> icon-green-check}}
+              </div>
+              <div class="media-object-section">
+                <p>Conduct multiple inspections at once with auto-save</p>
+              </div>
+            </li>
+          </ul>
+          <div class="happy-badge gutter-bottom">
+            <p>
+              <img class="no-border" src="/images/happy-inspector.png" alt="Happy Insptector">
+            </p>
+            <a class="offsite" href="https://apps.apple.com/us/app/happy-inspector-by-happyco/id981301626 "><img class="inspector-icon no-border" src="/images/app.png" alt="Apple Store Icon"></a>
+            <a class="offsite" href="https://play.google.com/store/apps/details?id=com.happyinspector.mildred&hl=en_US"><img class="inspector-icon no-border badge-space-left" src="/images/google.png" alt="Google Play Icon"></a>
+          </div>
+          <a class="video-modal widescreen-video gutter-top" href="https://www.youtube.com/watch?v=PZ3z9d49r4I"  data-src="//www.youtube-nocookie.com/embed/PZ3z9d49r4I?rel=0&amp;wmode=transparent">
+            <div class="cta-video-wrapper position-relative">            {{> play-icon}}
+              <img src="/images/optigo-happy-videoscreenshot.png" class="cta-video-graphic" alt="video thumbnail">
+              </div>
+            </a>
+          <hr>
+          <div class="row">
+            <div class="column small-6 text-center">
+              <div class="cta">
+                {{> icon-pricing}}
+                <p class="oh-content">Learn about<br class="hide-for-medium"> licensing<br> <span class="no-wrap">and pricing</span></p>                  
+              </div>
+              <a href="/docs/optigo_happy_flyer.pdf" class="button secondary press-button" onclick="FM.form.cta('secondary button', 'optigoHappy mobile')">learn more <span class="show-for-sr">about optigoHappy</span> </a>
+            </div>
+            <div class="column small-6 text-center">
+              <div class="cta">
+                {{> icon-question}}
+                <p class="oh-content">For additional<br class="hide-for-medium"> questions visit<br> <span class="no-wrap">our FAQs</span></p>                  
+              </div>
+              <a href="/docs/dt_optigo_happy_FAQ.pdf" class="button secondary press-button" onclick="FM.form.cta('secondary button', 'FAQs mobile')">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;faqs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End mobile view -->
+    </div>
+  </div>
+</div>
+<div id="questions" class="dt questions landing-band background-concrete">
+  <div class="fade-in-questions trigger"></div>
+  <div class="row-container">
+    <div class="row">
+      <div class="column small-centered medium-9 text-center">
+        <div class="content">
+          <h2 class="title sub-footer">Questions?</h2>
+          <p>If you have questions or comments related to any of our digital transformation products, don’t  <span class="no-wrap">hesitate to reach out.</span></p>
+          <a class="button secondary press-button" href="mailto:multifamily_feedback@freddiemac.com" onclick="FM.form.cta('secondary button', 'Email Multifamily Feedback Mailbox')">&nbsp;&nbsp;email us&nbsp;&nbsp;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{> footer-landing}}
+</div>

@@ -1,0 +1,89 @@
+.callout {
+  margin: $callout-margin;
+  background-color: $callout-background;
+  position: relative;
+  padding: rem-calc(30);
+  &.flex {
+    @include flex;
+    @include flex-direction(column);
+  }
+  &.large {
+    @include breakpoint(large) {  
+      padding: rem-calc(40);
+    }
+  }
+  &.small,
+  &.xsmall {
+    padding: rem-calc(10);
+  }
+  &.xlarge {
+    @include breakpoint(large) {
+      padding: rem-calc(50);
+    }
+    @include breakpoint(xlarge) {
+      padding: rem-calc(80);
+    }
+    .reveal & {
+      @include breakpoint(xlarge) {
+        padding: 7rem;
+      }
+    }   
+  }
+  &.small-no-sides {
+    @include breakpoint(small only) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &.medium-no-sides {
+    @include breakpoint(medium only) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  > :first-child:not(.button) {
+    margin-top: 0;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }        
+  .close-button {
+    color: currentColor;
+  }
+  &.hollow-thin,
+  &.hollow {
+    border: $callout-border;
+  }
+  &.hollow {
+    border-width: 3px;
+  }
+  &.border-white {
+    border: 3px solid $white;
+    @include breakpoint(large) {
+      border: 4px solid $white;
+    }
+  }
+  &.callout-overlay {    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &.alert {
+    background-color: mix($fm-red, $white, 10%);
+    border: 1px solid $fm-red;
+  }
+  &.primary {
+    background-color: mix($primary-color, $white, 10%);
+    border: 1px solid $primary-color; 
+  }
+}
+
+.rounded {
+  border-radius: 0.35rem;
+  &.large {
+    border-radius: 0.6rem;
+  }
+  &.xlarge {
+    border-radius: 0.65rem;
+  }
+}

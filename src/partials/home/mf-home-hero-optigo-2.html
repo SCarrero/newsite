@@ -1,0 +1,125 @@
+<style>
+  .button.invert.tertiary {
+  background: #ffffff;
+  color: #88BD45; 
+  }
+  .button.invert.tertiary:hover, .button.invert.tertiary:focus, .button.invert.tertiary:active {
+    background: #88BD45;
+    color: #ffffff; 
+  }
+  .optigo-logo{
+    width:25%;
+    /*margin-right: -15px;*/
+    transform: translate(-26px, -10px);
+
+  }
+  
+  .greenOrb::before{
+    content: "";
+    background: transparent url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22659.881%22%20height=%22659.878%22%20viewBox=%220%200%20659.881%20659.878%22%3E%3Cpath%20d=%22M220.4,0C97.617,0-9.506,67.55-66.317,167.311H213.1c102.879,0,169.934,72.947,169.934,162.627s-72.95,162.63-162.63,162.63-162.63-72.95-162.63-162.63c0-53.423,26-100.761,65.89-130.424l-228.318,76a329.461,329.461,0,0,0-4.883,54.423c0,181.932,148.009,329.941,329.941,329.941S550.343,511.869,550.343,329.938,402.334,0,220.4,0%22%20transform=%22translate(109.538%200)%20translate(0)%22%20fill=%22%2388bd45%22/%3E%3C/svg%3E") no-repeat center center;
+    background-size:contain; 
+    position: absolute;
+    left:-64%;
+    top:20%;
+    width:100%;
+    height: 100%;
+    transform: rotate(25deg);
+  }
+  .blueOrb::after{
+    content: "";
+    background: transparent url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22459.027%22%20height=%22459.025%22%20viewBox=%220%200%20459.027%20459.025%22%3E%3Cpath%20fill=%22%2300a6e1%22%20d=%22M119.976,0C34.563,0-39.953,46.989-79.473,116.385H114.895c71.565,0,118.21,50.744,118.21,113.127A113.129,113.129,0,1,1,52.681,138.786l-158.823,52.868a229.18,229.18,0,0,0-3.4,37.858c0,126.555,102.958,229.514,229.514,229.514S349.489,356.067,349.489,229.512,246.531,0,119.976,0%22%20transform=%22translate(109.538%200)%22/%3E%3C/svg%3E") no-repeat center center;
+    background-size:contain;
+    position: absolute;
+    right:-50%;
+    top:-50%;
+    width: 85%;
+    height: 80%;
+  } 
+  .orangeOrb::after{
+    content: "";
+    background: transparent url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22567.725%22%20height=%22567.722%22%20viewBox=%220%200%20567.725%20567.722%22%3E%3Cpath%20d=%22M174.324,0C68.686,0-23.476,58.116-72.353,143.945H168.04c88.511,0,146.2,62.76,146.2,139.915S251.48,423.777,174.324,423.777,34.407,361.015,34.407,283.86A139.651,139.651,0,0,1,91.095,171.65l-196.432,65.387a283.45,283.45,0,0,0-4.2,46.822c0,156.524,127.339,283.862,283.862,283.862S458.187,440.383,458.187,283.86,330.848,0,174.324,0%22%20transform=%22translate(109.538%200)%22%20fill=%22%23ff6a00%22/%3E%3C/svg%3E") no-repeat center center;
+    background-size:contain;
+    position: absolute;
+    left:12%;
+    bottom:-110%;
+    width: 85%;
+    height: 90%;
+  }
+  @media screen and (min-width: 35.625em) {/*med*/
+    .orangeOrb::after{
+      left:8%;
+      bottom:-266%;
+      height: 208%;
+    }
+    .greenOrb::before{
+      left:-45%;
+      top:18%;
+      width:90%;
+      height:168%;
+      transform: rotate(360deg);
+      transition:all 1s;      
+    }
+    
+    .blueOrb::after{
+      height:160%;
+      width:100%;
+      top:-80%;
+      right:-60%
+    }
+
+  }
+  @media screen and (min-width: 61.25em) {/*large*/
+    .greenOrb::before{
+      left:-87%;
+      top:-63%;
+      height: 272%;
+      width:133%;
+      transform:rotate(30deg);
+      transition: all 600ms;
+    }
+    .blueOrb::after{
+      transform:rotate(30deg);
+    }
+    .optigo-logo{
+      width:18%;
+      margin-right: 210px;
+    }
+  }
+  
+  
+
+</style>
+<div class="position-relative background-white" style="overflow:hidden;">
+  <!--optigo Os-->
+  <div class="content-band even row-wrapper" style="overflow:visible;">
+    <div class="row">
+      <div class="column small-centered large-10 greenOrb blueOrb position-relative">
+        <div class="callout text-center no-margin orangeOrb position-relative">
+          <h1 class="hero-text weight-bold accent-green">Aim high. Optigo further.</h1>
+            <a class="button invert tertiary">L<span class="lowercase">earn</span> M<span class="lowercase">ore</span>&nbsp;
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="width:1.2em;height:1.2em;vertical-align:text-top;"
+                viewBox="0 0 200 200" fill="none" stroke-width="14" class="stroke-anchor">
+                <circle cx="100" cy="100" r="90" />
+                <polygon points="70, 60 70, 145 145, 100" />
+              </svg>
+            </a>            
+        </div>  
+        <div class="callout small-to-default no-margin"></div>
+      </div>
+      <div class="column large-11">
+        <img class="optigo-logo float-right" src="https://mf.freddiemac.com/images/optigo-refresh-89.svg" alt="">
+      </div>
+    </div>
+    
+  </div>  
+</div>
+<!--
+  <div class="row">
+      <div class="large-1 column">
+        <div class="callout"></div>
+      </div>
+      <div class="large-10 small-9 small-centered large-offset-1 column text-center">
+        <img src="https://mf.freddiemac.com/images/optigo-refresh-89.svg" alt="" class="optigo-logo">
+      </div>
+    </div>
+-->

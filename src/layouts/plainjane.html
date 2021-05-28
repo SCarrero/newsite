@@ -1,0 +1,85 @@
+﻿{{!-- This is a stand alone landing page template --}}
+
+<!doctype html>
+
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{>metadata}}
+    {{!-- only output theme-color if it exists --}}
+    {{#if themecolor}}
+    <meta property="theme-color" content="{{ themecolor }}" />
+    {{/if}}
+    <script>document.documentElement.classList.remove("no-js");
+    function preferReducedMotion() {
+      const query = '(prefers-reduced-motion: no-preference)';
+      const mediaQueryList = window.matchMedia(query);
+      const prefersReducedMotion = !mediaQueryList.matches;
+      return prefersReducedMotion;
+    }
+    </script>
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    {{#each (array "" stylesheet)}}
+    <link rel="stylesheet" href="{{.}}" />
+    {{/each}}   
+      
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KZFS9PD');</script>
+    <!-- End Google Tag Manager -->
+  </head>  
+  {{#if bodyclass}}
+  <body class="{{ bodyclass }}">
+    {{else}}
+  <body>
+  {{/if}}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZFS9PD"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="show-for-print">FreddieMac.com</div>        
+    {{> body}}
+    
+    {{#if usejquery }}
+    <script src="/js/vendor/jquery-3.5.1.min.js"></script>  
+    {{/if}} 
+    {{#if usefoundationjs }}
+    <script src="/js/vendor/foundation-what-input.min.js"></script>
+    <script>
+      $(document).foundation(); 
+    </script>
+    {{/if}}  
+    {{#each (array "" javascript)}}
+      <script src="{{ this }}"></script>
+    {{/each}}  
+    {{#if onload }}
+      <script type="text/javascript">
+      window.onload = {{onload}};
+      </script>
+    {{/if}} 
+    <script type="text/javascript">
+      //  Start Eloqua Scripts
+        var _elqQ = _elqQ || [];
+        _elqQ.push(['elqSetSiteId', '325135053']);
+        _elqQ.push(['elqTrackPageView']);  
+        (function () {
+            function async_load() {
+                var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+                s.src = '//img03.en25.com/i/elqCfg.min.js';
+                var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+            }
+            if (window.addEventListener) window.addEventListener('DOMContentLoaded', async_load, false);
+            else if (window.attachEvent) window.attachEvent('onload', async_load); 
+        })();
+      //  End Eloqua Scripts
+    </script> 
+  </body>
+</html>

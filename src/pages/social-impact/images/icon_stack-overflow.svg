@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="47px" height="55px" viewBox="0 0 47 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_stack-overflow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Social-Impact-Investing-v3" transform="translate(-246.000000, -3348.000000)">
+            <g id="Products" transform="translate(0.000000, 2991.000000)">
+                <g id="Box-1" transform="translate(130.000000, 336.000000)">
+                    <g id="icon_stack-overflow" transform="translate(110.000000, 20.000000)">
+                        <g id="Outline_Icons" transform="translate(7.658228, 2.784810)" stroke="#88BD45" stroke-linejoin="round" stroke-width="4">
+                            <g id="Group">
+                                <path d="M35.0849434,31.510732 L35.0849434,46.4639516 C35.0849434,49.0036984 33.0165623,51.0649422 30.4680213,51.0649422 L5.07495003,51.0649422 C2.5241006,51.0649422 0.458027981,49.0036984 0.458027981,46.4639516 L0.458027981,31.510732" id="Shape"></path>
+                                <path d="M27.0053298,41.8629609 L8.53764157,41.8629609" id="Shape" stroke-linecap="round"></path>
+                                <path d="M27.8987042,35.6838305 L9.83268821,31.8627078" id="Shape" stroke-linecap="round"></path>
+                                <path d="M30.0571153,29.8221684 L13.1799567,22.3501596" id="Shape" stroke-linecap="round"></path>
+                                <path d="M33.3928414,24.5333297 L18.4386309,13.7348046" id="Shape" stroke-linecap="round"></path>
+                                <path d="M37.7535243,20.0519648 L25.3732478,6.39392405" id="Shape" stroke-linecap="round"></path>
+                                <path d="M42.954487,16.5667144 L33.6883245,0.647286736" id="Shape" stroke-linecap="round"></path>
+                            </g>
+                        </g>
+                        <g id="Frames-24px">
+                            <rect id="Rectangle-path" x="0" y="0" width="55" height="55"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

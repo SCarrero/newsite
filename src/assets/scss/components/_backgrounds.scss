@@ -1,0 +1,113 @@
+@media screen {   
+
+  // override old background colors that no longer exist until we can update things
+  .background-purple,
+  .background-black {
+    background: map-get($colors, navy3);
+    color: $white;
+  }
+  .background-primary {
+    background: map-get($colors, blue5);
+    color: $white;
+  }
+  .background-offwhite {
+    background-color: $white; 
+  }
+  // end old overrides
+
+  .background-teal {
+    background: $fm-teal;
+    color: $black;
+    &.horizontal-chevron {
+      @include chevron-l-r($left: lighten($fm-teal, 3%), $right: $fm-teal);
+    }
+    &.offset-feature-panel {
+      @include chevron-h2(lighten($fm-teal, 3%), $fm-teal);
+      &.right-image {
+        @include chevron-h2-50(lighten($fm-teal, 3%), $fm-teal);
+      }
+    }
+    .offset-video-panel &.cell:first-of-type {
+      @include chevron-l-r(map-get($colors, navy3), map-get($colors, teal4));
+    }
+  }  
+  .background-green {
+    background: map-get($colors, green3);
+    color: $black;
+    &.horizontal-chevron {
+      @include chevron-l-r($left: map-get($colors, green1), $right: map-get($colors, green3));
+    }
+    &.offset-feature-panel {
+      @include chevron-h2(map-get($colors, green2), map-get($colors, green3));
+      &.right-image {
+        @include chevron-h2-50(map-get($colors, green2), map-get($colors, green3));
+      }
+    }
+    &.vertical-chevrons {
+      @include chevron-v4(map-get($colors, green5), false);
+    }
+    &.vertical-chevrons-multi {
+      @include chevron-vmulti(map-get($colors, green3));
+    }    
+    .offset-video-panel &.cell:first-of-type {
+      @include chevron-l-r(map-get($colors, green1), map-get($colors, green3));
+    }
+  }
+  .background-blue {
+    background: map-get($colors, blue5);
+    color: $white;
+    &.horizontal-chevron {
+      @include chevron-l-r(map-get($colors, blue5), lighten(map-get($colors, blue5), 3%));
+    }
+    &.offset-feature-panel {
+      @include chevron-h2(map-get($colors, blue5), lighten(map-get($colors, blue5), 3%));
+      &.right-image {
+        @include chevron-h2-50(map-get($colors, blue5), lighten(map-get($colors, blue5), 3%));
+      }
+    }
+    &.vertical-chevrons {
+      @include chevron-v4(map-get($colors, blue5), false);
+    }    
+    .offset-video-panel &.cell:first-of-type {
+      @include chevron-l-r(map-get($colors, blue5), lighten(map-get($colors, blue5), 3%));
+    }
+  }
+  .background-navy {
+    background: map-get($colors, navy4);
+    color: $white;
+    &.horizontal-chevron {
+      @include chevron-l-r(map-get($colors, navy3), lighten(map-get($colors, navy3), 3%));
+    }
+    &.offset-feature-panel{
+      @include chevron-h2(map-get($colors, navy3), map-get($colors, navy4));
+      &.right-image {
+        @include chevron-h2-50(map-get($colors, navy3), map-get($colors, navy4));
+      }
+    }
+    &.vertical-chevrons {
+      @include chevron-v4(lighten(map-get($colors, navy5), 8%), true);
+    }
+    .offset-video-panel &.cell:first-of-type {
+      @include chevron-l-r(map-get($colors, navy3), map-get($colors, navy4));
+    }
+  }
+  .background-navy5 {
+    background: map-get($colors, navy5);
+    color: $white;
+  }
+  .background-red {
+    background: $fm-red;
+    color: $white;
+    a {
+      color: inherit;
+    }
+  }
+  .background-concrete {
+    background: $light-gray;
+    color: $body-font-color; 
+  }
+  .background-white {
+    background: $white;
+    color: $body-font-color; // solves for when this is inside another background
+  }
+}

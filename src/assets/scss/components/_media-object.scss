@@ -1,0 +1,184 @@
+.media-object-section .background-image-feature {
+  @include breakpoint(small) {
+    padding-bottom: 74%;
+  }
+  @include breakpoint(medium only) {
+    height: 100%;
+  }
+}
+.media-object { 
+  color: inherit;
+  margin-top: 0;
+  margin-bottom: rem-calc(20);
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  &.large {
+    .media-object-section { 
+      &:first-child {
+        @include breakpoint(medium){
+          padding-right: $gutter * 1.5;
+        }
+      }
+      &:last-child:not(:nth-child(2)) {
+        @include breakpoint(medium){
+          padding-left: $gutter * 1.5;
+        }
+      }
+    }
+  }
+  &.large-50-50 {
+    @include breakpoint(medium only) {
+      min-height: rem-calc(220);
+      .media-object-section:first-child {
+        width: 35%;
+      }
+      .media-object-section:last-child {
+        width: 65%;
+      }
+
+    }
+    @include breakpoint(large){
+      .media-object-section {
+        width: 50%;
+      }
+    }
+    .media-feature-content {  
+      padding: rem-calc(20 15 20 20);
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;    
+      @include breakpoint(large){
+        padding: rem-calc(25 20 20 25);
+      }
+      @include breakpoint(xlarge){
+        padding: rem-calc(35 25 25 30);
+      }
+      @include breakpoint(xxlarge){
+        padding: rem-calc(60 35 30 60);
+        min-height: rem-calc(360);
+      }
+    }
+    &.stack-for-small .media-object-section {
+      @include breakpoint(small only) {
+        padding-bottom: 0;
+      } 
+    }
+    &.stack-for-small  .media-feature-content {
+      @include breakpoint(small only) {
+        padding: rem-calc(20 15 20 20);
+      }      
+    }
+  }
+  .media-object-section {
+    display: block;
+    flex: 0 1 auto;
+    &.main-section {
+      flex: 1 1 0px; // sass-lint:disable-line zero-unit
+    }
+  }
+  &.collapse {
+    .media-object-section {
+      &:first-child {
+        padding-#{$global-right}: 0;
+      }
+      &:last-child:not(:nth-child(2)) {
+        padding-#{$global-left}: 0;
+      }  
+    }
+  }
+  &.medium-uncollapse {
+    .media-object-section {  
+      &:first-child {
+        @include breakpoint(medium) {
+          padding-#{$global-right}: $gutter;
+        }
+      }
+      &:last-child:not(:nth-child(2)) {
+        @include breakpoint(medium) {
+          padding-#{$global-left}: $gutter;
+        }
+      }  
+    }
+  }
+  &.blurb3-leads-image2 {   // such as insights, research pages
+    img {
+      @include breakpoint (medium) { 
+        width: rem-calc(325); 
+      }    
+      @media screen and (min-width: -zf-bp-to-em(map-get($breakpoints, medium))) and (max-width: -zf-bp-to-em(map-get($breakpoints, medium) + 160px)) {
+        width: rem-calc(230); 
+      }
+      @media screen and (min-width: -zf-bp-to-em(map-get($breakpoints, large))) and (max-width: -zf-bp-to-em(map-get($breakpoints, large) + 150px)) {
+        width: rem-calc(230); 
+      }
+      @media screen and (min-width: -zf-bp-to-em(map-get($breakpoints, large) + 150px)) and (max-width: -zf-bp-to-em(map-get($breakpoints, xlarge))) {
+        width: rem-calc(290); 
+      } 
+      @media print {
+        width: rem-calc(110);
+      } 
+    }
+    .callout.large & {  // such as research page feature
+      img { 
+        @include breakpoint (medium) { 
+          width: rem-calc(325 - ($gutter * 1.5));         
+        }  
+        // from medium to 160px past medium
+        @media screen and (min-width: -zf-bp-to-em(map-get($breakpoints, medium))) and (max-width: -zf-bp-to-em(map-get($breakpoints, medium) + 160px)) {
+          width: rem-calc(230 - ($gutter * 1.5)); 
+        }
+        // from large to 150px past large
+        @media screen and (min-width: -zf-bp-to-em(map-get($breakpoints, large))) and (max-width: -zf-bp-to-em(map-get($breakpoints, large) + 150px)) {
+          width: rem-calc(230 - ($gutter * 1.5)); 
+        }
+        // from large + 150px to xlarge
+        @media screen and (min-width: -zf-bp-to-em(map-get($breakpoints, large) + 150px)) and (max-width: -zf-bp-to-em(map-get($breakpoints, xlarge))) {
+          width: rem-calc(290 - ($gutter * 1.5)); 
+        }   
+        @media print {
+          width: rem-calc(110);
+        }    
+      }
+    }
+  }
+  
+  .sidebar & {  
+    &.image1-leads-blurb2 {  // such as perspectives
+      img {
+        width: rem-calc(130); 
+        // from small to 150px before medium
+        @media screen and (min-width: -zf-bp-to-em(map-get($breakpoints, small))) and (max-width: -zf-bp-to-em(map-get($breakpoints, medium) - 150px)) {
+          width: rem-calc(98);  
+        }  
+        // from large to 80px past large
+        @media screen and (min-width: -zf-bp-to-em(map-get($breakpoints, large))) and (max-width: -zf-bp-to-em(map-get($breakpoints, large) + 80px)) {
+          width: rem-calc(98);
+        }
+        @media print {
+          width: 50px; 
+        } 
+      }
+    }
+  }
+  .section-divided {
+    border-bottom: 1px solid darken($light-gray, 5%);
+  }
+  
+  &.stack-for-#{$-zf-zero-breakpoint} {
+    @include breakpoint($-zf-zero-breakpoint only) {
+      flex-wrap: wrap;
+    }
+  }
+  &.stack-for-#{$-zf-zero-breakpoint} .media-object-section {
+    @include breakpoint($-zf-zero-breakpoint only) {
+      -ms-flex-basis: 100%;
+      flex-basis: 100%;
+      max-width: 100%;  
+      img {
+        width: $mediaobject-image-width-stacked;
+      }
+    }
+  }
+}

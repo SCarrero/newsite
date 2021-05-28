@@ -1,0 +1,446 @@
+---
+layout: default
+title: Notification of Interest Form 
+description: Lender Eligibility
+url:  https://mf.freddiemac.com/lenders/eligibility/form.html
+image: 
+stylesheet: /ss/app_landing.css
+bodyclass: background-primary
+onload: 
+---
+<style>
+hr.light-green {
+    border-color: rgba(136, 189, 69, 0.33);
+    border-width: 0 0 4px;
+}
+
+.faux-reveal {
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  margin-left: 0;
+  border: 0;
+  border-radius: 0;
+  padding-top: 2.5rem;
+  padding-top: calc(40px +  54 * (100vw - 320px)/1180); 
+} 
+@media screen and (min-width: 93.75em) {
+  .faux-reveal {
+    padding-top: rem-cal(94); 
+  } 
+}
+.modal-header {
+  position: relative; 
+}
+.close-button {
+  font-size: calc(20px + 16 * (100vw - 320px)/1180);
+}
+@media screen and (min-width: 79.375em) {
+  close-button {
+    font-size: 2.25rem; 
+  }
+}
+  
+[type="checkbox"] + label.no-box {
+  border: 1px solid #88bd45;
+  display: block;
+  margin: 1px;
+  min-height: 90px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+[type="checkbox"] + label.no-box:hover {
+  background-color: rgba(255, 255, 255, 0.33);
+}
+[type="checkbox"] + label.no-box::before {
+  content: "";
+  display: none;
+}
+[type="checkbox"]:checked + label.no-box {
+  background-color: #fff;
+  border-color: #333;
+}
+[type="checkbox"][disabled] + label.no-box {
+  opacity: 0.5;
+}
+[type="checkbox"] + label.no-box.is-invalid-label {
+  border-color: #cf0a2c !important;
+}
+</style>
+
+<div class="landing-band faux-reveal">
+  <div class="row-container-narrow">
+    <div class="row">
+      <div class="column">
+        <div class="modal-header">
+          <h1>Notification of Interest Form</h1>
+          <p class="text-right">
+            <a class="close-button" aria-label="close form" href="/lenders/eligibility/">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.39 167.39">
+                <path fill="#fff" d="M83.7 0a83.7 83.7 0 1 0 83.7 83.7A83.7 83.7 0 0 0 83.7 0zm42.67 127.06a6.13 6.13 0 0 1-8.67-.07l-34-34.55L49.69 127a6.13 6.13 0 1 1-8.74-8.6L75.1 83.7 41 49a6.13 6.13 0 1 1 8.74-8.6L83.7 75l34-34.55a6.13 6.13 0 1 1 8.74 8.6L92.29 83.7l34.14 34.69a6.13 6.13 0 0 1-.06 8.67z"/>
+              </svg>
+            </a>
+          </p>         
+        </div>
+        <p class="text-flex-18-24 weight-normal">Thank you for your interest in becoming an Optigo® lender. To get started, please complete the following information.</p>
+        <p class="text-static-16-18 weight-medium">Elements Marked * are required</p>
+        <div class="callout xlarge background-concrete">
+          <form id="lender_eligibility" class="fmform"  data-abide novalidate enctype="x-www-form-urlencoded" method="post" name="lender_eligibility" action="">
+            <div class="row">
+              <div class="column">
+                <h2 class="gutter-bottom">Program Type</h2>
+                <!-- Fieldset data attribute for checkbox [data-validator-abide-min="2" data-validator-abide-max="4"] -->
+                <fieldset class="checked-group" data-validator-abide-min="1">
+                  <legend class="icon-required">Please indicate the applicable line of business/program type.</legend>
+                  <input required type="checkbox" name="Program Type" value="Conventional" id="convLender" data-validator="checked_required">
+                    <label for="convLender">Conventional</label><br>
+                  <input type="checkbox" name="Program Type" value="Seniors Housing" id="seniorLender" data-validator="checked_required">
+                    <label for="seniorLender">Seniors</label><br>
+                  <input type="checkbox" name="Program Type" value="Targeted Affordable Housing" id="tahLender" data-validator="checked_required">
+                    <label for="tahLender">Targeted Affordable Housing</label><br>
+                  <input type="checkbox" name="Program Type" value="Small Balance Loans" id="sblLender" data-validator="checked_required">
+                    <label for="sblLender">Small Balance Loans</label>
+                </fieldset>
+              </div>
+            </div>
+            <hr class="light-green">
+            <div class="row">
+              <div class="column">
+                <h2 class="gutter-bottom">Company Information</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-6 column">                   
+                <label class="icon-required" for="institution-name">Institution Name</label> 
+                <input id="institution-name" maxlength="20" name="institution-name" required type="text" aria-describedby="lenderReqHelp0" />
+                <p class="help-text" id="lenderReqHelp0">Full legal name as reported to your regulator</p>
+              </div>
+              <div class="large-6 column">
+                <label class="icon-required" for="institution-url">Institution URL</label> 
+                <input id="institution-url" name="institution-url" required type="text" pattern="url" aria-describedby="lenderReqHelp1" />
+                <p class="help-text" id="lenderReqHelp1">Ex: http://www.freddiemac.com</p>
+              </div>
+            </div>
+            <!-- Lender Address -->
+            <div class="row">
+              <div class="column">
+                <h3 class="gutter-bottom">Headquarters Address</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-6 column">                        
+                <label class="icon-required" for="address0">Street Address 1</label> 
+                <input id="address0" name="Street Address" required type="text" />
+              </div>
+              <div class="large-6 column">                        
+                <label for="address1">Street Address 2</label> 
+                <input id="address1" name="Street Address 2" type="text" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-6 column">
+                <label class="icon-required" for="city">City</label> 
+                <input id="city" name="City" required type="text" />                        
+              </div>
+              <div class="large-6 column">                      
+                <label class="icon-required" for="state">State</label>
+                <select id="state" name="State" required>
+                  <option selected="selected" value="">select</option>
+                  <option value="AL">AL</option>
+                  <option value="AK">AK</option>
+                  <option value="AZ">AZ</option>
+                  <option value="AR">AR</option>
+                  <option value="CA">CA</option>
+                  <option value="CO">CO</option>
+                  <option value="CT">CT</option>
+                  <option value="DE">DE</option>
+                  <option value="DC">DC</option>
+                  <option value="FL">FL</option>
+                  <option value="GA">GA</option>
+                  <option value="GU">GU</option>
+                  <option value="HI">HI</option>
+                  <option value="ID">ID</option>
+                  <option value="IL">IL</option>
+                  <option value="IN">IN</option>
+                  <option value="IA">IA</option>
+                  <option value="KS">KS</option>
+                  <option value="KY">KY</option>
+                  <option value="LA">LA</option>
+                  <option value="ME">ME</option>
+                  <option value="MD">MD</option>
+                  <option value="MA">MA</option>
+                  <option value="MI">MI</option>
+                  <option value="MN">MN</option>
+                  <option value="MS">MS</option>
+                  <option value="MO">MO</option>
+                  <option value="MT">MT</option>
+                  <option value="NE">NE</option>
+                  <option value="NV">NV</option>
+                  <option value="NH">NH</option>
+                  <option value="NJ">NJ</option>
+                  <option value="NM">NM</option>
+                  <option value="NY">NY</option>
+                  <option value="NC">NC</option>
+                  <option value="ND">ND</option>
+                  <option value="OH">OH</option>
+                  <option value="OK">OK</option>
+                  <option value="OR">OR</option>
+                  <option value="PA">PA</option>
+                  <option value="PR">PR</option>
+                  <option value="RI">RI</option>
+                  <option value="SC">SC</option>
+                  <option value="SD">SD</option>
+                  <option value="TN">TN</option>
+                  <option value="TX">TX</option>
+                  <option value="UT">UT</option>
+                  <option value="VT">VT</option>
+                  <option value="VA">VA</option>
+                  <option value="VI">VI</option>
+                  <option value="WA">WA</option>
+                  <option value="WV">WV</option>
+                  <option value="WI">WI</option>
+                  <option value="WY">WY</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column large-6 end">
+                <div class="row">
+                  <div class="column large-6">
+                    <label class="icon-required" for="zipcode">Zip</label>
+                    <input id="zipcode" name="Zipcode" type="text" pattern="[0-9]*" required>
+                  </div>
+                  <div class="column large-6">
+                    <label for="zipcodeExt">Ext</label>
+                    <input type="text" id="zipcodeExt" name="Zipcode Ext" pattern="[0-9]*">
+                  </div>
+                </div>                
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <fieldset>
+                  <input id="different-address" name="The mailing address is different" type="checkbox" value="Yes"><label for="different-address">The mailing address is different from the principal address</label>
+                </fieldset>
+              </div>
+            </div>
+            <hr class="light-green">
+            <!-- Institution Details -->
+            <div class="row">
+              <div class="column">
+                <h3 class="gutter-bottom">Institution Details</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column large-6">
+                <label class="icon-required" for="netWorth">Institution Gap Net Worth</label> 
+                <input id="netWorth" min="0" max="99" maxlength="" pattern="[0-9]" name="Net Worth" required type="number" />
+              </div>
+              <div class="column large-6">
+                <fieldset>
+                  <legend class="icon-required" style="margin-bottom:0;padding-bottom:0.1875rem;">Length of Time in Multifamily Business</legend>
+                  <div class="row">
+                    <div class="column large-6">
+                      <label class="hide" for="years-in-business">Years</label>
+                        <input required name="Number of years in business" id="years-in-business" maxlength="2" pattern="\d{1,2}" type="number" aria-describedby="numberOfYears">
+                        <p class="help-text" id="numberOfYears">Years</p>
+                    </div>
+                    <div class="column large-6">
+                      <label class="hide" for="months-in-business">Months</label>
+                        <input required name="Number of months in business" id="months-in-business" maxlength="2" pattern="[0-9]*" type="number" aria-describedby="numberOfMonths">                      
+                        <p class="help-text" id="numberOfMonths">Months</p>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>              
+            </div>
+            <!-- Institution Type -->
+            <div class="row">
+              <div class="column">
+                <fieldset class="checked-group">
+                  <legend class="icon-required weight-medium">Institution Type</legend>
+                  <div>
+                    <input required type="radio" name="Institution Type" value="Domestic Bank" id="domesticBank">
+                    <label for="domesticBank">Domestic Bank</label>                    
+                  </div>
+                  <div>
+                    <input type="radio" name="Institution Type" value="CDFI" id="CDFI">
+                    <label for="CDFI">CDFI (Community Development Financial Institution)</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="Institution Type" value="Mortgage Bank" id="mortgageBank">
+                    <label for="mortgageBank">Mortgage Bank</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="Institution Type" value="Credit Union" id="creditUnion">
+                    <label for="creditUnion">Credit Union</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="Institution Type" value="HFA" id="HFA">
+                    <label for="HFA">Housing Finance Agency</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="Institution Type" value="Other" id="other">
+                    <label for="other">Other</label>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <hr class="light-green">
+            <div class="row">
+              <div class="column large-6">
+                <label class="icon-required" for="TIN-EIN">TIN/EIN</label> 
+                <input id="TIN-EIN" name="TIN-EIN" required autocapitalize="off" autocorrect="off" type="text" aria-describedby="taxEmployerID" />
+                <p class="help-text" id="taxEmployerID">Tax/Employer ID Number</p>
+              </div>
+              <div class="column large-6">
+                <label class="icon-required" for="hudNumber">HUD / FHA Mortgage Number</label> 
+                <input id="hudNumber" name="HUD Number" required autocapitalize="off" autocorrect="off" type="text" />
+              </div>
+              <div class="column">
+                <fieldset class="checked-group">
+                  <legend class="icon-required weight-medium">Existing Freddie Mac Relationship</legend>
+                    <input required type="radio" name="Existing Single-Family Seller/Servicer" value="Yes" id="existingSellerServicer">
+                    <label for="existingSellerServicer">Single-Family Seller/Servicer</label>
+                    <div style="display:flex;">
+                      <input type="radio" value="Other" id="otherExistingRelationship0" name="Existing Single-Family Seller/Servicer">
+                      <label for="otherExistingRelationship0" style="display:flex;">Other: </label>
+                      <input name="Relationship Description" type="text" id="otherExistingRelationship1">
+                        <label for="otherExistingRelationship1" class="show-for-sr">Describe the relationship with Freddie Mac</label>
+                    </div>
+                </fieldset>
+              </div>
+            </div>
+            <!-- Diversity Owndership -->
+            <div class="row">
+              <div class="column">
+                <fieldset class="checked-group">
+                  <legend class="icon-required weight-medium">Diversity Ownership</legend>
+                  <p class="help-text gutter-top">Select all that apply</p>
+                  <div>
+                    <input required type="radio" name="Diversity Ownership" value="Asian American Minority-Owned Business Enterprise" id="asianAmerican">
+                    <label for="asianAmerican">Asian American Minority-Owned Business Enterprise</label>                    
+                  </div>
+                  <div>
+                    <input type="radio" name="Diversity Ownership" value="Black or African American Minority-Owned Business Enterprise" id="blackAfricanAmerican">
+                    <label for="blackAfricanAmerican">Black (or African) American Minority-Owned Business Enterprise</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="Diversity Ownership" value="Community-Oriented Lending Institution" id="communityLending">
+                    <label for="communityLending">Community-Oriented Lending Institution</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="Diversity Ownership" value="Disabled-Owned Business Enterprise" id="disabledOwned">
+                    <label for="disabledOwned">Disabled-Owned Business Enterprise</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="Diversity Ownership" value="Gay, Lesbian, Bisexual or Transgendered-Owned Business Enterprise" id="LGBTQ">
+                    <label for="LGBTQ">Gay, Lesbian, Bisexual or Transgendered-Owned Business Enterprise</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="Diversity Ownership" value="Hispanic" id="hispanicOwned">
+                    <label for="hispanicOwned">Hispanic (or Latino) American Minority-Owned Business Enterprise</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="Diversity Ownership" value="Native American" id="nativeAmerican">
+                    <label for="nativeAmerican">Native American (or American Indian) Minority-Owned Business Enterprise</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="Diversity Ownership" value="Women-Owned Business Enterprise" id="womenOwned">
+                    <label for="womenOwned">Women-Owned Business Enterprise</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="Diversity Ownership" value="Prefer not to Answer" id="noAnswer">
+                    <label for="noAnswer">Prefer not to Answer</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="Diversity Ownership" value="None of the Above" id="na">
+                    <label for="na">None of the Above</label>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <!-- Point of Contact --> 
+            <div class="row">
+              <div class="column">
+                <h2 class="gutter-bottom">Point of Contact</h2>
+              </div>
+              <div class="large-6 column">                   
+                <label class="icon-required" for="fName">First Name</label> 
+                <input id="fName" maxlength="20" name="First Name" required type="text" />
+              </div>
+              <div class="large-6 column">
+                <label class="icon-required" for="lName">Last Name</label> 
+                <input id="lName" name="Last Name" required type="text" />
+              </div>
+              <div class="large-6 column">
+                <label class="icon-required" for="jobTitle">Job Title</label> 
+                <input id="jobTitle" name="Job Title" required autocapitalize="off" autocorrect="off" type="text" />
+              </div>
+              <div class="large-6 column">                    
+                <label class="icon-required" for="email">Email Address</label> 
+                <input id="email" name="Email" required autocapitalize="off" autocorrect="off" type="text" />
+              </div>              
+              <div class="large-6 column">
+                <label class="icon-required" for="phone">Phone Number</label>
+                <input id="phone" name="Phone" required pattern="^\d{3}-\d{3}-\d{4}$" type="tel" aria-describedby="telephoneHelp">
+                  <p class="help-text" id="telephoneHelp">###-###-####</p>
+              </div>
+              <div class="large-6 column">
+                <label for="extension">Extension</label>
+                <input type="text" name="Extension" id="extension">
+              </div>  
+            </div>        
+            <hr class="light-green">            
+            <!-- Additional Comments -->
+            <div class="row">
+              <div class="column">
+                <h2>Additional Comments</h2>
+              </div>
+              <div class="column">
+                <textarea name="coments" name="Additional Comments" id="comments" rows="5" cols="40"></textarea>
+              </div>
+              <div class="column">
+                <input id="confirmation" name="Confirmation" type="checkbox" value="I agree" required>
+                <label for="confirmation" class="icon-required">
+                  By submitting this form, you confirm that you have reviewed the eligibility requirements, and you believe your institution meets these requirements.
+                </label>
+              </div>
+              <div class="column gutter-top">
+                <input id="sustainability-measures" name="Confirmation" type="checkbox" value="I agree" required>
+                <label for="sustainability-measures" class="icon-required">
+                  By submitting this form, you confirm that you have reviewed the sustainability measures.
+                </label>
+              </div>
+              <div class="column">
+                <div id="recaptcha"></div>
+                <!--#include virtual="/include/disclaimer/ccpa.html" -->
+                <div class="row gutter-top">
+                  <div class="column">
+                    <div class="callout small background-red" style="display: none;" data-abide-error="" data-closable="">
+                      <button class="close-button" data-close="" type="button">
+                          <span aria-hidden="true">&times; </span>
+                      </button>
+                      <p class="enlarge">Please review your form for errors.</p>
+                    </div>
+                  </div>
+                  <div class="large-10 large-centered column">
+                    <p class="text-center">
+                      <input name="form-submit" disabled="disabled" class="button large secondary" id="form-submit" type="submit" value="Submit" />                      
+                    </p>                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <script src="https://www.google.com/recaptcha/api.js?onload=captchaonloadCallback2&amp;render=explicit" defer="defer" async=""></script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

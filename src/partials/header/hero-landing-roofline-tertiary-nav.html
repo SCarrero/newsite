@@ -1,0 +1,24 @@
+<div class="hero-roofline">
+  {{> breadcrumbs}}
+  <div class="roofline"></div>
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="cell hero-roofline-content hero-nav-wrapper">
+        <h1>{{{ title }}}</h1>
+        {{#if subtitle}}
+        <p>{{{ subtitle }}}</p>
+        {{/if}}
+        {{#if heroNav}}
+          <div class="hero-nav">
+            {{> (lookup . 'heroNav') }}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+  {{#if heroimg}}
+    <div class="hero-photo" {{#unless heroImgAlt}} aria-hidden="true" {{/unless}}>
+      <img src="{{heroimg}}" alt="{{#if heroImgAlt}}{{heroImgAlt}}{{/if}}" />
+    </div>
+  {{/if}}
+</div>

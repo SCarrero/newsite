@@ -1,7 +1,8 @@
 @charset 'utf-8';
 
-@import '_settings';
+@import 'settings';
 @import 'foundation';
+//@import 'node_modules/foundation-sites/assets/foundation-float';
 @import 'motion-ui';
 
 // Global styles
@@ -9,24 +10,27 @@
 @include foundation-forms;
 @include foundation-typography;
 
+
 // Grids (choose one)
+@include foundation-grid;
 @include foundation-xy-grid-classes;
-// @include foundation-grid;
+// the classes include $base-grid,  $margin-grid,  $padding-grid,  $block-grid, $collapse, $offset, $vertical-grid, $frame-grid -- may need to write an uncollapse grid option)
 // @include foundation-flex-grid;
 
 // Generic components
 //@include foundation-button;
-@include foundation-button-group;
+//@include foundation-button-group;
 @include foundation-close-button;
 @include foundation-label;
-@include foundation-progress-bar;
-@include foundation-slider;
+//@include foundation-progress-bar;
+//@include foundation-slider;
 @include foundation-switch;
 @include foundation-table;
+
 // Basic components
-@include foundation-badge;
+//@include foundation-badge;
 @include foundation-breadcrumbs;
-@include foundation-callout;
+//@include foundation-callout;
 @include foundation-card;
 @include foundation-dropdown;
 @include foundation-pagination;
@@ -38,18 +42,19 @@
 @include foundation-orbit;
 @include foundation-responsive-embed;
 @include foundation-tabs;
-@include foundation-thumbnail;
+//@include foundation-thumbnail;
+
 // Menu-based containers
 @include foundation-menu;
-@include foundation-menu-icon;
-@include foundation-accordion-menu;
+//@include foundation-menu-icon;
+//@include foundation-accordion-menu;
 @include foundation-drilldown-menu;
 @include foundation-dropdown-menu;
 
 // Layout components
 @include foundation-off-canvas;
 @include foundation-reveal;
-@include foundation-sticky;
+@include foundation-sticky; 
 @include foundation-title-bar;
 @include foundation-top-bar;
 
@@ -62,11 +67,53 @@
 // Motion UI
 @include motion-ui-transitions;
 @include motion-ui-animations;
-
-
-@import 'mixins';
-
 // import any local project scss files here
+@import 'components/body';
+@import 'mixins';
+@import 'components/icons';
+@import 'components/code';
+@import 'components/globals';
+@import 'components/page-layout';
+@import 'components/breadcrumbs';
+@import 'components/shims';
+@import 'components/reveal';
+@import 'components/text';
 @import 'components/typography';
-@import 'components/vertical-spacing';
 @import 'components/buttons';
+@import 'components/button-group';
+@import 'components/button-row';
+@import 'components/callouts';
+@import 'components/articles';
+@import 'components/accordion';
+@import 'components/forms';
+@import 'components/features';
+@import 'components/hero';
+@import 'components/flex';
+@import 'components/lists';
+@import 'components/avatar';
+@import 'components/images';
+@import 'components/card';
+@import 'components/tabs';
+@import 'components/grid-blocks';
+@import 'components/data-table';
+@import 'components/nav-header';
+@import 'components/nav-ribbon';
+@import 'components/mobile-nav-header';
+@import 'components/nav-footer';
+@import 'components/nav-tertiary';
+@import 'components/share-widget';
+@import 'components/footer-promos';
+@import 'components/sidebars';
+@import 'components/anchors';
+@import 'components/orbit';
+@import 'components/close-button';
+@import 'components/tooltips';
+@import 'components/floated-boxes';
+@import 'components/backgrounds';
+@import 'components/media-object';
+@import 'components/display';
+@import 'components/motion-ui';
+@import 'components/notifications';
+@import 'components/vertical-spacing';
+@import 'components/panel';
+// @import 'components/market-dashboard';

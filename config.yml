@@ -17,11 +17,14 @@ PATHS:
   dist: "dist"
   # Paths to static assets
   assets:
-    - "src/assets/js/{custom,vendor}/*.js"
+    # "src/assets/**/**/*"
+    - "src/assets/**/vendor/**/*"
+    - "src/assets/**/fonts/**/*"
     - "src/assets/ss/**/*.css"
     - "src/pages/**/images/**/*"
     - "src/pages/**/**/images/*" 
-    - "src/pages/**/files/**/*" 
+    - "src/pages/**/files/**/*"  
+    - "!src/assets/js/vendor/*.js"
   # Paths to Foundation sccs libraries
   sass:
     - "node_modules/foundation-sites/scss"
@@ -36,5 +39,13 @@ PATHS:
   # Paths to JavaScript to bundle and load if using prebuilt Foundation instead of webpack
   javascript:
     - "src/assets/js/foundation-prebuilt.js"
+    - "src/assets/js/fmGlobals.js"
+    - "src/assets/js/notificationCookies.js"
+    - "src/assets/js/headerNav.js"
+    # - "src/assets/js/cardToggle.js"
+    - "src/assets/js/prepModals.js"
+    - "src/assets/js/prepRotators.js"
+    - "src/assets/js/prepTabs.js"
+    - "src/assets/js/tertiaryNav.js"   
     - "src/assets/js/app.js"
     - "src/assets/js/shareWidget.js"

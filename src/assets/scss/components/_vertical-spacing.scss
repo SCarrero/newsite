@@ -8,7 +8,7 @@
 @mixin vertical-spacing-classes(
   $class: '-top',
   $count: 4,
-  $increment: rem-calc(10)
+  $increment: rem-calc(16)
 ) {
   @for $i from 0 through $count {
     @if ($i == 0) {
@@ -41,3 +41,10 @@
 }
 
 @include vertical-spacing-classes();
+
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+.padding-top-8 {
+  padding-top: 8rem;
+}

@@ -1,0 +1,25 @@
+#breadcrumb-wrapper {
+  font-weight: $global-weight-regular;
+  margin-bottom: 1.25rem;
+  letter-spacing: rem-calc(1.24);
+  @include breakpoint(medium) {
+    margin-bottom: 1.75rem;
+  }  
+  nav {
+    display: inline-block;
+    background: $light-gray;
+    padding: rem-calc(14 20 11);
+  }
+  ol, li {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+.no-breadcrumbs {
+  height: rem-calc(45);
+  @include breakpoint(medium) {
+    height: rem-calc(50);
+  }  
+}
