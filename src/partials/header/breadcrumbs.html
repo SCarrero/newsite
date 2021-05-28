@@ -1,0 +1,26 @@
+{{#if breadcrumb}}
+<div class="grid-container fluid hide-for-print" id="breadcrumb-wrapper">
+  <div class="grid-x">
+    <div class="cell">
+      <nav aria-label="You are here:" role="navigation">
+        <ol class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
+          {{#each breadcrumb}} {{#if url}}
+          <li property="itemListElement" typeof="ListItem">
+            <a property="item" typeof="WebPage" href="{{ url }}"><span property="name">{{ name }}</span></a>
+            <meta property="position" content="{{number 'add' 1 @index}}" />
+          </li>
+          {{else}}
+          <li property="itemListElement" typeof="ListItem">
+            <span property="name">{{ name }}</span>
+            <meta property="position" content="{{number 'add' 1 @index}}" />
+          </li>
+          {{/if}} {{/each}}
+        </ol>
+      </nav>
+    </div>
+  </div>
+</div>
+{{else}}
+<div class="grid-container fluid no-breadcrumbs">
+</div>
+{{/if}}
