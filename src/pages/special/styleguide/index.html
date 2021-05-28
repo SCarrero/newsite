@@ -1,0 +1,67 @@
+---
+title: Style Guides and Tools
+layout: main
+herotype: title
+image: files/styleguide.jpg
+description: Style guides and web tools for managing FreddieMac.com websites.
+breadcrumb: [{"name":"Home","url":"/"},{"name":"Style Guides and Tools"}]
+---
+
+
+<div class="iw_component">
+  <div class="row">
+    <div class="column medium-5">
+      <h2 class="weight-normal">Style Guides for Responsive Sites</h2>
+      {{#if guides}}    
+        <ul class="gutter-right">
+        {{#each guides.page}}
+          <li><a href="{{url}}">{{{name}}}</a></li> 
+        {{/each}}      
+      </ul>
+      {{/if}}
+      <h2 class="weight-normal">Legacy Templates</h2>
+      <ul>
+        <li><a href="http://www.freddiemac.com/special/style_guide/fm/">Single-family</a></li> 
+        <li><a href="http://www.freddiemac.com/terms/brand_standards/">Web Based Applications Template</a></li> 
+      </ul>
+    </div>
+    <div class="column medium-7">        
+      <h2 class="weight-normal">For Developers</h2>
+      <ul>
+        <li><a href="http://extcstage.fhlmc.com:8090/special/developer-resources/index.html">Developer Resources</a></li>
+        <li><a href="code-standards.html">SCSS Code Standards</a></li> 
+        <li><a href="git-help.html">Help with Git Commands</a></li> 
+        <li><a href="markdown.html">Writing in Markdown</a></li> 
+        <li><a href="panini.html">Panini (Handlebars) Templating</a></li>
+        <li><strong>-ISH Viewer</strong> - test a responsive page across small<i>ish</i>, medium<i>ish</i>, and larg<i>ish</i> breakpoints
+          <ul>
+            <li><a href="http://extcstage.fhlmc.com:8090/cgi-bin/ish/viewer.cgi?url=http://extcstage.fhlmc.com:8090/blog">FM Stage</a> / <a href="http://www.freddiemac.com/cgi-bin/ish/viewer.cgi?url=http://www.freddiemac.com/blog">FM Prod</a></li>
+            <li><a href="http://extcstage.fhlmc.com:9030/cgi-bin/ish/viewer.cgi?url=http://extcstage.fhlmc.com:9030/">My Home Stage</a> / <a href="https://myhome.freddiemac.com/cgi-bin/ish/viewer.cgi?url=https://myhome.freddiemac.com/">My Home Prod</a></li>
+          </ul>
+        </li>
+      </ul>    
+      <h2 class="weight-normal">For Designers</h2>  
+      <ul>
+        <li><a class="offsite" href="https://www.freddiecreative.com/">Widen DAM</a></li>
+        <li><a href="color-accessibility.html">Color Accessibility</a></li>
+        <li><strong>Snapshot Creator</strong> - take a screenshot of a page shown across multiple devices
+          <ul>
+          <li>FM <a href="http://www.freddiemac.com/special/styleguide/responsive.html">Prod</a> | <a href="http://extcstage.fhlmc.com:8090/special/styleguide/responsive.html">Stage</a></li>
+          <li>MF <a href="https://mf.freddiemac.com/special/styleguide/responsive.html">Prod</a> | <a href="https://mfextpreprod.fhlmc.com/special/styleguide/responsive.html?url=https%3A%2F%2Fmfextpreprod.fhlmc.com%2Findex.html">Stage</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h2 class="weight-normal">For UX</h2>
+      <ul>
+        <li><a class="offsite" href="https://analytics.google.com/">Google Analytics</a></li>
+        <li><span class="weight-normal">Design Checklists:</span>
+          <ol>
+            {{#each checklists}}
+              <li><a href="/special/styleguide/files/{{this}}">{{#each (string  "split" (string "replace" this "Design-|\.pdf" "" "gi") "-")}}{{string "capitalize" .}} {{/each}}</a></li>
+            {{/each}}
+          </ol>
+      </li>
+      </ul>
+    </div>
+  </div>
+</div>

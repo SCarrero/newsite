@@ -1,7 +1,7 @@
 {
   "name": "newsite",
   "version": "1.1.0",
-  "description": "My variation on Zurb Template Used to Generate new sites",
+  "description": "Redesign MF site",
   "main": "gulpfile.babel.js",
   "scripts": {
     "start": "gulp",

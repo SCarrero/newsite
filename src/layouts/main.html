@@ -1,0 +1,143 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    {{>metadata}}
+    {{>metadata-static}}
+
+    <link rel="stylesheet" href="/ss/app_corp2.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/xnm7jtg.css">
+
+    {{#each (array "" stylesheet)}}
+    <link rel="stylesheet" href="{{.}}" />
+    {{/each}}     
+  </head>  
+  {{#if bodyclass}}
+  <body class="{{ bodyclass }}">
+    {{else}}
+  <body>
+  {{/if}}  
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KZFS9PD"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe> </noscript>
+  <!-- End Google Tag Manager -->
+    <div id="body-wrapper" data-toggler=".is-mobile-expanded" class="off-canvas-content" data-off-canvas-content>
+      <div class="iw_viewport-wrapper"> 
+        <div class="iw_section">
+          <div class="row iw_row iw_stretch">
+            <div class="column iw_columns large-12">
+              <div class="iw_component">
+                <div class="show-for-print">FreddieMac.com</div> 
+
+                <!--googleoff: all-->
+                 {{> corp-header}}  
+
+                 <script>
+                  var d= document, 
+                  nav1 = {{#if navLevel1}}'{{navLevel1}}'{{else}}'none'{{/if}};
+                  if(d.getElementById(nav1)){ 
+                    d.getElementById(nav1).classList.add('active');
+                  }
+                </script>              
+                <!--googleon: all--> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="iw_section"> 
+          <div class="row iw_row iw_stretch"> 
+            <div class="column iw_columns large-12"> 
+              <div class="iw_component">
+                  <div id="skipper"></div>
+              </div>
+              <div class="iw_component">
+                {{#ifequal herotype "title" }} 
+                  {{> hero-title}}
+                {{/ifequal}}
+                {{#ifequal herotype "research-article" }}      
+                  {{> hero-research-article}}
+                {{/ifequal}}
+                {{#ifequal herotype "landing" }} 
+                  {{> hero-landing }}
+                {{/ifequal}} 
+                {{#ifequal herotype "perspectives-article" }} 
+                  {{> hero-perspective-article}}
+                {{/ifequal}}  
+                {{#ifequal herotype "perspectives-double-author-article" }} 
+                  {{> hero-perspective-double-author-article}}
+                {{/ifequal}}    
+                {{#ifequal herotype "landing-roofline" }} 
+                  {{> hero-landing-roofline}}
+                {{/ifequal}}
+                {{#ifequal herotype "landing-roofline-tertiary-nav" }} 
+                  {{> hero-landing-roofline-tertiary-nav}}
+                {{/ifequal}}
+                {{#ifequal herotype "landing-roofline-photo" }} 
+                  {{> hero-landing-roofline-photo}}
+                {{/ifequal}}
+                {{#ifequal herotype "landing-photo" }} 
+                  {{> hero-landing-photo}}
+                {{/ifequal}}             
+              </div> 
+            </div>
+          </div> 
+        </div> 
+        <div class="iw_section">
+          {{#ifequal grid "2-col"}}
+          <div class="row iw_row iw_stretch"> 
+            {{else}}
+          <div class="row iw_row iw_container"> 
+          {{/ifequal}} 
+            <div class="column iw_columns large-12">           
+              {{> body}}   
+            </div>
+          </div>
+        </div> 
+        <div class="iw_section"> 
+          <div class="row iw_row iw_stretch"> 
+            <div class="column iw_columns large-12"> 
+        
+              {{#if crosspromo}}
+              {{> (lookup . 'crosspromo') }}
+              {{/if}}
+              
+              {{> share-widget}}
+              
+              {{#if prefooter}}
+              {{> (lookup . 'prefooter') }}
+              {{/if}}
+              
+              <div class="iw_component">
+               {{> corp-footer}}
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+        <div class="iw_section"> 
+          <div class="row iw_row iw_stretch"> 
+            <div class="column iw_columns large-12"> 
+              <div class="iw_component">
+                {{> corp-footer-js}}
+
+                {{#each (array "" javascript)}}
+                  <script src="{{ this }}"></script>
+                {{/each}}    
+                {{#if onload}}
+                <script type="text/javascript">
+                  document.addEventListener("DOMContentLoaded", function () { 
+                    {{onload}}();
+                  });
+                </script>
+                {{/if}}
+              </div> 
+            </div> 
+          </div> 
+        </div>        
+      </div> 
+    </div>
+  </body>
+</html>
