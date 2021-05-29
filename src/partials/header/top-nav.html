@@ -13,10 +13,12 @@
             </div>
             <div class="top-bar-right">
               <ul class="menu" data-enable-hover="true">
+                <li><a class="main-nav-item" id="section-mediaroom" href="/lenders/" data-toggle="lenders-sub-nav"><span>Lenders</span></a></li>
+                <li><a class="main-nav-item" id="section-mediaroom" href="/lenders/" data-toggle="investors-sub-nav"><span>Investors</span></a></li>
+                <li><a class="main-nav-item" id="section-business" href="/borrowers/" data-toggle="borrowers-sub-nav"><span>Borrowers</span></a></li>
+                <li><a class="main-nav-item" id="section-research" href="/viewpoints/" data-toggle="products-sub-nav"><span>Products</span></a></li>
+                <li><a class="main-nav-item" id="section-research" href="/research/" data-toggle="news-sub-nav"><span>News &amp; Research</span></a></li>
                 <li><a class="main-nav-item first" id="section-about" href="/about/" data-toggle="about-sub-nav"><span>About</span></a></li>
-                <li><a class="main-nav-item" id="section-business" href="/borrowers/" data-toggle="borrower-sub-nav"><span>Borrowers</span></a></li>
-                <li><a class="main-nav-item" id="section-research" href="/viewpoints/" data-toggle="research-sub-nav"><span>Viewpoints</span></a></li>
-                <li><a class="main-nav-item" id="section-mediaroom" href="/media-room/" data-toggle="media-sub-nav"><span>Media Room</span></a></li>
                 <li><a class="main-nav-item pre-divider" id="section-careers" href="https://careers.freddiemac.com/" data-toggle="careers-sub-nav"><span>Careers</span></a></li>
                 <li><a class="main-nav-item post-divider last" id="section-search" href="/search/" data-toggle="search-sub-nav"><span>Search</span> 
                     <svg class="search-icon-desktop" stroke="currentColor" viewbox="0 0 19 19" style="width:1rem;height:1rem;" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(-1 0 0 1 18.63 0)" stroke-width="2" fill="none" fill-rule="evenodd"><circle cx="10.13" cy="8.234" r="6.5"/><path d="M5.63 12.734l-5 5"/></g></svg>
@@ -32,10 +34,13 @@
 
 <!-- SUB NAV PARTIALS -->
 <div class="dropdown-wrapper show-for-xlarge" style="display:none;">
-  {{> about-nav}}
+  
   {{> lenders-nav}}
-  {{> borrowers-nav}}
   {{> investors-nav}}
+  {{> borrowers-nav}}
+  {{> products-nav}}
   {{> research-nav}}
   {{> news-nav}}
+  {{> about-nav}}
+  {{> careers-nav}}
 </div>
